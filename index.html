@@ -10,45 +10,8 @@
 		<meta name="viewport" content="width = device-width, initial-scale = 1">
 		<!-- Latest compiled and minified CSS -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<link rel="stylesheet" type="text/css" href="style.css">
 		<style>
-			@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed');
-			/* jumbotron modifications */
-			.jumbotron
-			{
-				/* Google roboto font */
-				font-family: 'Roboto Condensed', sans-serif;
-				background-color:#0097A7;
-				color:white;
-				margin-bottom: none;
-				margin-top: none;
-				padding: none;
-			}
-			/* Rounded image */
-			img.profile
-			{
-				border-radius: 50%;
-			}
-			/* */
-			.page-header
-			{
-				border-bottom: none;
-			}
-			/* */
-			a
-			{
-				color:white;
-			}
-			/* */
-			a:hover
-			{
-				color:white;
-			}
-			/* Cards/Jumbotron selected mofifications */
-			.jumbotron:hover
-			{
-				/* Color of card/jumbotron when selected */
-				background-color:#009688;
-			}
 
 		</style>	
 	</head>
@@ -66,7 +29,7 @@
 				<!-- Column 1 -->
 				<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
 					<!-- Welcome card -->
-					<div class="jumbotron" id="welcome">
+					<div class="jumbotron accent" id="welcome">
 						<div class="container">
 							<div class="row">
 								<!-- Profile information -->
@@ -81,7 +44,7 @@
 
 								<!-- Profile picture -->
 								<div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-2 col-lg-offset-2">
-									<img class="profile hoverZoomLink" src="https://www.scs.ryerson.ca/~mgng/rsc/img/profile_pic.jpg" width="100%">
+									<img class="profile hoverZoomLink" src="./rsc/img/profile_pic.jpg" >
 								</div>
 								<!-- End of profile picture -->
 							</div>
@@ -90,7 +53,7 @@
 					<!-- End of welcome card -->
 
 					<!-- About card -->
-					<div class="jumbotron" id="about_me">
+					<div class="jumbotron accent" id="about_me">
 						<div class="container">
 							<div class="row">
 								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -120,7 +83,7 @@
 				<!-- Column 2 -->
 				<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" id="projects">
 					<!-- Projects card -->
-					<div class="jumbotron">
+					<div class="jumbotron accent">
 						<div class="container">
 							<div class="row">
 								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -132,7 +95,7 @@
 							<div class="row">
 								<div class="col-lg-6 col-sm-12">
 									<div class="page-header">
-										<h3><a href="http://scs.ryerson.ca/~mgng/#ryerson-projects" data-toggle="collapse">Ryerson University</a></h3>
+										<h3><a href="#ryerson-projects" data-toggle="collapse">Ryerson University</a></h3>
 									</div>
 									<div id="ryerson-projects" class="collapse">
 										<ul>
@@ -143,21 +106,21 @@
 											<li><h3>CPS305</h3></li>
 											<li><a href="http://www.scs.ryerson.ca/~mgng/cps530/labs"><h3>CPS530</h3></a></li>
 											<li><h3>CPS633</h3></li> -->
-											<li><a href="http://www.scs.ryerson.ca/~mgng/cps530/labs/"><h3>Web development</h3></a></li>
-											<li><a href="http://www.scs.ryerson.ca/~mgng/cps630/labs/"><h3>Web applications</h3></a></li>
+											<li><a href="https://cynicalbird.github.io/cps530/labs/"><h3>Web development</h3></a></li>
+											<li><a href="https://cynicalbird.github.io/cps630/labs/"><h3>Web applications</h3></a></li>
 										</ul>
 									</div>
 
 									<div class="page-header">
-										<h3><a href="https://www.scs.ryerson.ca/~mgng/mazeproject">Random maze generation</a></h3>
+										<h3><a href="https://cynicalbird.github.io/mazeproject">Random maze generation</a></h3>
 									</div>
 
 									<div class="page-header">
-										<h3><a href="http://scs.ryerson.ca/~mgng/#android-projects" data-toggle="collapse">Android</a></h3>
+										<h3><a href="#android-projects" data-toggle="collapse">Android</a></h3>
 									</div>
 									<div id="android-projects" class="collapse">
 										<ul>
-											<li><a href="http://www.scs.ryerson.ca/~mgng/cps530/TranSleep"><h3>TranSleep</h3></a></li>
+											<li><a href="https://cynicalbird.github.io/TranSleep"><h3>TranSleep</h3></a></li>
 										</ul>
 									</div>
 
@@ -173,7 +136,7 @@
 					<!-- End of projects card -->
 
 					<!-- Notes and information card -->
-					<div class="jumbotron" id="notes">
+					<div class="jumbotron accent" id="notes">
 						<div class="container">
 							<div class="row">
 								<div class="col-lg-6 col-md-4 col-sm-4 col-xs-6">
@@ -185,7 +148,7 @@
 							<div class="row">
 								<div class="col-lg-6 col-sm-12">
 									<div class="page-header">
-										<h3><a href="http://scs.ryerson.ca/~mgng/#ryerson-notes" data-toggle="collapse">Ryerson University</a></h3>
+										<h3><a href="#ryerson-notes" data-toggle="collapse">Ryerson University</a></h3>
 									</div>
 									<div id="ryerson-notes" class="collapse">
 										<ul>
@@ -194,24 +157,24 @@
 											<li><a href="https://1drv.ms/o/s!AmsWzFMDT1XbhR1liddwFmTtnCif"><h3>CPS213</h3></a></li>
 											<li><a href="https://1drv.ms/o/s!AmsWzFMDT1XbhVYGvZUk2avBvPl4"><h3>CPS310</h3></a></li>
 											<li><h3>CPS305</h3></li>
-											<li><a href="http://scs.ryerson.ca/~mgng/#"><h3>CPS530</h3></a></li>
+											<li><a href="#"><h3>CPS530</h3></a></li>
 											<li><a href="https://1drv.ms/o/s!AmsWzFMDT1Xbh1BsSa7Q6pZlAoHM"><h3>CPS590</h3></a></li>
-											<li><a href="http://scs.ryerson.ca/~mgng/"><h3>CPS630</h3>
-											</a></li><li><h3><a href="http://scs.ryerson.ca/~mgng/">CPS633</a></h3></li><a href="http://scs.ryerson.ca/~mgng/">
-										</a></ul><a href="http://scs.ryerson.ca/~mgng/">
-									</a></div><a href="http://scs.ryerson.ca/~mgng/">
-								</a></div><a href="http://scs.ryerson.ca/~mgng/">
+											<li><a href=""><h3>CPS630</h3></a</li>
+											<li><h3>CPS633</h3></li>
+										</ul>
+									</div>
+								</div>
 								<div class="col-lg-6 col-sm-12">
 									<div class="page-header">
 									</div>
 								</div>
-							</a></div><a href="http://scs.ryerson.ca/~mgng/">
-						</a></div><a href="http://scs.ryerson.ca/~mgng/">
-					</a></div><a href="http://scs.ryerson.ca/~mgng/">
+							</div>
+						</div>
+					</div>
 					<!-- End of "Notes and informatiom" card -->
 
 					<!-- Contacts card -->
-					</a><div class="jumbotron"><a href="http://scs.ryerson.ca/~mgng/">
+					</a><div class="jumbotron accent"><a href="http://scs.ryerson.ca/~mgng/">
 						</a><div class="container"><a href="http://scs.ryerson.ca/~mgng/">
 							<div class="row">
 								<!-- Contact information header -->
@@ -222,31 +185,31 @@
 								</div>
 								<!-- End of contact information header -->
 							</div>
-							</a><div class="row"><a href="http://scs.ryerson.ca/~mgng/">
+							</a><div class="row text-center"><a href="http://scs.ryerson.ca/~mgng/">
 								<!-- Facebook icon -->
 								</a><div class="col-lg-3 col-md-6 col-sm-6 col-xs-6"><a href="http://scs.ryerson.ca/~mgng/">
-									</a><a href="http://www.facebook.com/username1862"><img width="100%" src="https://www.scs.ryerson.ca/~mgng/rsc/img/social/facebook.png"></a>
+									</a><a href="http://www.facebook.com/username1862"><img class="icon" src="./rsc/img/social/facebook.png"></a>
 									<h3>Facebook</h3>
 								</div>
 								<!-- End of facebook icon -->
 
 								<!-- Linked in icon -->
 								<div class="col-lg-3 col-md-6 col-sm-6 col-xs-6">
-									<a href="http://www.facebook.com/username1862"><img width="100%" src="https://www.scs.ryerson.ca/~mgng/rsc/img/social/linkedin.png"></a>
+									<a href="http://www.facebook.com/username1862"><img class="icon" src="./rsc/img/social/linkedin.png"></a>
 									<h3>Linked In</h3>
 								</div>
 								<!-- End of linkedin icon -->
 								
 								<!-- Email icon -->
 								<div class="col-lg-3 col-md-6 col-sm-6 col-xs-6">
-									<a href="http://scs.ryerson.ca/~mgng/#email" data-toggle="collapse"><img width="100%" src="https://www.scs.ryerson.ca/~mgng/rsc/img/social/email.png"></a>
+									<a href="http://scs.ryerson.ca/~mgng/#email" data-toggle="collapse"><img class="icon" src="./rsc/img/social/email.png"></a>
 									<h3>Email</h3>
 								</div>
 								<!-- End of email icon -->
 								
 								<!-- Twitter icon -->
 								<div class="col-lg-3 col-md-6 col-sm-6 col-xs-6">
-									<a href="http://www.twitter.com/5d8310faf5d34ff"><img width="100%" src="https://www.scs.ryerson.ca/~mgng/rsc/img/social/twitter.png"></a>
+									<a href="http://www.twitter.com/5d8310faf5d34ff"><img class="icon" src="./rsc/img/social/twitter.png"></a>
 									<h3>Twitter</h3>
 								</div>
 								<!-- End of twitter icon -->

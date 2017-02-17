@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed');
+
+.accent 	{ background-color:#0097A7; transition: background-color 2s; }
+
+.accent:hover 	{ background-color:#009688; }
+
+/* jumbotron modifications */
+.jumbotron
+{
+	/* Google roboto font */
+	font-family: 'Roboto Condensed', sans-serif;
+	color:white;
+	margin-bottom: none;
+	margin-top: none;
+	padding: none;
+}
+
+.text-center { text-align: center; }
+
+	
+/* Rounded image */
+img.profile 	{ border-radius: 50%; width: 100%;}
+
+img.icon 	{ width: 35%; }
+			
+/* */
+.page-header	{ border-bottom: none; }
+			
+/* */
+a { color:white; }
+
+/* */
+a:hover
+{
+	color:white;
+}
+
+/* Cards/Jumbotron selected mofifications */
+.jumbotron:hover
+{
+		/* Color of card/jumbotron when selected */
+		
+}
+
+@media only screen and (min-width: 992px)
+{
+	img.icon {width: 65%;} 
+}
+
+@media only screen and (min-width: 1200px)
+{
+	img.icon {width: 80%;} 
+}
