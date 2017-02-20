@@ -37,7 +37,7 @@
 	width: 100%;
 	padding: 28px;
 	border-bottom: none;
-	transition: padding 1s;
+	transition: padding 0.5s;
 	transition-timing-function: ease-out;
 }
 
