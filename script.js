@@ -11,16 +11,16 @@ window.onscroll = function (e)
 	if (window.scrollY >= offset)
 	{
 		header.style.padding = "5px";
-		brand.style.padding = "5px";
-		slogan.style.padding = "5px";
+		//brand.style.padding = "5px";
+		//slogan.style.padding = "5px";
 		//header.style.fontSize = "8px";
 		slogan.style.display = "none";
 	}
 	else
 	{
 		header.style.padding = "28px";
-		brand.style.padding = "10px";
-		slogan.style.padding = "10px";
+		//brand.style.padding = "10px";
+		//slogan.style.padding = "10px";
 		//header.style.fontSize = "32px";
 		slogan.style.display = "initial";
 	}
