@@ -37,7 +37,14 @@
 	width: 100%;
 	padding: 28px;
 	border-bottom: none;
-} 
+	transition: padding 1s;
+	transition-timing-function: ease-out;
+}
+
+#header.expand
+{
+	padding: 5px;
+}
 
 #slogan
 {
