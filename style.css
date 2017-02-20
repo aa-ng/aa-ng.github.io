@@ -73,6 +73,11 @@ body
 	height: 100%;
 }
 
+button
+{
+	background-color: #5C6BC0;
+}
+
 html
 {
 	min-height: 100%;
