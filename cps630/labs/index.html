@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- Sets the character set to utf-8 -->
+		<title>Alex Ng's Website</title>
+		<!--Tells internet explorer to use the latest rendering engine -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<!-- Set the page width to the size of the device and the "zoom" to 1 -->
+		<meta name="viewport" content="width = device-width, initial-scale = 1">
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<link rel="stylesheet" type="text/css" href="style.css">
+	</head>
+	<body>
+		<!-- Header/Menu bar -->
+		<div class="accent" id="header">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12">
+						<h1 id="brand"><a href="https://cynicalbird.github.io/index.html">Alex Ng</a></h1>
+						<p id="slogan">CPS630 - In progress </p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- End of Header/Menu bar-->
+
+		<!-- Main content -->
+		<div class="jumbotron accent">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-6">
+						<h1>CPS630 Labs Overview</h1>
+						<p>This course focuses on creating rich web applications, taught by Professor Nhan Tran. cps630 covers the fundamentals of html, css and javascript. Teaching students to implement functionality of common frameworks such as Bootstrap and JQuery on their own in pure HTML, CSS and JavaScript.</p>
+					</div>
+					<div class="col-lg-6" id="carousel-container">
+						<div class="carousel slide" id="display-carousel" data-ride="carousel">
+							<!-- Carousel bottom inidicators (tick/bullet) -->
+							<ol class="carousel-indicators">
+								<li data-target="#display-carousel" data-slide-to="0" class="active"></li>
+								<li data-target="#display-carousel" data-slide-to="1"></li>
+								<li data-target="#display-carousel" data-slide-to="2"></li>
+							</ol>
+							<!-- Carousel content -->
+							<div class="carousel-inner">
+								<!-- Text for image 1 -->
+								<div class="item active">
+									<div class="slide1">
+										<div class="carousel-caption">
+											<h1>Lab 1</h1>
+											<p>CSS Responsive design</p>
+											<p>No Frameworks</p>
+										</div>
+									</div>
+								</div>
+
+								<!-- Text for image 2 -->
+								<div class="item">
+									<div class="slide2">
+										<div class="carousel-caption">
+											<h1>Lab 2</h1>
+											<p>Google Maps and OpenWeatherMaps JSON API</p>
+											<p>No Frameworks</p>
+										</div>
+									</div>
+								</div>
+
+								<!-- Text for image 3 -->
+								<div class="item">
+									<div class="slide3">
+										<div class="carousel-caption">
+											<h1>Lab 3</h1>
+											<p>and another!</p>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<!-- Action when arrows are clicked -->
+							<!-- "Left/Previous" carousel button -->
+							<a class="left carousel-control" href="#display-carousel" data-slide="prev">
+								<span class="glyphicon glyphicon-chevron-left"></span>
+							</a>
+
+							<a class="right carousel-control" href="#display-carousel" data-slide="next">
+								<span class="glyphicon glyphicon-chevron-right"></span>
+							</a>
+						</div>	
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- End of main content -->
+
+		<!-- Get JQuery -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<!-- Latest compiled and minified JavaScript (Bootstrap) -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+		<script src="script.js"></script>
+	</body>
+</html>
