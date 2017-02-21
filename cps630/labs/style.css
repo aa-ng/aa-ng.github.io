@@ -131,6 +131,17 @@ input[type=text]:focus { border-radius: 6px; border-color: red; }
 
 .transformation-scalein:hover	{ transform: scale(0.5,0.5); }
 
+#brand
+{
+	font-size: 48px;
+	padding: 10px;
+	margin: 0px;
+	transition: font-size 0.5s;
+	transition-timing-function: ease-out;
+}
+
+#brand.expand 	{ font-size: 36px; }
+
 /* Footer */
 #footer 
 {
@@ -178,6 +189,13 @@ input[type=text]:focus { border-radius: 6px; border-color: red; }
 	display: initial;
 	width: 30%;
 	transition: width 2s;
+}
+
+#slogan
+{
+	display: initial;
+	padding: 10px;
+	margin: 0px;
 }
 
 #temperature { font-size: 64px; }

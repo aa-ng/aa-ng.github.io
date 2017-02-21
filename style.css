@@ -114,6 +114,4 @@ li.dropdown-header { font-size: 32px; }
 @media only screen and (min-width: 1200px)
 {
 	img.icon {width: 80%;}
-	#brand { font-size: 32px; } 
-	#slogan { font-size: 18px; }
 }
