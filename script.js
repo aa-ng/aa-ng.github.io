@@ -6,7 +6,7 @@ window.onscroll = function (e)
 	var slogan = document.getElementById("slogan");
 	var body = document.getElementsByTagName("body")[0];
 
-	var offset = parseInt(window.getComputedStyle(body, null).getPropertyValue('padding-top').substring(1,2));
+	var offset = parseInt(window.getComputedStyle(body, null).getPropertyValue('padding-top').substring(0,3));
 
 	if (window.scrollY >= offset)
 	{
