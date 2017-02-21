@@ -1,0 +1,198 @@
+/* Import google web font */
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed');
+
+/* Selector if attribute "class" contains and begins with col- */
+[class*=col-] , [class^=col-] 
+{
+	width: 100%;
+	float:left;
+}
+
+.left
+{
+	float:left;
+}
+
+.right
+{
+	float: right;
+}
+
+.row
+{
+	 /*display:inline-block;*/	
+}
+
+/*
+div
+{
+	color: white;
+	box-sizing: border-box;	
+}
+*/
+
+.round-corners
+{
+	border-radius:6px;
+}
+
+.center-text
+{
+	text-align:center;
+}
+
+/* */
+@media only screen and (min-width: 768px)
+{
+	body
+	{
+		/*background-color:yellow; */
+	}
+	/*
+	[class*=col-]
+	{
+		float:left;
+	}*/
+
+	.menubar
+	{
+		width: 100%;
+	}
+	
+	.col-6
+	{
+		width: 100%;
+	}
+
+	.col-4
+	{
+		width:100%;
+	}
+	
+	.col-3
+	{
+		width:50%;
+	}
+}
+
+@media only screen and (min-width:1024px)
+{
+	body
+	{
+		/*background-color: orange;*/
+	}
+	
+	.col-12
+	{
+		width:100%;
+	}
+	
+	.col-6
+	{
+		width:50%;	
+	}
+	
+	.col-4
+	{
+		width:33.333%
+	}
+	
+	.col-3
+	{
+		width:25%;
+	}
+
+	.menubar
+	{
+		width:100%;
+	}
+
+}
+
+@media only screen and (min-width:1280px)
+{
+	/*background-color: red;*/
+}
+
+[class*=col], .menubar
+{
+	padding: 0px;
+	color: white;
+}
+
+.clear-fix
+{
+	padding:20px;
+	/* Note change transpenency (alpha) to be clear */
+	background-color:#white;
+}
+
+.accent
+{
+	background-color:#26A69A;
+	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+.accent-dark
+{
+	background-color:#009688;
+	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+.accent-darkest
+{
+	background-color:#00897B;
+	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+.accent-lightest
+{
+	background-color:#E0F2F1;
+	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+.accent-light
+{
+	background-color:#;
+	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+body
+{
+	padding:0px;
+	margin: 0px;
+	font-family: 'Roboto Condensed', sans-serif;
+}
+
+.container
+{
+	display: flex;
+	flex-flow: row wrap;	
+}
+/*
+.menu
+{
+	padding:0px;
+}*/
+
+.menu ul 
+{
+	/* Removes bullet points */
+	list-style-type: none;
+	margin: 0px;
+	padding: 0px;
+}
+.menu li 
+{
+	padding-top: 0;
+	padding-bottom: 0;
+	/*margin-bottom: 7px;*/
+	/* background-color: black; */
+	color: #ffffff;
+	/* box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); */
+}
+.menu li:hover, [class*=accent]:hover 
+{
+	/* background-image: url('http://www.scs.ryerson.ca/~mgng/rsc/img/cps630.png'); */
+	background-color: #AAAAFF;
+}

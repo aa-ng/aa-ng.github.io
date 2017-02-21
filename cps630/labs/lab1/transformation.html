@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- Sets the character set to Unicode Transformation Format 8 -->
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- CSS3 Styling sheet --> 
+		<link rel="stylesheet" type="text/css" href="http://www.scs.ryerson.ca/~mgng/cps630/labs/lab1/style.css">
+		<!-- Title of page -->
+		<title>CPS630 Lab 1 Transformation demo</title>
+	</head>
+	<body>
+		<!-- Header/top bar of page -->
+		<div class="col-12 accent-darkest" id="header">
+			<header>
+				<!-- To be implemented top menubar dropdown with button control (to much work in CSS)
+				<div class="menubar-button">
+					<img style="position:absolute left:1; top: 5; z:-1;" src="http://www.scs.ryerson.ca/~mgng/rsc/img/menu.png">
+					<input type="radio" id="show-menu" name="menubutton">
+					<input type="radio" id="hide-menu" name="menubutton">
+				</div>-->
+				
+				<!-- Link/Title to main site -->
+				<div class="left">
+					<a href="http://www.scs.ryerson.ca/~mgng/"><h1>Alex Ng</h1></a>
+				</div>
+				<!-- End of link to main site -->
+				
+				<!-- Profile picture -->
+				<div class="right">
+					<img class="circle" src="http://www.scs.ryerson.ca/~mgng/rsc/img/profile_pic.jpg" alt="profile picture">
+				</div>
+				<!-- End of profile picture -->
+			</header>
+		</div>  
+		<!--End of header/top bar of page --> 
+
+		<!-- Sidbar container -->
+		<div class="col-4">
+			<!-- Sidebar card -->
+			<div class="col-12 accent item sidebar">
+				<!-- Card content container -->
+				<div class="col-12">
+					<nav>
+						<h2>Home</h2>
+							<ul>
+								<li>
+									<details>
+										<summary>Labs</summary>
+										<ul>
+											<li>
+												<details>
+													<summary>Lab 1</summary>
+													<ul>
+														<li>
+															<a href="http://www.scs.ryerson.ca/~mgng/cps630/labs/lab1/index.html"><p>Home</p></a>
+														</li>
+														<li>
+															<a href="http://www.scs.ryerson.ca/~mgng/cps630/labs/lab1/transformation.html"><p>Transformation demo</p></a>
+														</li>
+
+														<li>
+															<a href="http://www.scs.ryerson.ca/~mgng/cps630/labs/lab1/overview.html"><p>Overview</p></a>
+														</li>
+													</ul>
+												</details>
+											</li>
+										</ul>
+									</details>
+								</li>
+							</ul>
+						<h2>Servers</h2>
+							<ul>
+								<li>
+									<details>
+										<summary>Status</summary>	
+										<ul>	
+											<li><a href=""><p>cake-net.zapto.org</p></a></li>
+											<li><a href=""><p>~mgng</p></a></li>
+										</ul>
+									</details>
+								</li>
+							</ul>
+						<a href="http://www.scs.ryerson.ca/~mgng/cps630/labs/lab2/index.html"><h2>Weather</h2></a>
+						<a href="#aboutme"><h2>About me</h2></a>
+						<a href="#contact"><h2>Contact me</h2></a>
+						<a href="#notes"><h2>Notes</h2></a>
+						<a href="#welcome"><h2>Welcome</h2></a>
+						<a href="#news"><h2>News</h2></a>		
+						<a href="#TranSleep"><h2>Projects</h2></a>
+					</nav>
+				</div>
+				<!-- Card content container -->
+			</div>
+			<!-- End of sidebar card -->
+		</div>
+		<!-- End of sidebar container -->
+
+		<!-- Main content area -->
+		<div class="content-container">
+			<main>
+				<!-- Welcome card -->
+				<div class="col-12 accent item" id="welcome">
+					<div class="col-12">
+						<article>
+							<h1>Welcome!</h1>
+							<p>This is Alex Ng's transformation demo for cps630 lab 1. This lab also uses only html and css</p>	
+							<p>Nulla non lacinia dolor, at feugiat arcu. Fusce porttitor pellentesque erat eget semper. Sed placerat, ex fringilla mollis facilisis, ante libero fermentum eros, et tristique ex elit id diam. Cras eget massa leo. Mauris lobortis mauris lacus, ac porttitor elit semper in. Morbi dapibus eleifend hendrerit. Ut cursus sed massa quis facilisis. Sed vitae bibendum augue, et dictum risus. Sed a tempor enim. Duis nulla arcu, consectetur a rhoncus lobortis, iaculis eget quam.
+
+							</p>		
+						</article>
+					</div>
+				</div>
+				<!-- End of welcome card -->
+
+				<!-- Demo card -->
+				<div class="col-12 item">
+					<div class="col-4">
+						<article>
+							<h1>Header</h1>
+							<p>
+								Praesent ut convallis diam, ut vulputate est. Suspendisse potenti. Cras imperdiet, ex a malesuada tristique, metus risus ornare metus, et malesuada dui sapien vel urna. Aenean feugiat libero tellus, eu porttitor nunc luctus ac. Proin interdum dapibus hendrerit. Sed vel ex eu est iaculis tempor aliquam ut ex. Praesent lacus orci, tincidunt eu efficitur nec, posuere vitae lorem. Curabitur condimentum viverra nulla, at tempor mi lobortis sit amet. Nunc finibus posuere justo, quis tristique lorem ornare nec. Maecenas aliquet et est at accumsan. Donec malesuada, eros nec iaculis ornare, nisl massa sollicitudin metus, eu maximus nunc eros nec mi. Vivamus euismod tempus feugiat.
+							</p>
+						</article>
+					</div>
+					<div class="col-4 transformation-scale">
+						<article>
+							<h1>Demo</h1>
+							<b>Hover here to see the transformation scale demo! (tap on mobile)</b>
+							<p>
+								Ut nec elit sed arcu elementum bibendum in eu nibh. Phasellus nec enim ut enim facilisis gravida sed id enim. Nam dictum lacinia leo id porta. Cras ullamcorper faucibus enim, sed auctor nunc vestibulum vulputate. Suspendisse potenti. Nulla lobortis efficitur efficitur. Nunc vehicula tortor nisl, sit amet ultrices leo vestibulum quis. In hac habitasse platea dictumst. Donec a pharetra odio. Donec ut ex justo. Maecenas iaculis efficitur sagittis. In dapibus tempor tellus, non rutrum ante maximus sed.
+							</p>
+						</article>
+					</div>
+					<div class="col-4">
+						<article>
+							<h1>Header</h1>
+							<p>
+								Donec gravida finibus lacus, ut feugiat eros convallis sit amet. Etiam ut metus in nunc laoreet aliquet. Etiam lobortis molestie finibus. Nullam a ipsum sollicitudin diam molestie rhoncus. Nulla faucibus erat ac dolor egestas semper. Fusce vulputate dictum neque, vitae dapibus nunc venenatis sed. Etiam a porttitor velit, nec rutrum mauris. Curabitur mauris felis, dignissim ut egestas ut, viverra in nibh. Ut eu purus ipsum. Aenean hendrerit quam et ex dapibus, in consectetur erat suscipit. Duis pellentesque ipsum vitae mi mattis pretium. Curabitur tempor, nunc vitae blandit interdum, ante nisl semper quam, at eleifend ante metus quis purus. Aenean congue erat turpis. Maecenas lacinia varius sagittis.
+							</p>
+						</article>
+					</div>
+				</div>
+				<!-- End of demo card -->
+
+				<!-- Details card -->
+				<div class="col-12 item accent-dark transformation-scalein" id="details">
+					<div class="col-12">
+						<article>
+							<h1>Details</h1>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed malesuada sodales dictum. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent posuere ultricies sodales. Curabitur ex purus, commodo a tellus at, pulvinar tempor metus. Integer suscipit cursus odio. Suspendisse sagittis, turpis ac gravida congue, ante ex egestas libero, eget hendrerit nisl nibh quis metus. Maecenas ut justo ex. Fusce mattis mauris vel condimentum consectetur. Ut vulputate arcu eros, quis interdum neque posuere nec. Maecenas id vestibulum est. Vestibulum tellus dui, congue tempor massa nec, dictum porta mi. Mauris eleifend maximus congue. Etiam ornare risus ac purus ullamcorper faucibus.
+
+							</p>
+						</article>
+					</div>
+				</div>
+				<!-- End of details card -->
+			</main>
+		</div>
+		<!-- End of main content area -->
+
+		<!-- Footer/Bottom bar container -->
+		<footer>
+			<div class="col-12 accent-darkest footer" id="footer">
+				<!-- menu container -->
+				<div class="col-12">
+					<details>
+						<summary>Menu</summary>
+						<nav>
+							<div class="col-6">
+								<h2>Home</h2>
+								<ul>
+									<li>
+										<details>
+											<summary>Labs</summary>
+											<ul>
+												<li>
+													<details>
+														<summary>Lab 1</summary>
+														<ul>
+															<li>
+																<a href="http://www.scs.ryerson.ca/~mgng/cps630/labs/lab1/index.html"><p>Home</p></a>
+															</li>
+															<li>
+																<a href="http://www.scs.ryerson.ca/~mgng/cps630/labs/lab1/transformation.html"><p>Transformation demo</p></a>
+															</li>
+															<li>
+																<a href="http://www.scs.ryerson.ca/~mgng/cps630/labs/lab1/overview.html"><p>Overview</p></a>
+															</li>
+														</ul>
+													</details>
+												</li>
+											</ul>	
+										</details>
+									</li>
+								</ul>
+								<h2>Servers</h2>
+								<ul>
+									<li>
+										<details>
+											<summary>Status</summary>	
+											<ul>	
+												<li><a href=""><p>cake-net.zapto.org</p></a></li>
+												<li><a href=""><p>~mgng</p></a></li>
+											</ul>
+										</details>
+									</li>
+								</ul>
+							</div>
+							<div class="col-6">
+								<a href="http://www.scs.ryerson.ca/~mgng/cps630/labs/lab2/index.html"><h2>Weather</h2></a>
+								<a href="#aboutme"><h2>About me</h2></a>
+								<a href="#contact"><h2>Contact me</h2></a>
+								<a href="#notes"><h2>Notes</h2></a>
+								<a href="#welcome"><h2>Welcome</h2></a>
+								<a href="#news"><h2>News</h2></a>		
+								<a href="#TranSleep"><h2>Projects</h2></a>
+							</div>
+						</nav>
+					</details>
+				</div>
+				<!-- End of menu container -->
+				
+				<!-- Links container -->
+				<div class="col-3">
+					<a href="#top"><h1>top</h1></a>
+				</div>
+				<!-- End of links container -->
+			</div>
+		</footer>
+		<!-- End of footer/bottom bar container -->
+	</body>
+</html>

@@ -1,0 +1,149 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- Sets the character set to Unicode Transformation Format 8 -->
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- CSS3 Styling sheet --> 
+		<link rel="stylesheet" type="text/css" href="http://www.scs.ryerson.ca/~mgng/cps630/labs/lab2/style.css">
+		<!-- Title of page -->
+		<title>CPS630 Lab 2</title>
+	</head>
+	<body onload="loadWeather()">
+		<!-- Header/top bar of page -->
+		<div class="col-12 accent-darkest" id="header">
+			<header>
+				<!-- To be implemented top menubar dropdown with button control (to much work in CSS)
+				<div class="menubar-button">
+					<img style="position:absolute left:1; top: 5; z:-1;" src="http://www.scs.ryerson.ca/~mgng/rsc/img/menu.png">
+					<input type="radio" id="show-menu" name="menubutton">
+					<input type="radio" id="hide-menu" name="menubutton">
+				</div>-->
+				
+				<!-- Link/Title to main site -->
+				<div class="left">
+					<!-- href="http://www.scs.ryerson.ca/~mgng/" -->
+					<h1 onclick="menuToggle()" id="home_link">Alex Ng</h1>
+				</div>
+				<!-- End of link to main site -->
+				
+				<!-- Profile picture -->
+				<div class="right">
+					<img id="profile_pic" class="circle" src="http://www.scs.ryerson.ca/~mgng/rsc/img/profile_pic.jpg" alt="profile picture">
+				</div>
+				<!-- End of profile picture -->
+				<div id="menu_collection" class="text-center col-12">
+					<div class="col-6 menuitem">
+						<a href="https://cynicalbird.github.io/index.html">Home Site</a>
+					</div>
+					
+					<div class="col-6 menuitem">
+						<a href="https://cynicalbird.github.io/cps630/labs/lab1/index.html">Lab 1</a>
+					</div>
+
+					<div class="col-6 menuitem">
+						<a href="http://www.123freeicons.com/tick-weather-icons/#.WJ_p-SErLnP">Icon pack used</a>
+					</div>
+					
+					<div class="col-6 menuitem">
+						<a href="https://openweathermap.org/forecast5#format">Openweathermap API</a>
+					</div>
+					
+					<div class="col-6 menuitem">
+						<p class="text_link" id="metric" onclick="convertUnits(this)">Metric</p>
+					</div>
+
+					<div class="col-6 menuitem">
+						<p class="text_link" id="imperial" onclick="convertUnits(this)">Imperial</p>
+					</div>
+				</div>
+			</header>
+		</div>  
+		<!--End of header/top bar of page --> 
+
+		<!-- Main content area -->
+		<div class="container" id="welcome">
+			<div class="col-6 item">
+				<h1>Welcome to <b class="secondary">Lab 2</b></h1>
+				<p>The following lab uses <b class="accent">openweathermap.org's</b> weather api and <b class="accent">Google maps</b> timezone api.</p>
+				<p><b class="accent">No frameworks</b> where used in this lab</p>
+				<p>This lab demonstates responsive design from <a href="http://www.scs.ryerson.ca/~mgng/cps630/labs/lab1/index.html">lab 1</a>, with <b class="secondary">http requests</b> in <b class="secondary">javascript</b> and <b class="secondary">ajax</b></p>
+			</div>
+			<div class="col-6 item">
+				<h1>Details</h1>
+				<p>The greeting ontop of the search bar changes depending on the time of day. The <b class="secondary">weather icon</b> also changes depending on when the <b class="accent">sunset and sunrise</b> are compared to the <b class="secondary">current time.</b></p>
+				<p>The sites menu can be accessed by pressing the <b class="accent">Site logo</b> (Alex Ng).</p>
+				<p>The forcasts are determined with the maximum temperate of each day.</p>
+			</div>
+		</div>
+
+		<div class="accent-light" id="sidebar">
+			<div class="col-12">
+				<h1 onclick="">Close sidebar</h1>
+			</div>
+		</div>
+		
+		<div class="container" id="greetingcard">
+			<div class="col-12 accent item">
+				<div class="container">
+					<!-- Weather icon -->
+					<div class="col-6 item text-center" id="icon_field">
+						<img id="weather_icon" src="http://cake-net.zapto.org/~alex/rsc/img/weather/dunno.png" alt="weather_icon">
+					</div>
+
+					<!-- Search bar -->
+					<div class="col-6 item text-center" id="weather_details">
+						<h1 id="greeting">Good morning!</h1>
+						<p id="sunrise">Loading sunrise</p>
+						<p id="sunset">Loading sunset</p>
+						<input id="location_searchbox" class="searchbar" type="text" name="search" placeholder="Location" onkeypress="handle_search(event)">
+						<p id="time">Loading time</p>
+					</div>
+				</div>
+
+				<div class="container">
+					<div class="col-3 item" id="weather_field">
+						<h1 id="location">Loading Location</h1>
+						<p id="weather_today">Loading Weather</p>
+					</div>
+					
+					<div class="col-3 item">
+						<p id="temperature">Loading Temperature</p>
+						<p id="humidity">Loading Humidity</p>
+						<p id="wind">Loading wind speed</p>
+					</div>
+					
+					<div class="col-3 item" id="forecast_field">
+						<div class="container" id="forecast">Loading forecast</div>
+					</div>
+				
+					<div class="col-3 item" id="hour_forecast_field">
+						<div class="container" id="hour_forecast"></div>
+					</div>
+				</div>
+			</div>
+			<div class="container" id="howto">
+			<div class="col-12 item">
+				<h1>How to use</h1>
+				<p>To use the <b class="secondary">Searchbar</b> you type in the city and as an optional choice add a comma followed by the 2 letter country code of the city. Example <b class="accent">London,{CA}</b> specifies <b class="secondary">London (Canada).</b> To search the city you entered simply <b class="accent">press enter(return)</b> on your keyboard.</p>
+				<p>To change between metric and imperical units open the menu and ..</p>
+			</div>
+		</div>
+		</div>
+		<!-- End of main content area -->
+
+		<!-- Footer/Bottom bar container -->
+		<footer>
+			<div class="col-12 accent-darkest footer" id="footer">
+				<!-- Links container -->
+				<div class="col-3">
+					<a href="#top"><h1>top</h1></a>
+				</div>
+				<!-- End of links container -->
+			</div>
+		</footer>
+		<!-- End of footer/bottom bar container -->
+		<script src="script.js"></script>
+	</body>
+</html>

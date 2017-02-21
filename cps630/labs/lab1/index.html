@@ -1,0 +1,359 @@
+<!---
+	Responsive design lab for CPS630
+	Created by Alex Ng Built with mobile first in mind
+-->
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- Sets the character set to Unicode Transformation Format 8 -->	
+		<meta charset="UTF-8">
+		<!-- -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- Title of page -->
+		<title>CPS630 Lab 1</title>
+		<!-- CSS3 Styling sheet --> 
+		<link rel="stylesheet" type="text/css" href="style.css">
+	</head>
+
+	<body>
+		<!-- Header/top bar of page -->
+		<div class="col-12 accent-darkest" id="header">
+			<header>
+				<!-- To be implemented top menubar dropdown with button control (to much work in CSS)
+				<div class="menubar-button">
+					<img style="position:absolute left:1; top: 5; z:-1;" src="http://www.scs.ryerson.ca/~mgng/rsc/img/menu.png">
+					<input type="radio" id="show-menu" name="menubutton">
+					<input type="radio" id="hide-menu" name="menubutton">
+				</div>-->
+				
+				<!-- Link/Title to main site -->
+				<div class="left">
+					<a href="https://cynicalbird.github.io/index.html"><h1>Alex Ng</h1></a>
+				</div>
+				<!-- End of link to main site -->
+				
+				<!-- Profile picture -->
+				<div class="right">
+					<img class="circle" src="http://www.scs.ryerson.ca/~mgng/rsc/img/profile_pic.jpg" alt="profile picture">
+				</div>
+				<!-- End of profile picture -->
+			</header>
+		</div>  
+		<!--End of header/top bar of page --> 
+			
+		<!-- Sidbar container -->
+		<div class="col-4">
+			<!-- Sidebar card -->
+			<div class="col-12 accent item sidebar">
+				<!-- Card content container -->
+				<div class="col-12">
+					<nav>
+						<h2>Home</h2>
+							<ul>
+								<li>
+									<details>
+										<summary>Labs</summary>
+										<ul>
+											<li>
+												<details>
+													<summary>Lab 1</summary>
+													<ul>
+														<li>
+															<a href="http://www.scs.ryerson.ca/~mgng/cps630/labs/lab1/index.html"><p>Home</p></a>
+														</li>
+														<li>
+															<a href="http://www.scs.ryerson.ca/~mgng/cps630/labs/lab1/transformation.html"><p>Transformation demo</p></a>
+														</li>
+
+														<li>
+															<a href="http://www.scs.ryerson.ca/~mgng/cps630/labs/lab1/overview.html"><p>Overview</p></a>
+														</li>
+													</ul>
+												</details>
+											</li>
+											<li>
+												<a href="http://www.scs.ryerson.ca/~mgng/cps630/labs/lab2/index.html"><p>Lab 2</p></a>
+											</li>
+										</ul>
+									</details>
+								</li>
+							</ul>
+						<h2>Servers</h2>
+							<ul>
+								<li>
+									<details>
+										<summary>Status</summary>	
+										<ul>	
+											<li><a href=""><p>cake-net.zapto.org</p></a></li>
+											<li><a href=""><p>~mgng</p></a></li>
+										</ul>
+									</details>
+								</li>
+							</ul>
+						<a href="http://www.scs.ryerson.ca/~mgng/cps630/labs/lab2/index.html"><h2>Weather</h2></a>
+						<a href="#aboutme"><h2>About me</h2></a>
+						<a href="#contact"><h2>Contact me</h2></a>
+						<a href="#notes"><h2>Notes</h2></a>
+						<a href="#welcome"><h2>Welcome</h2></a>
+						<a href="#news"><h2>News</h2></a>		
+						<a href="#TranSleep"><h2>Projects</h2></a>
+					</nav>
+				</div>
+				<!-- Card content container -->
+			</div>
+			<!-- End of sidebar card -->
+		</div>
+		<!-- End of sidebar container -->
+	
+		<!-- Main content container -->
+		<div class="content-container">
+			<main>	
+				<!-- Greeting card -->
+				<div class="col-12 accent item" id="greetingcard">
+					<!-- About me container -->	
+					<div class="col-12" id="aboutme">
+						<article>	
+							<h1>About me</h1>
+							<p>
+								Currently studying in their 2nd year of Computer Science at Ryerson University, Alex Ng is interested in Computer graphics and vision. Alex has hosted and deployed various internet services and web servers while practicing Front-end web development. Alex is currently working on side projects to strengthen their software development portfolio. 
+							</p>
+						</article>
+					</div>
+					<!-- End of about me container -->
+
+					<!-- Contact me container -->
+					<div class="col-4 text-center" id="contact">
+						<aside>
+							<!-- Title container -->
+							<div class="col-12">
+								<h1>Contact me</h1>
+							</div>
+							<!-- End of title container -->
+							
+							<!-- Facebook container -->
+							<div class="col-3" id="facebook">
+								<figure>
+									<a href=""><img class="icon" src="http://www.scs.ryerson.ca/~mgng/rsc/img/social/facebook.png" alt="facebook icon"></a>
+									
+									<figcaption><h4>Facebook</h4></figcaption>
+								</figure>
+							</div>
+							<!-- End of facebook container -->
+
+							<!-- Email container -->
+							<div class="col-3" id="email">
+								<figure>
+									<a href="mailto:alex.ng.personal@gmail.com"><img class="icon" src="http://www.scs.ryerson.ca/~mgng/rsc/img/social/email.png" alt="email icon"></a>	
+									<figcaption><h4>Email</h4></figcaption>
+								</figure>
+							</div>
+							<!-- End of email container -->
+
+							<!-- Linkedin container -->
+							<div class="col-3" id="linkedIn">
+								<figure>
+									<a href="https://www.linkedin.com/in/alex-ng-130039134"><img class="icon" src="http://www.scs.ryerson.ca/~mgng/rsc/img/social/linkedin.png" alt="linkedin icon"></a>
+								
+									<figcaption><h4>LinkedIn</h4></figcaption>
+								</figure>
+							</div>
+							<!-- End of linkedin container -->						
+
+							<!-- Twitter container -->
+							<div class="col-3" id="twitter">
+								<figure>	
+									<a href=""><img class="icon" src="http://www.scs.ryerson.ca/~mgng/rsc/img/social/twitter.png" alt="twitter icon"></a>
+									<figcaption><h4>Twitter</h4></figcaption>
+								</figure>
+							</div>
+							<!-- End of twitter container -->
+
+							<!-- Extras container -->
+							<div class="col-12" id="contact-extras">
+								<details>
+									<summary>Email address</summary>
+									<ul>
+										<li><h3>alex.ng.personal@gmail.com</h3></li>
+									</ul>
+								</details>
+							</div>
+							<!-- End of extras container -->
+						</aside>
+					</div>
+					<!-- End of contact me container -->
+					
+					<!-- Notes container -->
+					<div class="col-4 text-center" id="notes">
+						<aside>
+							<div class="col-12">
+								<h1>Notes</h1>
+								<h3>Ryerson University</h3>
+							</div>
+							<p>CPS590</p>
+						</aside>
+					</div>
+					<!-- End of notes container -->
+					
+					<!-- Validation card -->
+					<div class="col-4 text-center" id="validation">
+						<aside>
+							<div class="col-12">
+								<h1>Validation</h1>
+							</div>
+							<div class="col-12">
+								<a href="https://html5.validator.nu/?doc=http%3A%2F%2Fwww.scs.ryerson.ca%2F~mgng%2Fcps630%2Flabs%2Flab1%2F"><p>HTML 5</p></a>
+							</div>
+						</aside>
+					</div>
+					<!-- End of validation card -->
+				</div>
+				<!-- End of greeting card -->
+			
+				<!-- Welcome card -->
+				<div class="col-12 item" id="welcomecard">
+					<!-- Welcome container -->
+					<section>	
+						<div class="col-6 text-center" id="welcome">
+							<h1>Welcome!</h1>
+							<p>	
+								The site was made in <b class="accent">HTML</b> and <b class="accent">CSS</b> only. (no frameworks)		
+							</p>
+							<p>
+								This is the first lab for the course <b class="accent">CPS630</b> at Ryerson University.
+							</p>
+						</div>
+					</section>
+					<!-- End of welcome container -->
+						
+					<!-- News container -->
+					<section>
+						<div class="col-6 text-center" id="news">
+							<h1>News!</h1>
+							<ul>
+								<li>The smartwatch company <b class="secondary">Pebble</b> was recently bought by fitbit.</li>
+								<li><b class="secondary">CES 2017</b> has ended</li>
+								<li><b class="secondary">Blackbery</b> is coming out with a new smartphone</li>
+							</ul>	
+						</div>
+					</section>	
+					<!-- End of news container -->
+				</div>
+				<!-- End of welcome card -->
+
+				<!-- TranSleep info card -->
+				<div class="col-12 accent item" id="TranSleep">
+					<!-- Content container -->
+					<div class="col-12">	
+						<h1>TranSleep Android Project</h1>
+						<p>
+							The TranSleep project is designed to alert users if they are near their bus-stop so that they can be at peace of mind.
+						</p>
+						<p>
+							Built at HTV (hack the valley) 2017 in 36 hours our team has plans for a 2017 release in the Google play store.
+						</p>
+						<br>
+						<p>
+							<b>Hover over here to see more details (tap on mobile)</b>
+						</p>
+					</div>
+				</div>
+				<!-- End of <TranSleep info card -->
+					
+				<!-- TranSleep Android app overlay -->
+				<div class="overlay" id="TranSleep-overlay">
+					<!-- Overlay screenshots container -->
+					<div class="col-6 text-center">
+						<h1>Screenshots</h1>
+						<img class="screen" src="http://www.scs.ryerson.ca/~mgng/rsc/img/TranSleep_screen1.png" alt="screenshot1">						
+						<img class="screen" src="http://www.scs.ryerson.ca/~mgng/rsc/img/TranSleep_screen3.png" alt="screenshot2">
+					</div>
+					<!-- End of overlay screenshots container -->
+					
+					<!-- Overlay details container -->
+					<div class="col-6 text-center">
+						<h1>Details</h1>
+						<h2>Destination by stop #</h2>
+						<h2>Destination by route #</h2>
+					</div>
+					<!-- End of overlay details container -->
+				</div>
+				<!-- End of TranSleep android app overlay --> 
+			</main>	
+		</div>
+		<!-- End of main content container -->
+	
+		<!-- Footer/Bottom bar container -->
+		<footer>
+			<div class="col-12 accent-darkest footer" id="footer">
+				<!-- menu container -->
+				<div class="col-12">
+					<details>
+						<summary>Menu</summary>
+						<nav>
+							<div class="col-6">
+								<h2>Home</h2>
+								<ul>
+									<li>
+										<details>
+											<summary>Labs</summary>
+											<ul>
+												<li>
+													<details>
+														<summary>Lab 1</summary>
+														<ul>
+															<li>
+																<a href="http://www.scs.ryerson.ca/~mgng/cps630/labs/lab1/index.html"><p>Home</p></a>
+															</li>
+															<li>
+																<a href="http://www.scs.ryerson.ca/~mgng/cps630/labs/lab1/transformation.html"><p>Transformation demo</p></a>
+															</li>
+															<li>
+																<a href="http://www.scs.ryerson.ca/~mgng/cps630/labs/lab1/overview.html"><p>Overview</p></a>
+															</li>
+														</ul>
+													</details>
+												</li>
+												<li>
+													<a href="http://www.scs.ryerson.ca/~mgng/cps630/labs/lab2/index.html"><p>Lab 2</p></a>
+											</ul>	
+										</details>
+									</li>
+								</ul>
+								<h2>Servers</h2>
+								<ul>
+									<li>
+										<details>
+											<summary>Status</summary>	
+											<ul>	
+												<li><a href=""><p>cake-net.zapto.org</p></a></li>
+												<li><a href=""><p>~mgng</p></a></li>
+											</ul>
+										</details>
+									</li>
+								</ul>
+							</div>
+							<div class="col-6">
+								<a href="http://www.scs.ryerson.ca/~mgng/cps630/labs/lab2/index.html"><h2>Weather</h2></a>
+								<a href="#aboutme"><h2>About me</h2></a>
+								<a href="#contact"><h2>Contact me</h2></a>
+								<a href="#notes"><h2>Notes</h2></a>
+								<a href="#welcome"><h2>Welcome</h2></a>
+								<a href="#news"><h2>News</h2></a>		
+								<a href="#TranSleep"><h2>Projects</h2></a>
+							</div>
+						</nav>
+					</details>
+				</div>
+				<!-- End of menu container -->
+				
+				<!-- Links container -->
+				<div class="col-3">
+					<a href="#top"><h1>top</h1></a>
+				</div>
+				<!-- End of links container -->
+			</div>
+		</footer>
+		<!-- End of footer/bottom bar container -->
+	</body>
+</html>
