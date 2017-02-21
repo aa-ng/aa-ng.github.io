@@ -389,7 +389,7 @@ function displayForcast(forcast_object)
 		if (i >= 6)	
 			i = 0;
 		var day_text = getDay(i);
-		var units_text = "";
+		var weather_units_text = "";
 		if (units == "&units=metric")
 			weather_units_text = "°C";
 		else
