@@ -4,6 +4,8 @@
 
 .accent:hover 	{ background-color:#009688; }
 
+.btn-lg{ border: none;}
+
 /* jumbotron modifications */
 .jumbotron
 {
@@ -76,6 +78,7 @@ body
 button
 {
 	background-color: #5C6BC0;
+	padding: 10px;
 }
 
 html
