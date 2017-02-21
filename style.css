@@ -34,7 +34,11 @@
 	font-size: 36px;
 	padding: 10px;
 	margin: 0px;
+	transition: font-size 0.5s;
+	transition-timing-function: ease-out;
 }
+
+#brand.expand 	{ font-size: 48px; }
 
 #header 
 {
@@ -67,13 +71,14 @@
 }
 			
 /* */
-a { color:white; }
+a 			{ color: white; }
 
 /* */
-a:hover
-{
-	color:white;
-}
+a:hover		{ color: white; }
+
+a:target	{ color: white; }
+
+a:enabled 	{ color: white; }
 
 body
 {
@@ -93,7 +98,7 @@ html
 }
 
 /* Rounded image */
-img.profile 	{ border-radius: 50%; width: 100%;}
+img.profile 	{ border-radius: 50%; width: 50%;}
 
 img.icon 	{ width: 35%; }
 
