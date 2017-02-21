@@ -31,14 +31,14 @@
 
 #brand
 {
-	font-size: 36px;
+	font-size: 48px;
 	padding: 10px;
 	margin: 0px;
 	transition: font-size 0.5s;
 	transition-timing-function: ease-out;
 }
 
-#brand.expand 	{ font-size: 48px; }
+#brand.expand 	{ font-size: 36px; }
 
 #header 
 {

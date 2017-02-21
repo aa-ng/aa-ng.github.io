@@ -12,14 +12,14 @@ window.onscroll = function (e)
 	{
 		//header.style.padding = "5px";
 		header.classList.add("expand");
-		brand.classList.remove("expand");
+		brand.classList.add("expand");
 		slogan.style.display = "none";
 	}
 	else
 	{
 		//header.style.padding = "28px";
 		header.classList.remove("expand");
-		brand.classList.add("expand");
+		brand.classList.remove("expand");
 		slogan.style.display = "initial";
 	}
 };
