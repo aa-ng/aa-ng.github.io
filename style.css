@@ -50,7 +50,9 @@
 	padding: 5px;
 }
 
-#menu_container {padding-top: 10px;}
+#menu_container	{ padding-top: 10px; }
+
+#menu_header 	{ font-size: 32px; }
 
 #slogan
 {
@@ -58,11 +60,6 @@
 	padding: 10px;
 	margin: 0px;
 }
-	
-/* Rounded image */
-img.profile 	{ border-radius: 50%; width: 100%;}
-
-img.icon 	{ width: 35%; }
 			
 /* */
 a { color:white; }
@@ -89,6 +86,15 @@ html
 {
 	min-height: 100%;
 }
+
+/* Rounded image */
+img.profile 	{ border-radius: 50%; width: 100%;}
+
+img.icon 	{ width: 35%; }
+
+li { font-size: 24px; }
+
+li.dropdown-header { font-size: 32px; }
 
 @media only screen and (min-width: 992px)
 {
