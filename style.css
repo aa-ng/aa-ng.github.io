@@ -22,6 +22,8 @@
 
 .text-center { text-align: center; }
 
+.void { padding: 0px; margin: 0px; border: 0px; }
+
 #brand
 {
 	font-size: 36px;
@@ -47,6 +49,8 @@
 {
 	padding: 5px;
 }
+
+#menu_container {padding-top: 10px;}
 
 #slogan
 {
