@@ -1,0 +1,92 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- Sets the character set to Unicode Transformation Format 8 -->
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- CSS3 Styling sheet --> 
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<!-- Title of page -->
+		<title>CPS630 Lab 3</title>
+	</head>
+	<body onload="geoLocate()">
+		<!-- Header/top bar of page -->
+		<div class="col-12 accent-darkest" id="header">
+			<header>
+				<!-- Link/Title to main site -->
+				<div class="left">
+					<!-- href="http://www.scs.ryerson.ca/~mgng/" -->
+					<h1 onclick="menuToggle()" id="home_link">Alex Ng</h1>
+				</div>
+				<!-- End of link to main site -->
+				
+				<!-- Profile picture -->
+				<div class="right">
+					<img id="profile_pic" class="circle" src="http://www.scs.ryerson.ca/~mgng/rsc/img/profile_pic.jpg" alt="profile picture">
+				</div>
+				<!-- End of profile picture -->
+				<div id="menu_collection" class="text-center col-12">
+					<div class="col-6 menuitem">
+						<a href="https://cynicalbird.github.io/index.html">Home Site</a>
+					</div>
+					
+					<div class="col-6 menuitem">
+						<a href="https://cynicalbird.github.io/cps630/labs/lab1/index.html">Lab 1</a>
+					</div>
+
+					<div class="col-6 menuitem">
+						<a href="https://cynicalbird.github.io/cps630/labs/lab2/index.html">Lab 2</a>
+					</div>
+					
+					<div class="col-6 menuitem">
+						<p class="text_link" id="metric" onclick="convertUnits(this)">Automatic location finding</p>
+					</div>
+				</div>
+			</header>
+		</div>  
+		<!--End of header/top bar of page --> 
+
+		<!-- Main content area -->
+		<div class="container" id="welcome">
+			<div class="col-6 item">
+				<h1>Welcome to <b class="secondary">Lab 3</b></h1>
+				<p>
+					
+				</p>
+			</div>
+			<div class="col-6 item">
+				<h1>Details</h1>
+				<p>
+					
+				</p>
+			</div>
+		</div>
+		
+		<div class="container" id="greetingcard">
+			<div class="col-12 accent item">
+				
+			</div>
+			<div class="container" id="howto">
+			<div class="col-12 item">
+				<h1>How to use</h1>
+				<p></p>
+			</div>
+		</div>
+		</div>
+		<!-- End of main content area -->
+
+		<!-- Footer/Bottom bar container -->
+		<footer>
+			<div class="col-12 accent-darkest footer" id="footer">
+				<!-- Links container -->
+				<div class="col-3">
+					<a href="#top"><h1>top</h1></a>
+				</div>
+				<!-- End of links container -->
+			</div>
+		</footer>
+		<!-- End of footer/bottom bar container -->
+		<script src="script.js"></script>
+	</body>
+</html>
