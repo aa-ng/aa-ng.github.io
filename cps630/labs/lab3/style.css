@@ -158,7 +158,7 @@ input[type=text]:focus { border-radius: 6px; border-color: red; }
 
 #location { font-size: 68px; }
 
-#map { height:400px; width: 100%; }
+#map { height:400px; width: 100%; background-color: #4DB6AC; }
 
 #menu_collection 	{ display: none;}
 

@@ -57,6 +57,7 @@ function drop_handler()
 	dropbox.ondragenter = dragEnter;
 	dropbox.ondragover = dragOver;
 	dropbox.ondrop = drop;
+	dropbox.onclick = onclick;
 	geoLocate();
 }
 
@@ -80,6 +81,11 @@ function drop(e)
 	var data = e.dataTransfer;
 	var files = data.files;
 	processFiles(files);
+}
+
+function onclick(e)
+{
+	console.log("dropbox clicked");
 }
 
 function processFiles(files)
