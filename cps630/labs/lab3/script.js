@@ -21,9 +21,13 @@ var icon_url;
 
 var location_text = document.getElementById("location");
 var location_searchbox = document.getElementById("location_searchbox");
+var city_text = document.getElementById("city");
+var latitude_text = document.getElementById("latitude");
+var longitude_text = document.getElementById("longitude");
 
-var longitude;
-var latitude; 
+var latitude = 79.4;
+var longitude = -79.24; 
+var decimal_place = 2;
 var day;
 var hour;
 
@@ -70,11 +74,32 @@ function menuToggle()
 //Locates user's geolocation
 function geoLocate()
 {
-	
+	if (navigator.geolocation)
+	{
+		navigator.geolocation.getCurrentPosition(displayLocation);
+	}
+}
+
+function initMap()
+{
+	var uluru = {lat: latitude, lng: longitude};
+	var map = new google.maps.Map(document.getElementById("map"), { zoom : 7, center : uluru });
+	var marker = new google.maps.Marker({ position : uluru, map : map });
+}
+
+function displayLocation(position)
+{
+	latitude = position.coords.latitude;
+	longitude = position.coords.longitude;
+	coordinates = latitude+","+longitude
+	latitude_text.innerHTML = "Latitude: "+latitude.toFixed(decimal_place);
+	longitude_text.innerHTML = "Longitude: "+longitude.toFixed(decimal_place);
+	getTime();
+	initMap();
 }
 
 //Gets the time from google maps timezone api
-function getTime(today)
+function getTime()
 {
 	console.log("[getTime] json_time_server: "+JSON_time_server+coordinate_search+coordinates+API_time_key);
 	var request = new XMLHttpRequest();
@@ -85,7 +110,7 @@ function getTime(today)
 		if (request.status >= 200 && request.status < 400) 
 		{
 			console.log("[getTime] json_text: "+request.responseText);
-			displayTime(JSON.parse(request.responseText), today);
+			displayTime(JSON.parse(request.responseText));
 		} 
 		//Unsuccessfull request
 		else 
@@ -99,6 +124,11 @@ function getTime(today)
 	// There was a connection error of some sort
 	};
 	request.send();
+}
+
+function displayTime(JSON_Response)
+{
+	
 }
 
 //Handles search input

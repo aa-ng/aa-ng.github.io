@@ -65,14 +65,23 @@
 		
 		<div class="container" id="greetingcard">
 			<div class="col-12 accent item">
-				
+				<div class="col-6">
+					<h1>Location</h1>
+					<p id="city">finding city</p>
+					<p id="latitude">finding latitude</p>
+					<p id="longitude">finding longitude</p>
+				</div>
+				<div class="col-6">
+					<div id="map"></div>
+				</div>
 			</div>
-			<div class="container" id="howto">
+		</div>
+
+		<div class="container" id="howto">
 			<div class="col-12 item">
 				<h1>How to use</h1>
 				<p></p>
 			</div>
-		</div>
 		</div>
 		<!-- End of main content area -->
 
@@ -88,5 +97,6 @@
 		</footer>
 		<!-- End of footer/bottom bar container -->
 		<script src="script.js"></script>
+		<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAr-rRZPA0jY7jMs0ZIwDEM6WpGGigkB-Y&callback=initMap"></script>
 	</body>
 </html>
