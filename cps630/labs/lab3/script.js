@@ -15,7 +15,11 @@ var timestamp = today_date.getTime()/1000 + today_date.getTimezoneOffset() * 60;
 
 var units ="&units=metric"
 
-var JSON_time_server = 'https://maps.googleapis.com/maps/api/timezone/json?';
+var map_server = 'https://maps.googleapis.com/maps/api/';
+
+var service = ['timezone/','geocode/'];
+
+var format = 'json?';
 
 var icon_url;
 
@@ -153,15 +157,16 @@ function displayLocation(position)
 	latitude_text.innerHTML = "Latitude: "+latitude.toFixed(decimal_place);
 	longitude_text.innerHTML = "Longitude: "+longitude.toFixed(decimal_place);
 	getTime();
+	geoCode();
 	initMap();
 }
 
 //Gets the time from google maps timezone api
 function getTime()
 {
-	console.log("[getTime] json_time_server: "+JSON_time_server+coordinate_search+coordinates+API_time_key);
+	console.log("[getTime] json_time_server: "+map_server+service[0]+format+coordinate_search+coordinates+API_time_key);
 	var request = new XMLHttpRequest();
-	request.open('GET', JSON_time_server+coordinate_search+coordinates+"&timestamp="+timestamp+API_time_key, true);
+	request.open('GET', map_server+service[0]+format+coordinate_search+coordinates+"&timestamp="+timestamp+API_time_key, true);
 	request.onload = function() 
 	{
 		//Successfull request
@@ -187,6 +192,31 @@ function getTime()
 function displayTime(JSON_Response)
 {
 	
+}
+
+function geoCode()
+{
+	console.log("[geoCode] json_geocode_server: "+map_server+service[1]+format+"latlng="+coordinate_search+coordinates+API_time_key);
+	var request = new XMLHttpRequest();
+	request.open('GET', map_server+service[1]+format+"latlng="+coordinates+API_time_key);
+	request.onload = function()
+	{
+		if (request.status >= 200 && request.status < 400)
+		{
+			console.log("[geoCode] json_text"+request.responseText);
+			//Do something
+		}
+		else
+		{
+			alert("Google map geocode API could not be accessed");
+		}
+	};
+
+	request.onerror = function()
+	{
+
+	};
+	request.send();
 }
 
 //Handles search input
