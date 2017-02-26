@@ -131,6 +131,8 @@ input[type=text]:focus { border-radius: 6px; border-color: red; }
 
 .transformation-scalein:hover	{ transform: scale(0.5,0.5); }
 
+#dropbox { background-color: #4DB6AC; height: 150px; width:100%; border-style: dashed;}
+
 /* Footer */
 #footer 
 {

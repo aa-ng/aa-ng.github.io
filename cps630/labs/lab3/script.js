@@ -50,6 +50,42 @@ window.onscroll = function (ev)
 	}
 }
 
+window.onload = function ()
+{
+	var dropbox = document.getElementById("dropbox");
+	dropbox.ondragenter = dragEnter;
+	dropbox.ondragover = dragOver;
+	dropbox.ondrop = drop;
+}
+
+function dragEnter(e)
+{
+
+}
+
+function dragOver(e)
+{
+
+}
+
+function drop(e)
+{
+	e.stopPropagation();
+	e.preventDefualt();
+
+	var data = e.dataTransfer;
+	var files = data.files;
+	processFiles(files);
+}
+
+function processFiles(files)
+{
+	for (var i =  0; i < files.length; i++)
+	{
+		console.log(i);
+	}
+}
+
 //Toggles the header menu
 function menuToggle()
 {
