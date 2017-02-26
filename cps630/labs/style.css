@@ -24,6 +24,8 @@
 	background-color:#white;
 }
 
+.h1, h1 { font-size: 48px; }
+
 .void 	
 { /*display: flex; flex-flow: row wrap;*/
 	margin: 0px; 
