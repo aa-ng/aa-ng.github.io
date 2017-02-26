@@ -50,28 +50,32 @@ window.onscroll = function (ev)
 	}
 }
 
-window.onload = function ()
+
+function drop_handler()
 {
 	var dropbox = document.getElementById("dropbox");
 	dropbox.ondragenter = dragEnter;
 	dropbox.ondragover = dragOver;
 	dropbox.ondrop = drop;
+	geoLocate();
 }
 
 function dragEnter(e)
 {
-
+	e.stopPropagation();
+	e.preventDefault();
 }
 
 function dragOver(e)
 {
-
+	e.stopPropagation();
+	e.preventDefault();
 }
 
 function drop(e)
 {
 	e.stopPropagation();
-	e.preventDefualt();
+	e.preventDefault();
 
 	var data = e.dataTransfer;
 	var files = data.files;
@@ -80,11 +84,19 @@ function drop(e)
 
 function processFiles(files)
 {
-	for (var i =  0; i < files.length; i++)
+	//for (var i =  0; i < files.length; i++)
 	{
-		console.log(i);
+		//console.log(i);
+		var file = files[0];
+		var reader = new FileReader();
+		reader.onload = function(e)
+		{
+			var dropbox = document.getElementById("dropbox");
+			dropbox.style.backgroundImage =	"url('"	+	e.target.result +	"')";
+		}
+		reader.readAsDataURL(file);
 	}
-}
+} 
 
 //Toggles the header menu
 function menuToggle()
@@ -113,6 +125,10 @@ function geoLocate()
 	if (navigator.geolocation)
 	{
 		navigator.geolocation.getCurrentPosition(displayLocation);
+	}
+	else
+	{
+		alert("Location could not be found");
 	}
 }
 
