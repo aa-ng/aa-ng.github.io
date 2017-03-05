@@ -29,6 +29,7 @@ var city_text = document.getElementById("city");
 var latitude_text = document.getElementById("latitude");
 var longitude_text = document.getElementById("longitude");
 
+var file_text = new Array();
 var latitude = 79.4;
 var longitude = -79.24; 
 var decimal_place = 2;
@@ -94,17 +95,35 @@ function onclick(e)
 
 function processFiles(files)
 {
-	//for (var i =  0; i < files.length; i++)
+	var photo_extentions = ['gif','png','jpg','jpeg'];
+	for (var i =  0; i < files.length; i++)
 	{
-		//console.log(i);
-		var file = files[0];
+		console.log("[processFiles] file_index: "+i);
 		var reader = new FileReader();
-		reader.onload = function(e)
+		var file = files[i];
+		var extention = files[i].name.split('.').pop().toLowerCase();
+		if (!(files[i].name.includes(".")))
+		{
+			alert("file droped has no file extention, file not supported");
+			extention = "";
+		}
+		console.log("[processFiles] file_extention: "+extention);
+		reader.onload = function(event)
 		{
 			var dropbox = document.getElementById("dropbox");
-			dropbox.style.backgroundImage =	"url('"	+	e.target.result +	"')";
+			if (photo_extentions.indexOf(extention) > -1)
+				dropbox.style.backgroundImage =	"url('"	+	event.target.result +	"')";
+			else if (extention === "txt")
+			{
+				console.log("[processFiles] text_file: "+ event.target.result);
+				file_text.push(event.target.result);
+				initMap();
+			}
 		}
-		reader.readAsDataURL(file);
+		if (photo_extentions.indexOf(extention) > -1)
+			reader.readAsDataURL(file);
+		else
+			reader.readAsText(file);
 	}
 } 
 
@@ -147,6 +166,23 @@ function initMap()
 	var uluru = {lat: latitude, lng: longitude};
 	var map = new google.maps.Map(document.getElementById("map"), { zoom : 7, center : uluru });
 	var marker = new google.maps.Marker({ position : uluru, map : map });
+	var markers;
+	for (var i = 0; i < file_text.length; i++)
+	{
+		var file_lon = file_text[i].split(',').pop();
+		var file_lat = file_text[i].substring(0,file_text[i].indexOf(','));
+		markers = new google.maps.Marker({
+        position: new google.maps.LatLng(file_lat, file_lon),
+        map: map });
+	}
+	/*
+	google.maps.event.addListener(markers, 'click', (function(markers, i) {
+		return function() {
+		infowindow.setContent(file_text[i].split(',').pop());
+		infowindow.open(map, markers);
+	}
+	})(markers, i));
+	*/
 }
 
 function displayGPS(position)
@@ -221,7 +257,17 @@ function geoCode()
 
 function displayLocation(JSON_Response)
 {
+	var city_text = document.getElementById("city");
+	var location_text = document.getElementById("location");
 	
+	var results = JSON_Response.results;
+	var address_components = results[0].address_components;
+	
+	var city_group = address_components[4].long_name;
+	var country = address_components[5].long_name
+
+	city_text.innerHTML = address_components[2].short_name + " " + address_components[2].types[0];
+	location_text.innerHTML =  city_group+", "+ country;
 }
 
 //Handles search input
