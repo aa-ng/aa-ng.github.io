@@ -15,7 +15,7 @@
 .center 	{ margin:auto; }
 
 /* Circle class */
-.circle 	{ border-radius:50%; width: 60%; }
+.circle 	{ border-radius:50%; width: 50%; }
 
 .clear-fix
 {
@@ -104,7 +104,7 @@ input[type=text]:focus { border-radius: 6px; border-color: red; }
 	overflow: hidden;	
 }
 
-.right 	{ width: 15%; float: left; }
+.right 	{ width: 15%; float: left; margin: auto 0;}
 
 .round-corners 	{ border-radius:6px; }
 
@@ -394,4 +394,6 @@ p	{padding-top: 10px;}
 		display: initial;
 		height: 100%;
 	}
+
+	/* .circle { width: 50%; } */ 
 }

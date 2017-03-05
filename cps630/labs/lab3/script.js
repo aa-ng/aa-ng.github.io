@@ -134,7 +134,7 @@ function geoLocate()
 {
 	if (navigator.geolocation)
 	{
-		navigator.geolocation.getCurrentPosition(displayLocation);
+		navigator.geolocation.getCurrentPosition(displayGPS);
 	}
 	else
 	{
@@ -149,7 +149,7 @@ function initMap()
 	var marker = new google.maps.Marker({ position : uluru, map : map });
 }
 
-function displayLocation(position)
+function displayGPS(position)
 {
 	latitude = position.coords.latitude;
 	longitude = position.coords.longitude;
@@ -204,7 +204,7 @@ function geoCode()
 		if (request.status >= 200 && request.status < 400)
 		{
 			console.log("[geoCode] json_text"+request.responseText);
-			//Do something
+			displayLocation(JSON.parse(request.responseText));
 		}
 		else
 		{
@@ -217,6 +217,11 @@ function geoCode()
 
 	};
 	request.send();
+}
+
+function displayLocation(JSON_Response)
+{
+	
 }
 
 //Handles search input
