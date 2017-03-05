@@ -143,6 +143,7 @@ function menuToggle()
 			menu_collection.style.display = "block";
 			break;
 		case "block":
+			header.classList.remove("toggle");
 			menu_collection.style.display = "none";
 			break;
 	}
