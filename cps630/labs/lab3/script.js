@@ -46,11 +46,11 @@ window.onscroll = function (ev)
 	var offset = parseInt(window.getComputedStyle(body, null).getPropertyValue('padding-top').substring(1,2))+70;
 	if ((window.scrollY) >= offset)
 	{
-		header.style.padding = "5px";
+		header.classList.add("header_collapse");
 	}
 	else
 	{
-		header.style.padding = "24px";
+		header.classList.remove("header_collapse");
 	}
 }
 
