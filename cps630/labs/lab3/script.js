@@ -288,7 +288,7 @@ function getDistance()
 	var worker;
 	if (typeof(Worker) !== "undefined") 
 	{
-		worker = new Worker("workers.js");
+		worker = new Worker("worker.js");
 		worker.postMessage(file_text);
 		worker.onmessage = function(event) 
 		{
