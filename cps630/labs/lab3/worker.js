@@ -34,11 +34,11 @@ function haversine()
 	    	message = message+toRad(end_lon-end_lat);
 	    	var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a)); 
 	    	var d = radius * c;
-	    	message = message +"coordinate "+i+" distance: "+d+",";
+	    	message = message +"coordinate "+i+" distance: "+d+"";
 		}
 	} 
-	alert("[worker][haversine] message: "+message);
-    //postMessage("");
+	console.log("[worker][haversine] message: "+message);
+    postMessage(message);
     //setTimeout("timedCount()",500);
 }
 
