@@ -37,7 +37,7 @@ function haversine()
 	    	message = message +"coordinate "+i+" distance: "+d+",";
 		}
 	} 
-	console.log("[worker][haversine] message: "+message);
+	alert("[worker][haversine] message: "+message);
     //postMessage("");
     //setTimeout("timedCount()",500);
 }
