@@ -170,19 +170,19 @@ function initMap()
 	var markers;
 	for (var i = 0; i < file_text.length; i++)
 	{
-		if (!(isNumber(file_text[i].split(',').pop())))
-		{
-			alert("File is not fomated correctly: (lat,lng)");
-			return -1;
-		}
 		var file_lon = file_text[i].split(',').pop();
 		var file_lat = file_text[i].substring(0,file_text[i].indexOf(','));
+		if (!(isNumber(file_lat)))
+		{
+			alert("File is not fomatted correctly: (lat,lng)");
+			return -1;
+		}
 		markers = new google.maps.Marker({
         position: new google.maps.LatLng(file_lat, file_lon),
         map: map });
 	}
 	if (file_text.length > 0)
-		haversine();
+		getDistance();
 }
 
 function displayGPS(position)
@@ -282,12 +282,14 @@ function handle_search(event)
 	}
 }
 
-function haversine()
+function getDistance()
 {
+	/*
 	var worker;
 	if (typeof(Worker) !== "undefined") 
 	{
 		worker = new Worker("workers.js");
+		worker.postMessage(file_text);
 		w.onmessage = function(event) 
 		{
             document.getElementById("distance").innerHTML = event.data;
@@ -297,6 +299,7 @@ function haversine()
 	{
     	alert("Web worker functionality not supported by your browser!");
 	}
+	*/
 }
 
 //Returns a string value associated with a week number (0=sunday,...,6=saturday)
@@ -331,7 +334,7 @@ function getDay(number)
 }
 
 //If the developer wanted they could extend this to only return true for legit coordinates.
-function isNumber(n)
+function isNumber(n) 
 {
-    return typeof n == 'number' && !isNaN(n) && isFinite(n);
+    return parseFloat(n) == n;
 }

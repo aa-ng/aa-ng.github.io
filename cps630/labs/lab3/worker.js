@@ -1,8 +1,14 @@
-if (typeof(Worker) !== "undefined") 
+self.onmessage = function(message)
 {
-    
-} 
-else 
-{
-    
+	postMessage("[worker] onmessage: "+message);
 }
+
+myWorker.addEventListener('message', );
+
+function haversine() {
+    
+    //postMessage("");
+    //setTimeout("timedCount()",500);
+}
+
+haversine();
