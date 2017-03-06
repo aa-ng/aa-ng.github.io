@@ -284,7 +284,7 @@ function handle_search(event)
 
 function getDistance()
 {
-	/*
+	
 	var worker;
 	if (typeof(Worker) !== "undefined") 
 	{
@@ -299,7 +299,6 @@ function getDistance()
 	{
     	alert("Web worker functionality not supported by your browser!");
 	}
-	*/
 }
 
 //Returns a string value associated with a week number (0=sunday,...,6=saturday)
