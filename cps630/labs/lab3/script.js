@@ -181,6 +181,8 @@ function initMap()
         position: new google.maps.LatLng(file_lat, file_lon),
         map: map });
 	}
+	if (file_text.length > 0)
+		haversine();
 }
 
 function displayGPS(position)
@@ -257,7 +259,8 @@ function displayLocation(JSON_Response)
 {
 	var city_text = document.getElementById("city");
 	var location_text = document.getElementById("location");
-	
+	var address_text = document.getElementById("address");
+
 	var results = JSON_Response.results;
 	var address_components = results[0].address_components;
 	
@@ -266,6 +269,7 @@ function displayLocation(JSON_Response)
 
 	city_text.innerHTML = address_components[2].short_name + " " + address_components[2].types[0];
 	location_text.innerHTML =  city_group+", "+ country;
+	address_text.innerHTML = address_components[0].short_name + " "+address_components[1].short_name; 
 }
 
 //Handles search input
@@ -275,6 +279,23 @@ function handle_search(event)
 	{
 		location_search = location_searchbox.value;
 		//do something
+	}
+}
+
+function haversine()
+{
+	var worker;
+	if (typeof(Worker) !== "undefined") 
+	{
+		worker = new Worker("workers.js");
+		w.onmessage = function(event) 
+		{
+            document.getElementById("distance").innerHTML = event.data;
+        };
+	} 
+	else 
+	{
+    	alert("Web worker functionality not supported by your browser!");
 	}
 }
 
