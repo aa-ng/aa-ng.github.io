@@ -2,6 +2,7 @@ var coords = new Array();
 var got_start = 0;
 var start_lat;
 var start_lon;
+var message;
 
 self.onmessage = function(event)
 {
@@ -18,10 +19,9 @@ self.onmessage = function(event)
 	//postMessage(""+message[0]);
 }
 
-function haversine() {
+function haversine() 
+{
     
-
-    var message;
     //if (typeof coords.length === null)
     { 
 	    for (var i = 0; i < coords.length; i++)
