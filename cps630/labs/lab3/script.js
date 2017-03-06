@@ -290,7 +290,7 @@ function getDistance()
 	{
 		worker = new Worker("workers.js");
 		worker.postMessage(file_text);
-		w.onmessage = function(event) 
+		worker.onmessage = function(event) 
 		{
             document.getElementById("distance").innerHTML = event.data;
         };
