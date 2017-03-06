@@ -4,6 +4,7 @@ self.onmessage = function(event)
 {
 	coords.push(event.data[0]);
 	console.log(event.data[0]);
+	haversine();
 	//postMessage(""+message[0]);
 }
 
@@ -18,6 +19,7 @@ function haversine() {
 	    	message = message+toRad(lat2-lat1);
 		}
 	} 
+	console.log("[worker][haversine] message: "+message);
     //postMessage("");
     //setTimeout("timedCount()",500);
 }
