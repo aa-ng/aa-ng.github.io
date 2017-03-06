@@ -13,7 +13,7 @@ self.onmessage = function(event)
 		start_lat = event.data[0].substring(0,event.data[0].indexOf(','));
 		got_start = 1;
 	}
-	else
+	//else
 	{
 		console.log(start_lat);
 		console.log(start_lon);
