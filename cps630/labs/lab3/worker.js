@@ -1,7 +1,17 @@
 var coords = new Array();
+var got_start = 0;
+var start_lat;
+var start_lon;
 
 self.onmessage = function(event)
 {
+	console.log(got_start);
+	if (got_start == 0)
+	{
+		start_lon = event.data[0].split(',').pop();
+		start_lat = event.data[0].substring(0,file_text[i].indexOf(','));
+		got_start = 1;
+	}
 	coords.push(event.data[0]);
 	console.log(event.data[0]);
 	haversine();
@@ -16,7 +26,9 @@ function haversine() {
     { 
 	    for (var i = 0; i < coords.length; i++)
 	    {
-	    	message = message+toRad(lat2-lat1);
+	    	var end_lon = coords[i].split(',').pop();
+			var end_lat = coords[i].substring(0,file_text[i].indexOf(','));
+	    	message = message+toRad(end_lon-end_lat);
 		}
 	} 
 	console.log("[worker][haversine] message: "+message);
