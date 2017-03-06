@@ -27,7 +27,7 @@ function haversine() {
 	    for (var i = 0; i < coords.length; i++)
 	    {
 	    	var end_lon = coords[i].split(',').pop();
-			var end_lat = coords[i].substring(0,file_text[i].indexOf(','));
+			var end_lat = coords[i].substring(0,coords[i].indexOf(','));
 	    	message = message+toRad(end_lon-end_lat);
 		}
 	} 
