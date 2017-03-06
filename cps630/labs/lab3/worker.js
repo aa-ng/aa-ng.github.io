@@ -2,7 +2,7 @@ var coords = new Array();
 var got_start = 0;
 var start_lat;
 var start_lon;
-var message;
+var message = "";
 
 self.onmessage = function(event)
 {
