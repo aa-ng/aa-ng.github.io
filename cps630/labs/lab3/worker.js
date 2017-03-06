@@ -28,10 +28,13 @@ function haversine()
 			var end_lat = coords[i].substring(0,coords[i].indexOf(','));
 			var d_lon = toRad(end_lon-start_lon);
 			var d_lat = toRad(end_lon-start_lon);
+			var radius = 6371;
 
 			var a = Math.sin(d_lat/2) * Math.sin(d_lat/2)+Math.cos(toRad(start_lat)) * Math.cos(toRad(end_lat)) * Math.sin(d_lon/2) * Math.sin(d_lon/2);  
 			console.log(a);
 	    	message = message+toRad(end_lon-end_lat);
+	    	var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a)); 
+	    	var d = radius * c;
 		}
 	} 
 	console.log("[worker][haversine] message: "+message);
