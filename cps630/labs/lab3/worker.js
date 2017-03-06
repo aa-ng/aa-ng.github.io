@@ -1,9 +1,8 @@
-var coords;
+var coords = new Array();
 
 self.onmessage = function(event)
 {
-	coords = event.data[0];
-	console.log(event.data[0].length);
+	coords.push(event.data[0]);
 	console.log(event.data[0]);
 	//postMessage(""+message[0]);
 }
