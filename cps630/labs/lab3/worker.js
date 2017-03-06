@@ -1,10 +1,10 @@
 var coords;
 
-self.onmessage = function(message)
+self.onmessage = function(event)
 {
-	coords = message[0];
-	console.log(message[0].length);
-	console.log(message[0]);
+	coords = event.data[0];
+	console.log(event.data[0].length);
+	console.log(event.data[0]);
 	//postMessage(""+message[0]);
 }
 
