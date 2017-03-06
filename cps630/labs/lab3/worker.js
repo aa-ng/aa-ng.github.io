@@ -26,7 +26,10 @@ function haversine()
 	    {
 	    	var end_lon = coords[i].split(',').pop();
 			var end_lat = coords[i].substring(0,coords[i].indexOf(','));
-			console.log(end_lon);
+			var d_lon = toRad(end_lon-start_lon);
+			var d_lat = toRad(end_lon-start_lon);
+
+			console.log(d_lon);
 	    	message = message+toRad(end_lon-end_lat);
 		}
 	} 
