@@ -1,6 +1,6 @@
 self.onmessage = function(message)
 {
-	postMessage("[worker] onmessage: "+message);
+	postMessage(""+message[0]);
 }
 
 function haversine() {
