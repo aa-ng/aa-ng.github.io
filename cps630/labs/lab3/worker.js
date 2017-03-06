@@ -14,20 +14,19 @@ self.onmessage = function(event)
 		got_start = 1;
 	}
 	coords.push(event.data[0]);
-	console.log(event.data[0]);
 	haversine();
 	//postMessage(""+message[0]);
 }
 
 function haversine() 
 {
-    
     //if (typeof coords.length === null)
     { 
 	    for (var i = 0; i < coords.length; i++)
 	    {
 	    	var end_lon = coords[i].split(',').pop();
 			var end_lat = coords[i].substring(0,coords[i].indexOf(','));
+			console.log(end_lon);
 	    	message = message+toRad(end_lon-end_lat);
 		}
 	} 
