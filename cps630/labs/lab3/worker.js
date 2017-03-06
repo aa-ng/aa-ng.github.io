@@ -3,8 +3,8 @@ var coords;
 self.onmessage = function(message)
 {
 	coords = message;
-	console.log(message.length);
-	console.log(message);
+	console.log(message[0].length);
+	console.log(message[0]);
 	//postMessage(""+message[0]);
 }
 
