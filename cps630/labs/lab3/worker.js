@@ -33,6 +33,7 @@ function haversine()
 			var a = Math.sin(d_lat/2) * Math.sin(d_lat/2)+Math.cos(toRad(start_lat)) * Math.cos(toRad(end_lat)) * Math.sin(d_lon/2) * Math.sin(d_lon/2); 
 	    	var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a)); 
 	    	var d = radius * c;
+	    	console.log(c);
 	    	message = message +"coordinate "+i+" distance: "+d+"";
 		}
 	} 
