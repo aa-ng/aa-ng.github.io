@@ -29,7 +29,7 @@ function haversine()
 			var d_lon = toRad(end_lon-start_lon);
 			var d_lat = toRad(end_lon-start_lon);
 
-			var a = Math.sin(d_lat/2) * Math.sin(d_lat/2)+Math.cos(start_lat.toRad()) * Math.cos(end_lat.toRad()) * Math.sin(d_lon/2) * Math.sin(d_lon/2);  
+			var a = Math.sin(d_lat/2) * Math.sin(d_lat/2)+Math.cos(toRad(start_lat)) * Math.cos(toRad(end_lat)) * Math.sin(d_lon/2) * Math.sin(d_lon/2);  
 			console.log(a);
 	    	message = message+toRad(end_lon-end_lat);
 		}
