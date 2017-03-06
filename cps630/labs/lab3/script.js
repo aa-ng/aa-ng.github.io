@@ -170,20 +170,17 @@ function initMap()
 	var markers;
 	for (var i = 0; i < file_text.length; i++)
 	{
+		if (!(isNumber(file_text[i].split(',').pop())))
+		{
+			alert("File is not fomated correctly: (lat,lng)");
+			return -1;
+		}
 		var file_lon = file_text[i].split(',').pop();
 		var file_lat = file_text[i].substring(0,file_text[i].indexOf(','));
 		markers = new google.maps.Marker({
         position: new google.maps.LatLng(file_lat, file_lon),
         map: map });
 	}
-	/*
-	google.maps.event.addListener(markers, 'click', (function(markers, i) {
-		return function() {
-		infowindow.setContent(file_text[i].split(',').pop());
-		infowindow.open(map, markers);
-	}
-	})(markers, i));
-	*/
 }
 
 function displayGPS(position)
@@ -310,4 +307,10 @@ function getDay(number)
 			break;
 	}
 	return day_text;
+}
+
+//If the developer wanted they could extend this to only return true for legit coordinates.
+function isNumber(n)
+{
+    return typeof n == 'number' && !isNaN(n) && isFinite(n);
 }
