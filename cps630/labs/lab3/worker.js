@@ -10,11 +10,14 @@ self.onmessage = function(event)
 function haversine() {
     
 
-    var message; 
-    for (var i = 0; i < coords.length; i++)
-    {
-    	message = message+toRad(lat2-lat1);
-    } 
+    var message;
+    if (typeof coords.length === null)
+    { 
+	    for (var i = 0; i < coords.length; i++)
+	    {
+	    	message = message+toRad(lat2-lat1);
+		}
+	} 
     //postMessage("");
     //setTimeout("timedCount()",500);
 }
