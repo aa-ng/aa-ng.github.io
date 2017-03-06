@@ -9,7 +9,7 @@ self.onmessage = function(event)
 	if (got_start == 0)
 	{
 		start_lon = event.data[0].split(',').pop();
-		start_lat = event.data[0].substring(0,file_text[i].indexOf(','));
+		start_lat = event.data[0].substring(0,event.data[0].indexOf(','));
 		got_start = 1;
 	}
 	coords.push(event.data[0]);
