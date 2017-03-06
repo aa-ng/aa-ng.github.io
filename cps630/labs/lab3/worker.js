@@ -12,7 +12,7 @@ function haversine() {
     
 
     var message;
-    if (typeof coords.length === null)
+    //if (typeof coords.length === null)
     { 
 	    for (var i = 0; i < coords.length; i++)
 	    {
@@ -28,5 +28,3 @@ function toRad(x)
 {
    return x * Math.PI / 180;
 }
-
-haversine();
