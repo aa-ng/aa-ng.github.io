@@ -289,7 +289,6 @@ function getDistance()
 	if (typeof(Worker) !== "undefined") 
 	{
 		worker = new Worker("worker.js");
-		worker.postMessage(latitude+longitude);
 		worker.postMessage(file_text);
 		worker.onmessage = function(event) 
 		{

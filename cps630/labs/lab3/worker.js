@@ -1,11 +1,12 @@
 var coords = new Array();
 var got_start = 0;
-var start_lat;
-var start_lon;
+var start_lat = 79.4;;
+var start_lon = -79.4;
 var message = "";
 
 self.onmessage = function(event)
 {
+	
 	console.log(got_start);
 	if (got_start == 0)
 	{
@@ -13,10 +14,13 @@ self.onmessage = function(event)
 		start_lat = event.data[0].substring(0,event.data[0].indexOf(','));
 		got_start = 1;
 	}
+		s_lon = event.data[0].split(',').pop();
+		s_lat = event.data[0].substring(0,event.data[0].indexOf(','));
+		got_start = 1;
 	//else
 	{
-		console.log(start_lat);
-		console.log(start_lon);
+		console.log(s_lat);
+		console.log(s_lon);
 		console.log(got_start == 0);
 		coords.push(event.data[0]);
 		haversine();
