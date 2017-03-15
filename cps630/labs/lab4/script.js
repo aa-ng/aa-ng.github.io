@@ -23,7 +23,7 @@ function requestTodo()
 
 function renderTodo(object)
 {
-	var object_html = '<div class="jumbotron">'
+	var object_html = '<div class="jumbotron accent">'
 		+'<div class="container">'
 			+'<div class="col-lg-9">'
 				+'<h2>'+object.title+'</h2>'
