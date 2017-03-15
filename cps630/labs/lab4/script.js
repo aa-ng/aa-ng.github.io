@@ -17,7 +17,8 @@ function requestTodo()
 	{ 
 		var error='Request dropped? error'; 
 		alert(error); 
-		log('requestTodo', error);};
+		log('requestTodo', error);
+	};
 	request.send();
 }
 
@@ -37,6 +38,7 @@ function renderHTML(list)
 
 	for (var i = 0; i < list.length; i++)
 	{
+		log('renderHTML', i+" : "+renderTodo(list[i]));
 		list_html = list_html + renderTodo(list[i]);
 	}
 
