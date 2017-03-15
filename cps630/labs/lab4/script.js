@@ -30,7 +30,7 @@ function renderTodo(object)
 				+'<p>Completed: '+object.complete+'</p>'
 				+'<p>Description: '+object.description+'</p>'
 			+'</div>'
-			+'<div class="col-lg-3"><button>x</button></div>'
+			+'<div class="col-lg-3"><button>Remove</button></div>'
 		+'</div>'
 	+'</div>'
 	return object_html;
