@@ -10,7 +10,6 @@ function requestTodo()
 		{
 			log('requestTodo', request.responseText);
 			renderHTML(JSON.parse(request.responseText));
-
 		}
 	}
 	request.onerror = function () 
@@ -31,11 +30,13 @@ function renderTodo(object)
 	return object_html;
 }
 
-function renderHTML(list)
+function renderHTML(object)
 {
 	var list_html = '';
 	var list_container = document.getElementById('list_container');
+	var list = object.todo;
 
+	log('renderHTML', list[0]);
 	for (var i = 0; i < list.length; i++)
 	{
 		log('renderHTML', i+" : "+renderTodo(list[i]));
