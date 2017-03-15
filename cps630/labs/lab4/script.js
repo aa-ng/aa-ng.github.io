@@ -25,7 +25,7 @@ function renderTodo(object)
 {
 	var object_html = '<div class="jumbotron">'
 		+'<div class="container">'
-			+'<div class="col-9">'
+			+'<div class="col-lg-9">'
 				+'<h2>'+object.title+'</h2>'
 				+'<p>Completed: '+object.complete+'</p>'
 				+'<p>Description: '+object.description+'</p>'
