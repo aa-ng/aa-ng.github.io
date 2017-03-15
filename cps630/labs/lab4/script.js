@@ -23,9 +23,10 @@ function requestTodo()
 
 function renderTodo(object)
 {
-	var object_html = '<div class="col-12"><h2>'+object.title+'</h2></div>'
-	+'<div class="col-12"><p>'+object.complete+'</p></div>'
-	+'<div class="col-12"><p>'+object.description+'</p></div>';
+	var object_html = '<div class="col-12">'
+	+<h2>+object.title+'</h2>'
+	+'<p>Completed: '+object.complete+'</p>'
+	+'<p>Description: '+object.description+'</p></div>';
 
 	return object_html;
 }
