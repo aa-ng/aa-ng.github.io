@@ -79,7 +79,7 @@ button
 	border: 1px solid #00897B;
 }
 
-button.remove, button.complete { width: 100%; }
+button.remove, button.complete { width: 100%; margin-bottom: 10px; }
 
 button.add { width: 25%; text-align: center; margin-top: 15px;}
 
