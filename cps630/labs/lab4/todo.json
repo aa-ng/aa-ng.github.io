@@ -3,9 +3,9 @@
 	[
 		{
 			"id":0,
-			"title": "title of task",
+			"title": "finish lab 4",
 			"complete": false,
-			"description": "description of the task"
+			"description": "complete implementing and hand in lab 4 for cps630"
 		}
 	]
 }
