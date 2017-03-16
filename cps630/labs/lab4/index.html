@@ -81,7 +81,7 @@
 				{
 					if (request.status >= 200 && request.status < 400)
 					{
-						todo_list = request.responseText;
+						todo_list = JSON.parse(request.responseText);
 						log('requestTodo', todo_list);
 						//renderHTML(JSON.parse(request.responseText));
 						//return (JSON.parse(request.responseText));
