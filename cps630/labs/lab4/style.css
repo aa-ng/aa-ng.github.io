@@ -81,7 +81,7 @@ button
 
 button.remove { width: 100%; }
 
-button.add { width: 25%; text-align: center;}
+button.add { width: 25%; text-align: center; margin-top: 15px;}
 
 div.header + div.container
 {
