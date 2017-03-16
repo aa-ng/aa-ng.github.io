@@ -58,14 +58,22 @@
 
 .accent 
 {
-	background-color: #00897B; 
+	background-color: #26A69A; 
 	color: white;
 	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+.card
+{
+	background-color: white;
 }
 
 button 
 {
 	width: 100%;
+	border-radius: 6px;
+	background-color: #26A69A;
+	border: 1px solid #00897B;
 }
 
 div.header + div.container
@@ -74,6 +82,8 @@ div.header + div.container
 }
 
 a { color: white; }
+
+body { background-color: rgb(249,249,249); }
 
 html, body
 {
