@@ -83,7 +83,7 @@
 					if (request.status >= 200 && request.status < 400)
 					{
 						log('requestTodo', request.responseText);
-						renderHTML(JSON.parse(request.responseText));
+						//renderHTML(JSON.parse(request.responseText));
 						return (JSON.parse(request.responseText));
 					}
 				}
