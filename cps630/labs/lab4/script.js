@@ -1,9 +1,12 @@
 var todo_url = 'todo.json'
 
-var todo = angular.module('todo', []);
-todo.controller('todoController', function($scope) {
-
-});
+//var todo = angular.module('todo', []);
+//todo.controller('todoController', function($scope) {
+function todoController ($scope)
+{
+	$scope.list = renderTodo().todo;
+}
+//});
 
 function addTodo()
 {
@@ -20,6 +23,7 @@ function requestTodo()
 		{
 			log('requestTodo', request.responseText);
 			renderHTML(JSON.parse(request.responseText));
+			return (JSON.parse(request.responseText));
 		}
 	}
 	request.onerror = function () 
