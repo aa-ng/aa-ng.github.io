@@ -80,13 +80,15 @@ button
 
 div.header + div.container
 {
-	padding-top: 40px;
+	padding-top: 20px;
 }
 
 div.col-lg-12 + input
 {
 	width: 100%;
 }
+
+div#list_container { padding-top: 20px; }
 
 a { color: white; }
 
