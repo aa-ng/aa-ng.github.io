@@ -46,7 +46,7 @@
 
 			<div class="row" id="list_container"></div>
 			<h1>Todo List: </h1>
-			<div ng-repeat="task in list">
+			<div ng-repeat="task in list" ng-include="'task.html'">
 				<div ng-include="'task.html'"></div>
 			</div>
 		</div>
