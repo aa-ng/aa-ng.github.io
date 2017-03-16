@@ -11,7 +11,7 @@
 		<link rel="stylesheet" type="text/css" href="style.css">
 	</head>
 	
-	<body ng-app="todo" onload="requestTodo()" ng-controller="todoController">
+	<body ng-app="todo" onload="" ng-controller="todoController">
 		<div class="header clearfix">
 			<nav>
 				<ul class="nav nav-pills pull-right">
@@ -78,7 +78,7 @@
 			{
 				var request = new XMLHttpRequest();
 				request.open('GET', todo_url, true);
-				request.onload = function ()
+				request.onload = function()
 				{
 					if (request.status >= 200 && request.status < 400)
 					{
