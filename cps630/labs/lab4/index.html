@@ -70,8 +70,8 @@
 		<script>
 			var todo = angular.module('todo', []);
 			todo.controller('todoController', function($scope) {
+				log('todoController',renderTodo());
 				$scope.list = requestTodo().todo;
-				log('todoController',$scope.list);
 			});
 
 			function requestTodo()
