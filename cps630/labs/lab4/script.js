@@ -1,6 +1,6 @@
 var todo_url = 'todo.json'
 
-var todo = angular.module('todo', []);
+//var todo = angular.module('todo', []);
 //todo.controller('todoController', function($scope) {
 function todoController ($scope)
 {
