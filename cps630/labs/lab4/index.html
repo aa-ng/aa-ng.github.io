@@ -47,9 +47,17 @@
 			<div class="row" id="list_container"></div>
 			<h1>Angular bellow</h1>
 			<div ng-repeat="task in list">
-				<div class="container">
-					<div class="col-lg-9">
-						<h2>{{task.title}}</h2>
+				<div class="jumbotron card">
+					<div class="container">
+						<div class="col-lg-9">
+							<h2>{{task.title}}</h2>
+							<p>Completion status: {{task.complete}}</p>
+							<p>Description: {{task.description}}</p>
+						</div>
+						<div class="col-lg-3">
+							<button class="remove">Remove</button>
+							<button class="completed">Completed</button>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -76,6 +84,7 @@
 			function requestTodo()
 			{
 				var request = new XMLHttpRequest();
+				//needs to be syncronous because we need to wait for its content before trying to display it.
 				request.open('GET', todo_url, false);
 				request.onload = function()
 				{
