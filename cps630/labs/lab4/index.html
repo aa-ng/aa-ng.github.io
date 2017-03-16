@@ -102,9 +102,9 @@
 				$scope.todoAdd = function()
 				{
 					$scope.list.push({ 
-						$scope.inputTitle,
-						false,
-						$scope.inputDescription
+						"title" : $scope.inputTitle,
+						"complete" : false,
+						"description" : $scope.inputDescription
 					});
 				}
 			});
