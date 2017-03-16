@@ -69,14 +69,17 @@
 	border: 1px solid #d8dde2;;
 }
 
-button 
+button
 {
-	width: 100%;
 	border-radius: 6px;
 	background-color: #26A69A;
 	color: white;
 	border: 1px solid #00897B;
 }
+
+button.remove { width: 100%; }
+
+button.add { width: 25%; }
 
 div.header + div.container
 {
