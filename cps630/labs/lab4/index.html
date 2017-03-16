@@ -68,12 +68,6 @@
 		<!-- Latest compiled and minified Bootstrap JavaScript Scripts-->
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 		<script>
-			var todo = angular.module('todo', []);
-			todo.controller('todoController', function($scope) {
-				log('todoController',requestTodo());
-				$scope.list = requestTodo().todo;
-			});
-
 			function requestTodo()
 			{
 				var request = new XMLHttpRequest();
@@ -95,6 +89,12 @@
 				};
 				request.send();
 			}
+
+			var todo = angular.module('todo', []);
+			todo.controller('todoController', function($scope) {
+				log('todoController',requestTodo());
+				$scope.list = requestTodo().todo;
+			});
 
 			/*
 			function renderTodo(object)
