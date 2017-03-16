@@ -76,7 +76,7 @@
 			function requestTodo()
 			{
 				var request = new XMLHttpRequest();
-				request.open('GET', todo_url);
+				request.open('GET', todo_url, false);
 				request.onload = function()
 				{
 					if (request.status >= 200 && request.status < 400)
@@ -87,7 +87,7 @@
 						//return (JSON.parse(request.responseText));
 					}
 				}
-				request.onerror = function () 
+				request.onerror = function() 
 				{ 
 					var error='Request dropped? error'; 
 					alert(error); 
