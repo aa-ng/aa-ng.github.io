@@ -99,14 +99,28 @@
 				log('todoController',todo_list.todo);
 				$scope.list = todo_list.todo;
 
+				//handles adding to the list
 				$scope.todoAdd = function()
 				{
+					var duplicate = 0;
+
+					for (var i = 0; i < $scope.list.length; i++)
+					{
+						if ($scope.list[i].title === $scope.inputTitle)
+							duplicate = 1;
+					}
+					console.log('todoAdd', duplicate);
 					$scope.list.push({ 
 						"title" : $scope.inputTitle,
 						"complete" : false,
 						"description" : $scope.inputDescription
 					});
-				}
+				};
+
+				$scope.todoRemove = function()
+				{
+
+				};
 			});
 
 			/*
