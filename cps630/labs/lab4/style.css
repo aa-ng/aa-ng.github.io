@@ -83,6 +83,8 @@ button.remove { width: 100%; }
 
 button.add { width: 25%; text-align: center; margin-top: 15px;}
 
+input#title, input#description { margin-top: 10px; }
+
 div.header + div.container
 {
 	padding-top: 20px;
