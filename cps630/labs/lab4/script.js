@@ -1,5 +1,10 @@
 var todo_url = 'todo.json'
 
+function addTodo()
+{
+	
+}
+
 function requestTodo()
 {
 	var request = new XMLHttpRequest();

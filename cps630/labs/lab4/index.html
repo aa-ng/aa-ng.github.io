@@ -11,7 +11,7 @@
 		<link rel="stylesheet" type="text/css" href="style.css">
 	</head>
 	
-	<body onload="requestTodo()">
+	<body ng-app="todo" onload="requestTodo()">
 		<div class="header clearfix">
 			<nav>
 				<ul class="nav nav-pills pull-right">
@@ -22,10 +22,14 @@
 			<h3 class="">Alex Ng</h3>
 		</div>
 		<div class="container">
-			<div class="row" id="list_container">
-				<h1>Welcome to lab 4</h1>
-				<p>This lab showcases angular js</p>
-			</div>
+			<form ng-submit="addTodo()">
+				<input type="text" class="form-control" placeholder="Title">
+				<div class="input-group">
+					<input type="text" class="form-control" placeholder="Description">
+					<button class="btn btn-defualt">Submit task</button>
+				</div>
+			</form>
+			<div class="row" id="list_container"></div>
 		</div>
 		
 		<!-- Front end functionality -->
