@@ -94,6 +94,8 @@ body {  }
 
 h2 { margin-top: 0px; };
 
+input[type=text] { width: 100%; }
+
 html, body
 {
 	height: 100%;
