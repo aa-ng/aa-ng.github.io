@@ -96,7 +96,7 @@
 			var todo = angular.module('todo', []);
 			todo.controller('todoController', function($scope) {
 				requestTodo();
-				log('todoController',todo_list);
+				log('todoController',todo_list.todo);
 				$scope.list = todo_list.todo;
 			});
 
