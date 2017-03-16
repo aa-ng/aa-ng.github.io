@@ -110,11 +110,18 @@
 							duplicate = 1;
 					}
 					console.log('todoAdd', duplicate);
-					$scope.list.push({ 
-						"title" : $scope.inputTitle,
-						"complete" : false,
-						"description" : $scope.inputDescription
-					});
+					if (!duplicate)
+					{
+						$scope.list.push({ 
+							"title" : $scope.inputTitle,
+							"complete" : false,
+							"description" : $scope.inputDescription
+						});
+					}
+					else
+					{
+						alert('Task is already added!');
+					}
 				};
 
 				$scope.todoRemove = function()
