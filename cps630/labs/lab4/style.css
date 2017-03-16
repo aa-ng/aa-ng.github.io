@@ -84,11 +84,12 @@ div.header + div.container
 
 a { color: white; }
 
-body { background-color: rgb(249,249,249); }
+body {  }
 
 html, body
 {
 	height: 100%;
 	width: 100%;
+	background-color: rgb(249,249,249);
 	font-family: 'Roboto Condensed', sans-serif;
 }
