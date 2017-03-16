@@ -81,7 +81,7 @@ button
 
 button.remove, button.complete { width: 100%; margin-bottom: 10px; }
 
-button.add { width: 25%; text-align: center; margin-top: 15px;}
+button.add { background-color: #5C6BC0; width: 25%; text-align: center; margin-top: 15px;}
 
 input#title, input#description { margin-top: 10px; }
 
