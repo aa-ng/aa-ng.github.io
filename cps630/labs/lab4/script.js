@@ -4,7 +4,7 @@ var todo_url = 'todo.json'
 //todo.controller('todoController', function($scope) {
 function todoController ($scope)
 {
-	$scope.list = renderTodo().todo;
+	$scope.list = requestTodo().todo;
 	log('todoController',$scope.list);
 }
 //});

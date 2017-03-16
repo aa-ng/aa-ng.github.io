@@ -43,7 +43,16 @@
 					</div>
 				</form>
 			</div>
+
 			<div class="row" id="list_container"></div>
+			<h1>Angular bellow</h1>
+			<div ng-repeat="task in list">
+				<div class="container">
+					<div class="col-lg-9">
+						<h2>{{task.title}}</h2>
+					</div>
+				</div>
+			</div>
 		</div>
 		
 		<!-- Front end functionality -->
