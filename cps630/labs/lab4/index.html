@@ -51,6 +51,9 @@
 			<h1>Todo List: </h1>
 			<!-- Todo list -->
 			<div ng-repeat="task in list" ng-include="'task.html'"></div>
+			<div class='row'>
+				<div ng-repeat=''></div>
+			</div>
 			<!-- End of Todo list -->
 		</div>
 		
@@ -150,15 +153,15 @@
 					{
 						if ($scope.list[i].remove === true)
 						{	
-							removeTask();
+							removeTask($scope.list, i);
 						}
 					}
 				};
 			});
 
-			function removeTask()
+			function removeTask(list, index)
 			{
-
+				list.splice(index, 1);
 			}
 
 			/* depreciated helper function to render html for tasks with plain js
@@ -205,7 +208,7 @@
 				for (var i = 0; i < list.length; i++)
 				{
 					console.log('contains', list[i].attribute1);
-					if (list[i].attribute1 === attribute2)
+					if (list[i].title === attribute2)
 						found = 1;
 				}
 				return found;
