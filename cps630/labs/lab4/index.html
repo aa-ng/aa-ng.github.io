@@ -74,7 +74,7 @@
 			//stores the retrived json object from http request
 			var todo_list = {};
 			//points to the next unique id 
-			var id_pointer;
+			var id_pointer = 0;
 
 			//request json file from a url
 			function requestTodo()
@@ -90,6 +90,10 @@
 						log('requestTodo', todo_list.todo);
 						//renderHTML(JSON.parse(request.responseText));
 						//return (JSON.parse(request.responseText));
+					}
+					else
+					{
+						alert('Request denied');
 					}
 				}
 				request.onerror = function() 
@@ -107,6 +111,7 @@
 				requestTodo();
 				log('todoController',todo_list.todo);
 				$scope.list = todo_list.todo;
+				id_pointer = $scope.list.length;
 
 				//handles adding to the list
 				$scope.todoAdd = function()
@@ -115,12 +120,11 @@
 					//$scope.inputTitle
 					var duplicate = contains($scope.list, title, $scope.inputTitle);
 
-					
 					console.log('todoAdd', duplicate);
 					if (!duplicate)
 					{
 						$scope.list.push({
-							"" 
+							"id" : id_pointer, 
 							"title" : $scope.inputTitle,
 							"complete" : false,
 							"remove" : false, 
@@ -128,6 +132,8 @@
 							"tag" : $scope.inputTag
 
 						});
+						id_pointer = $scope.list.length;
+						console.log('todoAdd', id_pointer);
 					}
 					else
 					{
