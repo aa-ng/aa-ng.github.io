@@ -159,12 +159,25 @@
 						}
 					}
 				};
+
+				//handles completing tasks from the list
+				$scope.todoComplete = function(id)
+				{
+					var index = findIndex($scope.list, id);
+					console.log('todoComplete',index);
+					$scope.list[index].complete = true;
+				};
 			});
 
 			function removeTask(list, index)
 			{
 				//var index = findIndex(list, id);
 				list.splice(index, 1);
+			}
+
+			function completeTask(list, index)
+			{
+				list[index].complete = true;
 			}
 
 			function findIndex(list, id)
