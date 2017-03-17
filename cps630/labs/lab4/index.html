@@ -105,7 +105,7 @@
 				{
 					//$scope.list[i].title
 					//$scope.inputTitle
-					var duplicate = contains($scope.list, $scope.list[i].title, $scope.inputTitle);
+					var duplicate = contains($scope.list, title, $scope.inputTitle);
 
 					
 					console.log('todoAdd', duplicate);
@@ -186,7 +186,7 @@
 				var found = 0; 
 				for (var i = 0; i < list.length; i++)
 				{
-					if (attribute1 === attribute2)
+					if (list[i].attribute1 === attribute2)
 						found = 1;
 				}
 				return found;
