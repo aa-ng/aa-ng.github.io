@@ -107,6 +107,15 @@ input[type=text] { width: 100%; }
 
 form { width: 100%; }
 
+#tagContent { position: relative; }
+
+#tagContent, p.tag, p.tag + b
+{
+	position: absolute;
+	top: 0px;
+	right: 0px;
+}
+
 html, body
 {
 	height: 100%;

@@ -4,6 +4,9 @@
 			<h2>{{task.title}}</h2>
 			<p>Completion status: {{task.complete}}</p>
 			<p>Description: {{task.description}}</p>
+			<div class='tagContent'>
+				<p class='tag'><b class='secondary'>[{{task.tag}}]</b></p>
+			</div>
 		</div>
 		<div class="col-lg-3">
 			<button class="remove" ng-click="todoRemove(task.id)">Remove</button>
