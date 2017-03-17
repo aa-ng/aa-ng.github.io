@@ -147,21 +147,22 @@
 				//handles removing tasks from the list
 				$scope.todoRemove = function(id)
 				{
-					console.log('todoRemove',id);
-					$scope.list[id].remove = true;
+					var index = findIndex($scope.list, id);
+					console.log('todoRemove',index);
+					$scope.list[index].remove = true;
 					for (var i = 0; i < $scope.list.length; i++)
 					{
 						if ($scope.list[i].remove === true)
 						{	
-							removeTask($scope.list, i);
+							removeTask($scope.list, index);
 						}
 					}
 				};
 			});
 
-			function removeTask(list, id)
+			function removeTask(list, index)
 			{
-				var index = findIndex(list, id);
+				//var index = findIndex(list, id);
 				list.splice(index, 1);
 			}
 
