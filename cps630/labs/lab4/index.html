@@ -52,7 +52,7 @@
 			<!-- Todo list -->
 			<div ng-repeat="task in list" ng-include="'task.html'"></div>
 			<div class='row'>
-				<div ng-repeat='tag in tags'></div>
+				<div ng-repeat='tag in tags' ng-include="'tags.html'"></div>
 			</div>
 			<!-- End of Todo list -->
 		</div>
@@ -114,7 +114,7 @@
 				requestTodo();
 				log('todoController',todo_list.todo);
 				$scope.list = todo_list.todo;
-				$scope.tags = [];
+				$scope.tags = ['cps630'];
 				id_pointer = $scope.list.length;
 
 				//handles adding to the list
