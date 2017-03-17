@@ -159,9 +159,20 @@
 				};
 			});
 
-			function removeTask(list, index)
+			function removeTask(list, id)
 			{
+				var index = findIndex(list, id);
 				list.splice(index, 1);
+			}
+
+			function findIndex(list, id)
+			{
+				for (var i = 0; i < list.length; i++)
+				{
+					if (list[i].id === id)
+						return i;
+				}
+				return -1;
 			}
 
 			/* depreciated helper function to render html for tasks with plain js
