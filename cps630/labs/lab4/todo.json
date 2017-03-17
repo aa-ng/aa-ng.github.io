@@ -5,13 +5,17 @@
 			"id":0,
 			"title": "Finish lab 4",
 			"complete": false,
-			"description": "complete implementing and hand in lab 4 for cps630"
+			"remove": false,
+			"description": "complete implementing and hand in lab 4 for cps630",
+			"tag" : "cps630"
 		},
 		{
 			"id":1,
 			"title":"Finish assignment",
 			"complete": false,
-			"description": "complete implementing and prepare deliverables for cps630 presentation."
+			"remove" : false,
+			"description": "complete implementing and prepare deliverables for cps630 presentation.",
+			"tag" : "cps630"
 		}
 	]
 }

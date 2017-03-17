@@ -93,6 +93,11 @@
 				request.send();
 			}
 
+			function completeTask(id)
+			{
+				todo_list[id].complete = true;
+			}
+
 			var todo = angular.module('todo', []);
 			todo.controller('todoController', function($scope) {
 				requestTodo();
@@ -126,7 +131,11 @@
 
 				$scope.todoRemove = function()
 				{
-
+					for (var i = 0; i < $scope.list.length; i++)
+					{
+						if ($scope.list[i].complete === true)
+							$scope.list.splice(i,1);
+					}
 				};
 			});
 
