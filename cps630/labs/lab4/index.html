@@ -93,6 +93,7 @@
 				request.send();
 			}
 
+			//Angular app functionality
 			var todo = angular.module('todo', []);
 			todo.controller('todoController', function($scope) {
 				requestTodo();
@@ -104,7 +105,7 @@
 				{
 					//$scope.list[i].title
 					//$scope.inputTitle
-					var duplicate = contains($scope.list, title, inputTitle);
+					var duplicate = contains($scope.list, 'title', 'inputTitle');
 
 					
 					console.log('todoAdd', duplicate);
@@ -122,6 +123,7 @@
 					}
 				};
 
+				//handles removing tasks from the list
 				$scope.todoRemove = function(id)
 				{
 					console.log('todoRemove',id);
@@ -129,12 +131,19 @@
 					for (var i = 0; i < $scope.list.length; i++)
 					{
 						if ($scope.list[i].remove === true)
-							$scope.list.splice(i,1);
+						{	
+							removeTask();
+						}
 					}
 				};
 			});
 
-			/*
+			function removeTask()
+			{
+
+			}
+
+			/* depreciated helper function to render html for tasks with plain js
 			function renderTodo(object)
 			{
 				var object_html = '<div class="jumbotron card">'
@@ -154,6 +163,7 @@
 			}
 			*/
 
+			//depreciated way of rending html for todo list with plain js
 			function renderHTML(object)
 			{
 				var list_html = '';
@@ -170,6 +180,7 @@
 				list_container.innerHTML = list_html;
 			}
 
+			//simple contains method
 			function contains(list, attribute1, attribute2)
 			{
 				var found = 0; 
@@ -181,6 +192,7 @@
 				return found;
 			}
 
+			//standard log function for easy standard output to console
 			function log(tag, message)
 			{
 				console.log("["+tag+"]"+" : "+ message);
