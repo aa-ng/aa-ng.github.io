@@ -31,12 +31,15 @@
 			<div class="row">
 				<form class="input-group input-group-lg" ng-submit="todoAdd()">
 					<div class="col-lg-12">
-						<input ng-model='inputTitle' id='title' type="text" class="form-control" placeholder="Title">
+						<input ng-model='inputTitle' id='titleInput' type="text" class="form-control" placeholder="Title">
 					</div>
 					<div class="col-lg-12">
 						<!-- <span class="input-group-btn"> -->
-						<input ng-model='inputDescription' id='description' type="text" class="form-control" placeholder="Description">
+						<input ng-model='inputDescription' id='descriptionInput' type="text" class="form-control" placeholder="Description">
 						<!-- </span> -->
+					</div>
+					<div class="col-lg-12">
+						<input ng-model='inputTag' id='tagInput' type="text" class="form-control" placeholder="Tag">
 					</div>
 					<div class="col-lg-12 center">
 						<button class="btn btn-defualt add">Submit task</button>
@@ -66,9 +69,14 @@
 		<!-- Latest compiled and minified Bootstrap JavaScript Scripts-->
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 		<script>
+			//url of json response
 			var todo_url = 'todo.json';
+			//stores the retrived json object from http request
 			var todo_list = {};
+			//points to the next unique id 
+			var id_pointer;
 
+			//request json file from a url
 			function requestTodo()
 			{
 				var request = new XMLHttpRequest();
@@ -111,10 +119,14 @@
 					console.log('todoAdd', duplicate);
 					if (!duplicate)
 					{
-						$scope.list.push({ 
+						$scope.list.push({
+							"" 
 							"title" : $scope.inputTitle,
 							"complete" : false,
-							"description" : $scope.inputDescription
+							"remove" : false, 
+							"description" : $scope.inputDescription,
+							"tag" : $scope.inputTag
+
 						});
 					}
 					else
@@ -186,6 +198,7 @@
 				var found = 0; 
 				for (var i = 0; i < list.length; i++)
 				{
+					console.log('contains', list[i].attribute1);
 					if (list[i].attribute1 === attribute2)
 						found = 1;
 				}
