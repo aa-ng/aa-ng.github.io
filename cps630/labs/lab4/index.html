@@ -52,7 +52,7 @@
 			<!-- Todo list -->
 			<div ng-repeat="task in list" ng-include="'task.html'"></div>
 			<div class='row'>
-				<div ng-repeat=''></div>
+				<div ng-repeat='tag in tags'></div>
 			</div>
 			<!-- End of Todo list -->
 		</div>
@@ -114,6 +114,7 @@
 				requestTodo();
 				log('todoController',todo_list.todo);
 				$scope.list = todo_list.todo;
+				$scope.tags = [];
 				id_pointer = $scope.list.length;
 
 				//handles adding to the list
@@ -213,7 +214,7 @@
 				list_container.innerHTML = list_html;
 			}
 
-			//simple contains method
+			//simple contains method to check if a task is already inside our list
 			function contains(list, attribute1, attribute2)
 			{
 				var found = 0; 
