@@ -102,13 +102,11 @@
 				//handles adding to the list
 				$scope.todoAdd = function()
 				{
-					var duplicate = 0;
+					//$scope.list[i].title
+					//$scope.inputTitle
+					var duplicate = contains($scope.list, title, inputTitle);
 
-					for (var i = 0; i < $scope.list.length; i++)
-					{
-						if ($scope.list[i].title === $scope.inputTitle)
-							duplicate = 1;
-					}
+					
 					console.log('todoAdd', duplicate);
 					if (!duplicate)
 					{
@@ -170,6 +168,17 @@
 				}
 
 				list_container.innerHTML = list_html;
+			}
+
+			function contains(list, attribute1, attribute2)
+			{
+				var found = 0; 
+				for (var i = 0; i < list.length; i++)
+				{
+					if ($scope.list[i].attribute1 === $scope.inputTitle)
+						found = 1;
+				}
+				return found;
 			}
 
 			function log(tag, message)
