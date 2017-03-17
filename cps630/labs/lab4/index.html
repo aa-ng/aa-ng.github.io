@@ -127,7 +127,7 @@
 				$scope.todoRemove = function(id)
 				{
 					console.log('todoRemove',id);
-					todo_list[id].remove = true;
+					$scope.list[id].remove = true;
 					for (var i = 0; i < $scope.list.length; i++)
 					{
 						if ($scope.list[i].remove === true)
