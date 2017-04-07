@@ -113,6 +113,8 @@ div.container#fab a {color: white;}
 
 div.container#fab h1{ padding: 12px; margin: 0; text-align: center;}
 
+div.container#fab:hover { background-color: #7986CB; border: 2px solid #d8dde2; }
+
 div.container#nav
 {
 	position: fixed;

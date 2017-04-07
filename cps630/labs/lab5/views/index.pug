@@ -3,7 +3,9 @@ extends article
 block content
 	h1.page-header= title
 	div.row
+		div(class='col-md-12')
+			+article('Welcome!','Welcome to Lab 5')
 		div(class='col-md-6')
-			+article('Description','This is lab5! In the making of this lab I used: NodeJS, Express, Pug, and Bootstrap. This lab focuses on templating using the engine Pug, using inheritence to reuse common templates like headers and footers. This is also the last lab for this course.')
+			+article('Description','In the making of this lab I used: NodeJS, Express, Pug, and Bootstrap. This lab focuses on templating using the engine Pug, using inheritence to reuse common templates like headers and footers. This is also the last lab for this course.')
 		div(class='col-md-6')
 			+article('Moving forward','After CPS630 I plan to continue developing my skills in the MEAN (MongoDB, Express, Angular, NodeJS) stack. I also have plans to look into ReactJS as I have heard allot about the framework as of lately. Lastly I want to continue developing RU-Fighter my groups project for this course.')
