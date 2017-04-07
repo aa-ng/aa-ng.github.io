@@ -5,8 +5,8 @@ mixin article(title, message, picture)
 		div.article-wrapper
 			if picture
 				img(class='article' src= picture , alt=picture)
-		h1= title
+		h2= title
 		if message
-			h2= message
+			p= message
 		else
 			p No content provided

@@ -10,7 +10,7 @@
 	border: 1px solid #d8dde2;
 	margin-bottom: 40px;
 	margin-top: 120px;
-	min-height: 66%;
+	min-height: 66.6666%;
 }
 
 #panel p { font-size: 24px; }
@@ -67,18 +67,29 @@ footer, div.container#footer
 	position: relative;
 	bottom: 0;
 	width: 100%;
-	min-height: 33%;
+	min-height: 33.3333%;
 	margin: 0;
+	padding-top: 10px;
 	color: white;
-	background-color: #242729;
-	border: 1px solid black;
-	padding-left: 25px;
-	padding-right: 25px;
+	background-color: #263238/*#242729*/;
+}
+
+div.container#footer h2
+{ 
+	margin-bottom: 10px; 
+	margin-top: 10px;
+	padding-left: 10px;
+}
+
+div.container#footer
+{
+
 }
 
 div.container#footer a
 {
 	font-size: 24px;
+	color: #5C6BC0;
 	/* list-style-type: none; */
 }
 
@@ -88,7 +99,19 @@ div.container#fab
 	bottom: 0;
 	right: 0;
 	border-radius: 50%;
+	width: 75px;
+	height: 75px;
+	margin: 10px;
+	padding: 0;
+	background-color: #5C6BC0;
+	z-index: 10;
+	text-align: center;
+	border: 2px solid white;
 }
+
+div.container#fab a {color: white;}
+
+div.container#fab h1{ padding: 12px; margin: 0; text-align: center;}
 
 div.container#nav
 {
@@ -124,6 +147,14 @@ img.article
 	border: 8px solid #d8dde2;
 	text-align: center;
 	z-index: 1;
+}
+
+b { color: #5C6BC0; }
+
+div#ending
+{
+	padding: 8px;
+	background-color: #5C6BC0;
 }
 
 img.article:hover

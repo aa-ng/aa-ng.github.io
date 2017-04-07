@@ -1,12 +1,22 @@
 extend layout
 
 block footer
+	div.container#fab
+		h1
+			a(href='#top') Top
 	div.container
 		div.row
-			div(class='col-md-3')
-				h1= title
-			div(class='col-md-3')
-				h1 Labs
+			div(class='col-md-3 col-sm-6')
+				h2 Contact me
+				ul
+					li
+						a(href='mailto:alex.ng.personal@gmail.com') Email
+					li 
+						a(href='https://www.linkedin.com/in/alex-ng-130039134') Linked In
+					li
+						a(href='https://www.facebook.com/username1862') Facebook
+			div(class='col-md-3 col-sm-4 col-xs-6')
+				h2 Labs
 				ul
 					li
 						a(href='https://Cynicalbird.github.io/cps630/labs/lab1') "Lab 1"
@@ -18,3 +28,8 @@ block footer
 						a(href='https://Cynicalbird.github.io/cps630/labs/lab4') "Lab 4"
 					li 
 						a(href='https://Cynicalbird.github.io/cps630/labs/lab5') "Lab 5"
+			div(class='col-md-3 col-sm-6')
+				+ article('About me', 'Alex Ng is a Computer Science student studying at Ryerson university.')
+	div.row
+		div(class='col-md-12' id='ending')
+				h2 &copy Alex Ng
