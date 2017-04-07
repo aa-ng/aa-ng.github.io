@@ -6,7 +6,9 @@ block footer
 			a(href='#top') Top
 	div.container
 		div.row
-			div(class='col-md-3 col-sm-6')
+			div(class='col-md-6 col-sm-6 col-xs-4')
+				+article('About me','Currently studying in their 2nd year of Computer Science at Ryerson University, Alex Ng is interested in Computer graphics and vision. Alex has hosted and deployed various internet services and web servers while practicing Front-end web development. Alex is currently working on side projects to strengthen their software development portfolio.')
+			div(class='col-sm-3 col-xs-4')
 				h2 Contact me
 				ul
 					li
@@ -15,7 +17,7 @@ block footer
 						a(href='https://www.linkedin.com/in/alex-ng-130039134') Linked In
 					li
 						a(href='https://www.facebook.com/username1862') Facebook
-			div(class='col-md-3 col-sm-4 col-xs-6')
+			div(class='col-sm-3 col-xs-4')
 				h2 Labs
 				ul
 					li
@@ -27,9 +29,8 @@ block footer
 					li 
 						a(href='https://Cynicalbird.github.io/cps630/labs/lab4') "Lab 4"
 					li 
-						a(href='https://Cynicalbird.github.io/cps630/labs/lab5') "Lab 5"
-			div(class='col-md-3 col-sm-6')
-				+ article('About me', 'Alex Ng is a Computer Science student studying at Ryerson university.')
+						strike
+							a(href='https://Cynicalbird.github.io/cps630/labs/lab5') "Lab 5"
 	div.row
 		div(class='col-md-12' id='ending')
 				h2 &copy Alex Ng

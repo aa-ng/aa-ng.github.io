@@ -69,7 +69,7 @@ footer, div.container#footer
 	width: 100%;
 	min-height: 33.3333%;
 	margin: 0;
-	padding-top: 10px;
+	padding-top: 20px;
 	color: white;
 	background-color: #263238/*#242729*/;
 }
@@ -153,6 +153,7 @@ b { color: #5C6BC0; }
 
 div#ending
 {
+	margin-top: 20px;
 	padding: 8px;
 	background-color: #5C6BC0;
 }
