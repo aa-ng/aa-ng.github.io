@@ -1,0 +1,12 @@
+extends parent
+
+mixin article(title, message, picture)
+	div.article
+	div.article-wrapper
+		if picture
+			img(class='article' src= picture , alt=picture)
+	h1= title
+	if message
+		h2= message
+	else
+		p No content provided

@@ -1,0 +1,27 @@
+doctype html
+html
+	head
+		title= title
+		meta(name="viewport" content="width=device-width, initial-scale=1")
+		link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css")  
+		link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css")
+		link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js")
+		link(rel='stylesheet', href='/stylesheets/style.css')
+body
+	div.container#nav
+		nav
+			ul(class='nav nav-pills pull-right')
+				li(role='presentation') 
+					a(href='/') Home
+				li(role='presentation')
+					a(href='/about') About	
+			
+			h1
+				a(href='https://Cynicalbird.github.io/') Alex
+	div.container#panel
+		block content
+		block aboutme
+	div.container#footer
+		block footer
+
+
