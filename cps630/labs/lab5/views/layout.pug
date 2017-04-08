@@ -9,15 +9,7 @@ html
 		link(rel='stylesheet', href='/stylesheets/style.css')
 body
 	div.container#nav
-		nav
-			ul(class='nav nav-pills pull-right')
-				li(role='presentation') 
-					a(href='/') Home
-				li(role='presentation')
-					a(href='/about') About	
-			
-			h1
-				a(href='https://Cynicalbird.github.io/') Alex
+		block nav
 	div.container#panel
 		block content
 		block aboutme

@@ -130,7 +130,6 @@ div.container#nav
 
 div.container#nav a, div.container#nav h3 
 {
-	margin-bottom:20px;
 	color: white;
 	transition: background-color 1s;
 }
@@ -163,6 +162,12 @@ div#ending
 img.article:hover
 {
 
+}
+
+li[role=active] 
+{
+	border-radius: 6px;
+	background-color: #5C6BC0;
 }
 
 div.article-wrapper

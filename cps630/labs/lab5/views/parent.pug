@@ -1,5 +1,24 @@
 extend layout
 
+block nav
+	nav
+			ul(class='nav nav-pills pull-right')
+				- if (path === '/')
+					li(role='active') 
+						a(href='/') Home
+				- else
+					li(role='presentation') 
+						a(href='/') Home
+				- if (path === '/about')
+					li(role='active')
+						a(href='/about') About	
+				- else
+					li(role='presentation')
+						a(href='/about') About	
+			
+			h1
+				a(href='https://Cynicalbird.github.io/') Alex
+
 block footer
 	div.container#fab
 		h1
