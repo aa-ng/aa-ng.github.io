@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed');
+
+#nav-message { font-size: 18px; }
+
+#nav-title { font-size: 28px; transition: font-size 0.5s;  transition-timing-function: ease-out;}
+
+#nav-title.expand { font-size: 48px; }
+
+.center { text-align: center; }
+.left { text-align: left; }
+
+ul { list-style-position: inside; }
+
+body { }
+
+div[class*=card] { color: white; padding: 15px; box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); min-height: 200px;}
+
+div.card#Welcome
+{
+    padding-top: 139px;
+    background-color: #FE6D64;
+    min-height: 66.6666%;
+}
+
+div.card#Projects { background-color: #333745; }
+
+div.card#Projects a.collapsed { color: #E63462; }
+
+div.card#Projects a { color: #FE6D64; }
+
+div.card#About { background-color: #E63462; }
+
+div.card#Contact { background-color: #B4C7E6; }
+
+div.center { text-align: center; }
+
+footer
+{
+    position: relative;
+    background-color: #D6D2F3;
+    bottom: 0;
+    min-height: 300px;
+}
+
+h1.title { font-size: 48px; }
+
+html, body
+{
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+    padding: 0px;
+    margin: 0px;
+    background-color: rgb(248,248,248);
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+img.profile
+{
+    width: 300px;
+    border-radius: 50%;
+    border: 8px solid lightgrey;
+}
+
+nav
+{
+    position: fixed;
+    background-color: #A82648;
+    /*#E63462;*/
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    color: white;
+    height: 124px;
+    padding: 30px 10px;
+    width: 100%;
+    top: 0;
+    transition: padding 0.5s;
+    transition-timing-function: ease-out;
+    z-index: 100;
+}
+
+nav.collapse
+{
+    height: auto;
+    display:initial;
+    padding: 5px;
+}
+
+
+nav a { color: white; padding: auto; }
+.nav > li > a { padding-top: 15px; padding-bottom: 15px; margin: auto; }
+nav h1, nav h2, nav h3, nav h4, nav h5, nav h6, #nav-message, nav-#title { margin-top: 0px; margin-bottom: 0px;}
+
+p.loading { font-size: 64px; color: white; }

@@ -1,0 +1,29 @@
+extends layout.pug
+
+block footer
+    footer
+
+block navigation
+    nav
+        ul(class='nav nav-pills pull-right')
+            li(role='presentation')
+                a(href='/') Home
+
+            li(role='presentation')
+                a(href='/about') About
+        h1
+            a(href='https://Cynicalbird.github.io/')#nav-title Alex
+        p#nav-message #{message}
+block scripts
+    // Bootstrap
+    link(href="/css/bootstrap.css" rel="stylesheet" type="text/css")
+    // JQuery
+    script(src="/js/jquery.min.js")
+    script(src="/js/bootstrap.min.js")
+    // End of bootstrap dependencies
+    // AngularJS
+    script(src="/js/angular.js")
+    // End of AngularJS
+    link(href="/stylesheets/style.css" rel="stylesheet" type="text/css")
+    script(src="/javascripts/animations.js")
+    script(src="/javascripts/ajax.js")

@@ -1,0 +1,82 @@
+extends interface.pug
+block content
+    +card("Welcome", "/images/logo_lrg.jpeg")
+    +card("Projects")
+    +card("About")
+    +card("Contact")
+
+mixin card(title, picture)
+    //Card container
+    div(class="card" id= title)
+        div(class="container")
+            div(class="row")
+                - var col = "col-xs-12"
+                case title
+                    when "Welcome"
+                        - col = "col-xs-12 center"
+                div(class= col)
+                    if (picture)
+                        img(class="profile" src= picture , alt= picture )
+                    case title
+                        default
+                            b
+                                h1.title= title
+                            //when "Welcome"
+                                //h1.title= title+" I'm Alex"
+                    +loading
+                    //case title
+                        when "Welcome"
+                            +list(["Web developer", "Software developer", "Digital media Enthusiast"])
+                        when "Projects"
+                            +projects(["Ryerson","Random maze","Android"])
+                        when "About"
+                            div(class="col-md-4 col-sm-6 col-xs-12")
+                                +article("About me","Currently studying in their 2nd year of Computer Science at Ryerson University, Alex Ng is interested in Computer graphics and vision. Alex has hosted and deployed various internet services and web servers while practicing Front-end web development. Alex is currently working on side projects to strengthen their software development portfolio.")
+    //end of Card container
+mixin projects(projects)
+    div(class="center")
+        div(class="col-md-4 col-sm-6 col-xs-12")
+            +article("Web development")
+            +project("cps630 - Web applications","cps630")
+        div(class="col-md-4 col-sm-6 col-xs-12")
+            +list(["Java","Github"],"Random maze generation", true)
+        div(class="col-md-4 col-sm-6 col-xs-12")
+            +list(["Transleep","Github"],"Android", true)
+        div(class="col-md-4 col-sm-6 col-xs-12")
+            +article("Games","click")
+        div(class="col-md-4 col-sm-6 col-xs-12")
+            +article("Ryerson University", "click")
+        div(class="col-md-4 col-sm-6 col-xs-12")
+            +project("Random maze generation", "Random-maze-generation", "https://github.com/CynicalBird/mazeproject")
+mixin article(title, message)
+    h2= title
+    if (message)
+        p= message
+mixin list(items, title, links)
+    if (title)
+        h2= title
+    ul
+        each item in items
+            if (links)
+                li
+                    a(href= item)= item
+            else
+                li= item
+mixin project(name, web, github)
+    if (name)
+        h4
+            a(href= "#"+web+"-project" data-toggle="collapse" class="collapsed" aria-expanded="false")= name
+        div(id= web+"-project" class="collapse" aria-expanded="false")
+            ul
+                if (web)
+                    li
+                        a(href= web) Link
+                if (github)
+                    li
+                        a(href= github) Github
+
+
+    else
+        Error project name not provided
+mixin loading
+    p.loading="loading..."
