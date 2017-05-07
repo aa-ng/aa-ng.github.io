@@ -13,17 +13,16 @@ mixin card(title, picture)
                 - var col = "col-xs-12"
                 case title
                     when "Welcome"
-                        - col = "col-xs-12 center"
+                        - col = "center"
                 div(class= col)
                     if (picture)
                         img(class="profile" src= picture , alt= picture )
                     case title
                         default
-                            b
-                                h1.title= title
+                            h1(class= "title-"+title)= title
                             //when "Welcome"
                                 //h1.title= title+" I'm Alex"
-                    +loading
+                    +loading(title)
                     //case title
                         when "Welcome"
                             +list(["Web developer", "Software developer", "Digital media Enthusiast"])
@@ -78,5 +77,5 @@ mixin project(name, web, github)
 
     else
         Error project name not provided
-mixin loading
-    p.loading="loading..."
+mixin loading(title)
+    div(class= title, type="loading")="loading..."

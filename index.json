@@ -2,9 +2,10 @@
 	"href":"/",
 	"cards": [
 		{
-			"title": "Welcome I'm Alex",
+			"title": "Welcome, I'm Alex",
 			"align": "center",
 			"images": ["/images/logo_lrg.jpeg"],
+			"items": ["list"],
 			"list": [
 				"Web developer",
 				"Software developer",
@@ -15,6 +16,7 @@
 			"title": "Projects",
 			"align": "left",
 			"images": [],
+			"items": ["projects"],
 			"projects": [
 				{
 					"type":"group",
@@ -61,6 +63,7 @@
 		{
 			"title": "About",
 			"align": "left",
+			"items": ["articles"],
 			"articles": [
 				{
 					"title":"About me",
@@ -73,6 +76,7 @@
 		{
 			"title": "Contact",
 			"align": "left",
+			"items": ["social"],
 			"social": {
 				"facebook":{
 					"src":"http://www.facebook.com/username1862",
