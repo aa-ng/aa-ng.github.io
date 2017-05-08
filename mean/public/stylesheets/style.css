@@ -1,19 +1,49 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto+Condensed');
 
+@keyframes bounceIn {
+    0% {
+        -webkit-transform: scale(0.1);
+        -moz-transform: scale(0.1);
+        -ms-transform: scale(0.1);
+        -o-transform: scale(0.1);
+        transform: scale(0.1);
+        opacity: 0;
+    }
+    60% {
+        -webkit-transform: scale(1.1);
+        -moz-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+        -o-transform: scale(1.1);
+        transform: scale(1.1);
+        opacity: 1;
+    }
+    100% {
+        -webkit-transform: scale(1);
+        -moz-transform: scale(1);
+        -ms-transform: scale(1);
+        -o-transform: scale(1);
+        transform: scale(1);
+    }
+}
+
 #nav-message { font-size: 18px; display: block;}
 
 #nav-title { font-size: 28px; transition: font-size 0.5s;  transition-timing-function: ease-out;}
 
 #nav-title.expand { font-size: 48px; }
 
-.center { margin: auto; float: none;  }
+.center { margin: auto; float: none; }
+.dropdown-menu { background-color: #333745; color: #FE6D64; min-width: 300px; left: -100%; font-size: 18px; }
+.dropdown-menu > li.dropdown-header { color: #E63462; text-decoration: underline; font-size: 18px; }
+.dropdown-menu > li > a { color: #FE6D64; }
+.dropdown-menu > li > a:hover { background-color: #A82648; }
 .left { text-align: left; }
 
 ul { text-align: left; float: none; display:table; margin:0 auto;}
 
 body { min-height: 66.6666%; }
 
-button#menu { background-color: #FE6D64; border: solid 1px #ED5C53;}
+button#menu { background-color: #FE6D64; border: solid 1px #ED5C53; margin: auto; }
 
 div[class*=card] { color: white; padding: 45px; box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); min-height: 200px;}
 
@@ -32,21 +62,30 @@ div.card#Projects a { color: #FE6D64; }
 
 div.card#About { background-color: #E63462; }
 
-div.card#Contact { background-color: #B4C7E6; }
+div.card#Contact { background-color: #A49ED5; }
 
 div.center { text-align: center; }
 
 footer
 {
     position: relative;
-    background-color: #D6D2F3;
+    background-color: #99B2DD;
     bottom: 0;
     min-height: 300px;
 }
 
-h1[class*=title] { font-size: 44px; margin-top: 0px;}
+h1[class*=title] { font-size: 44px; margin-top: 10px; }
 
-h2 { text-decoration: underline; }
+h1.title-Welcome
+{
+    -webkit-animation-name: bounceIn;
+    -moz-animation-name: bounceIn;
+    -o-animation-name: bounceIn;
+    animation-name: bounceIn;
+    animation-duration: 2s;
+}
+
+h2 { text-decoration: underline; margin-top: 10px; }
 
 html, body
 {

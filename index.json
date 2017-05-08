@@ -76,17 +76,27 @@
 		{
 			"title": "Contact",
 			"align": "left",
-			"items": ["social"],
+			"items": ["social","forum"],
 			"social": {
-				"facebook":{
+				"facebook": {
 					"src":"http://www.facebook.com/username1862",
 					"icon":"/images/facebook.png"
 				},
 				"email": {
 					"src":"alex.ng.personal@gmail.com",
 					"icon":"/images/email.png"
+				},
+				"twitter": {
+					"src":"http://www.twitter.com/5d8310faf5d34ff",
+					"icon":"/images/twitter.png"
+				},
+				"linkedin": {
+					"src":"https://ca.linkedin.com/in/alex-ng-130039134",
+					"icon":"/images/linkedin.png"
 				}
-
+			},
+			"forum": {
+				"fields": ["name","title","message","email"]
 			}
 		}
 	]

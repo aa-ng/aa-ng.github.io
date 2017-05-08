@@ -27,6 +27,9 @@ function generateLayout(layout)
                 case "articles":
                     view+=generateArticles(card.articles);
                     break;
+                case "social":
+                    view+=generateSocial(card.social);
+                    break;
             }
         }
         //set the title of the card
@@ -139,18 +142,33 @@ function generateArticle(article)
     return view+"</div>";
 }
 
+function generateSocial(social)
+{
+    var view = "<div class='center'>";
+    var container = "<div class='col-lg-3 col-md-4 col-sm-6 col-xs-12'>";
+    if (social.hasOwnProperty("facebook"))
+        view += container + "<a href='"+social.facebook.src+"'><img alt='facebook' src='"+social.facebook.icon+"'></a><h2>Facebook</h2></div>";
+    if (social.hasOwnProperty("email"))
+        view += container + "<a href='mailto:"+social.email.src+"'><img alt='email' src='"+social.email.icon+"'></a><h2>Email</h2></div>";
+    if (social.hasOwnProperty("linkedin"))
+        view += container + "<a href='"+social.linkedin.src+"'><img alt='linkedin' src='"+social.linkedin.icon+"'></a><h2>Linkedin</h2></div>";
+    if (social.hasOwnProperty("twitter"))
+        view += container + "<a href='"+social.twitter.src+"'><img alt='twitter' src='"+social.twitter.icon+"'></a><h2>Twitter</h2></div>";
+    return view+"</div>";
+}
+
 function generateNav(cards)
 {
     var viewDesktop = "<ul class='nav nav-pills pull-right'>";
     var viewMobile = "<div id='menu-container' class='dropdown'>" +
-        "<button id='menu' class='hidden-sm hidden-md hidden-lg btn-lg dropdown-toggle' type='button' data-toggle='dropdown-toggle' aria-haspopup='true' aria-expanded='true'>" +
+        "<button id='menu' class='hidden-sm hidden-md hidden-lg btn-lg dropdown-toggle' type='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='true'>" +
         "Menu<span class='carrot'></span></button>" +
         "<ul class='dropdown-menu'>" +
         "<li class='dropdown-header'>Navigation</li>";
     for(var i = 0; i < cards.length; i++)
     {
         viewDesktop+=generatePill(cards[i]);
-        //viewMobile+=generatePill(cards[i]);
+        viewMobile+=generateMenuItem(cards[i]);
     }
     viewMobile+="</li></ul></div>";
     viewDesktop+=viewMobile+"</ul>";
@@ -165,7 +183,9 @@ function generatePill(card)
     return view+"</a></li>";
 }
 
-function generateMenuItem()
+function generateMenuItem(card)
 {
-
+    var id = titleToId(card.title);
+    var view = "<li><a href='#"+id+"'>"+id;
+    return view+"</a></li>";
 }

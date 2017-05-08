@@ -10,13 +10,13 @@ var app = angular.module("app",[]);
 
 //initialize angularjs main controller
 app.controller("main", function($scope, $http){
-
     //ajax post to root of api route (gets the data layout of the main page)
     $http.post("/api").then(function(res){
         //log the request response
         log("post",JSON.stringify(res));
         //generate a view from the response
         generateLayout(res);
+        //animate
         scrollAnimate();
     });
 });
