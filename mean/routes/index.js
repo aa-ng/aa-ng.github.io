@@ -10,7 +10,7 @@ router.get('/', function(req, res, next) {
     });
 });
 
-router.post('/api/', function(req, res, next){
+router.post('/api', function(req, res, next){
     Page.getPageByUrl('/', function(err, doc){
         if (err)
         {

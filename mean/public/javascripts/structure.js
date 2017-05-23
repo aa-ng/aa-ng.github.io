@@ -9,12 +9,13 @@ function generateLayout(layout)
         var title = card.title;
         var id = titleToId(title);
         //html view of current card
-        var view = "";
+        var view = '';
         //log the current card and json representation
         log("JSON, Card "+i, JSON.stringify(card));
         //loop through items/documents of card
         for (var h = 0; h < card.items.length; h++)
         {
+            view += '<div class="row">';
             //determine the type of element/document inside the card
             switch (card.items[h])
             {
@@ -30,7 +31,10 @@ function generateLayout(layout)
                 case "social":
                     view+=generateSocial(card.social);
                     break;
+                case "forum":
+                    view+=generateForm(card.forum);
             }
+            view += '</div>';
         }
         //set the title of the card
         $("h1.title-"+id).html(title);
@@ -144,16 +148,16 @@ function generateArticle(article)
 
 function generateSocial(social)
 {
-    var view = "<div class='center'>";
-    var container = "<div class='col-lg-3 col-md-4 col-sm-6 col-xs-12'>";
+    var view = "<div class='center'><h2>Social</h2>";
+    var container = "<div class='col-lg-3 col-md-4 col-sm-6 col-xs-12 icon-container'>";
     if (social.hasOwnProperty("facebook"))
-        view += container + "<a href='"+social.facebook.src+"'><img alt='facebook' src='"+social.facebook.icon+"'></a><h2>Facebook</h2></div>";
+        view += container + "<a href='"+social.facebook.src+"'><img alt='facebook' src='"+social.facebook.icon+"'></a><h3>Facebook</h3></div>";
     if (social.hasOwnProperty("email"))
-        view += container + "<a href='mailto:"+social.email.src+"'><img alt='email' src='"+social.email.icon+"'></a><h2>Email</h2></div>";
+        view += container + "<a href='mailto:"+social.email.src+"'><img alt='email' src='"+social.email.icon+"'></a><h3>Email</h3></div>";
     if (social.hasOwnProperty("linkedin"))
-        view += container + "<a href='"+social.linkedin.src+"'><img alt='linkedin' src='"+social.linkedin.icon+"'></a><h2>Linkedin</h2></div>";
+        view += container + "<a href='"+social.linkedin.src+"'><img alt='linkedin' src='"+social.linkedin.icon+"'></a><h3>Linkedin</h3></div>";
     if (social.hasOwnProperty("twitter"))
-        view += container + "<a href='"+social.twitter.src+"'><img alt='twitter' src='"+social.twitter.icon+"'></a><h2>Twitter</h2></div>";
+        view += container + "<a href='"+social.twitter.src+"'><img alt='twitter' src='"+social.twitter.icon+"'></a><h3>Twitter</h3></div>";
     return view+"</div>";
 }
 
@@ -188,4 +192,15 @@ function generateMenuItem(card)
     var id = titleToId(card.title);
     var view = "<li><a href='#"+id+"'>"+id;
     return view+"</a></li>";
+}
+
+function generateForm(form)
+{
+    //hard coded title and form post for now
+    var view = '<div class="center form"><h2>Leave me a message</h2>';
+    for (var i = 0; i < form.fields.length; i++)
+    {
+        view +='<div class="col-xs-12"><input type="text" placeholder="'+form.fields[i]+'"></div>'
+    }
+    return view+'</div>';
 }

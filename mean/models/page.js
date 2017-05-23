@@ -15,7 +15,7 @@ module.exports.createPage = function(newPage, callback){
     newPage.save(callback);
 };
 
-module.exports.getPageByUrl = function (href, callback){
+module.exports.getPageByUrl = function(href, callback){
     var query = { href:href };
     Page.findOne(query, callback);
 };

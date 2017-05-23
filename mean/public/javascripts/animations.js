@@ -53,7 +53,7 @@ function getCard(scroll)
     var totalHeight = 0;
     for (var i = 0; i < borders.length; i++)
     {
-        if (scroll <= borders[i] + totalHeight -  $("nav").outerHeight())
+        if (scroll <= borders[i] + totalHeight -  $("nav").outerHeight(true))
             return cards[i];
         totalHeight+=borders[i];
     }
