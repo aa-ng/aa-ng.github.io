@@ -1,0 +1,26 @@
+{
+	"href":"/admin",
+	"name":"Admin",
+	"cards": [
+		{
+			"title": "Welcome, I'm Alex",
+			"align": "center",
+			"images": ["/images/logo_lrg.jpeg"],
+			"items": ["list"],
+			"list": [
+				"Web developer",
+				"Software developer",
+				"Digital media Enthusiast"
+			]
+		},
+		{
+			"title": "Edit pages",
+			"align": "left",
+			"items":["edit"],
+			"edit": {
+				"admin":true,
+				"actions": ["update","create"]
+			}
+		}
+	]
+}

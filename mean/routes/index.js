@@ -10,17 +10,4 @@ router.get('/', function(req, res, next) {
     });
 });
 
-router.post('/api', function(req, res, next){
-    Page.getPageByUrl('/', function(err, doc){
-        if (err)
-        {
-            console.log("'/' not found");
-        }
-        else
-        {
-            res.json(doc);
-        }
-    });
-});
-
 module.exports = router;

@@ -71,6 +71,8 @@ ul { text-align: left; float: none; display:table; margin:0 auto;}
 
 body { min-height: 66.6666%; }
 
+button { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
+
 button#menu { background-color: #FE6D64; border: solid 1px #ED5C53; margin: auto; }
 
 div[class*=card] { color: white; padding: 45px; box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); min-height: 200px; border-top: 1px solid black; }
@@ -91,14 +93,78 @@ div.card#Projects a.collapsed { color: #E63462; }
 
 div.card#Projects a { color: #FE6D64; }
 
-div.card#About { background-color: #E63462; /*background-image: url("/images/alex_ng_banner.jpg"); background-repeat: no-repeat;*/ }
+div.card#About { background-color: #E63462; }
 div.card#About:hover  { }
 
-div.card#Contact { background-color: #FE6D64;/*#A49ED5;*/ }
+div.card#Contact { background-color: #FE6D64; }
+
+div.card#Edit { background-color: #E63462; }
+div.card#Edit button { background: #FB651D; border: 1px solid #EA540C; border-radius: 6px; }
 
 div.center { text-align: center; }
 
 div.icon-container { margin-bottom: 20px; }
+
+div.modalForm
+{
+    color: black;
+    padding: 20px;
+    margin: auto;
+}
+
+div[type*=modal]
+{
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 10; /* Sit on top */
+    left: 0;
+    top: 0;
+    margin: 0 auto;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+div[type*=modalContent]
+{
+    display: block;
+    position: relative;
+    background-color: #fefefe;
+    margin: 134px auto; /* 15% from the top and centered */
+    padding-bottom: 20px;
+    /*max-height: 200px;*/
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+    height: auto;
+}
+
+div[type=modalHeader]
+{
+    display: block;
+    position: relative;
+    padding: 20px;
+    background-color: #FB651D;
+    max-height: none;
+    height: auto;
+    color: white;
+}
+
+/* The Close Button */
+span[type=modalClose] {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+span[type=modalClose]:hover,
+span[type=modalClose]:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
 
 footer
 {

@@ -2,12 +2,11 @@ extends layout.pug
 
 block footer
     footer
-        div.container
+        div.container.center
             div.row
-                div.col-lg-2.col-md-3.col-sm-4.col-xs-12
-                    h2 home
-                div.col-lg-2.col-md-3.col-sm-4.col-xs-12
-                    h2 Projects
+                //div.col-lg-2.col-md-3.col-sm-4.col-xs-12
+                div.col-xs-12
+                    h2 Footer in progress...
         div.end
             div.row
                 h3 &copy Alex Ng #{year}
@@ -23,6 +22,29 @@ block navigation
         h1
             a(href='https://Cynicalbird.github.io/')#nav-title Alex
         p#nav-message #{message}
+
+mixin card(title, picture)
+    //Card container
+    div(class="card" id= title)
+        div(class="container")
+            div(class="row")
+                - var col = "col-xs-12"
+                case title
+                    when "Welcome"
+                        - col = "center"
+                div(class= col)
+                    if (picture)
+                        img(class="profile" src= picture , alt= picture )
+                    case title
+                        default
+                            h1(class= "title-"+title)= title
+                            //when "Welcome"
+                                //h1.title= title+" I'm Alex"
+                    +loading(title)
+
+mixin loading(title)
+    div(class= title, type="loading")="loading..."
+
 block scripts
     // Bootstrap
     link(href="/css/bootstrap.css" rel="stylesheet" type="text/css")

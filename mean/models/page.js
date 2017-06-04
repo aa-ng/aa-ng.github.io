@@ -16,6 +16,16 @@ module.exports.createPage = function(newPage, callback){
 };
 
 module.exports.getPageByUrl = function(href, callback){
-    var query = { href:href };
+    var query;
+    //remove '/' from query if there to match database
+    if (href.length > 1 && href.charAt(href.length-1) === '/')
+        query = { href: href.substring(0, href.length-1) }
+    else
+        query = { href: href };
+    console.log('[pageQuery] : '+JSON.stringify(query))
     Page.findOne(query, callback);
+};
+
+module.exports.getAllPages = function(callback) {
+    Page.find({}, callback);
 };

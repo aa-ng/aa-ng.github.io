@@ -7,6 +7,9 @@ var bodyParser = require('body-parser');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
+var api = require('./routes/api');
+var projects = require('./routes/projects');
+var admin = require('./routes/admin');
 
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/site');
@@ -14,8 +17,6 @@ var db = mongoose.connection;
 
 
 var app = express();
-
-
 
 // redirect bootstrap JS
 app.use('/js', express.static(__dirname + '/node_modules/bootstrap/dist/js'));
@@ -44,6 +45,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
 app.use('/users', users);
+app.use('/api', api);
+app.use('/projects', projects);
+app.use('/admin', admin);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

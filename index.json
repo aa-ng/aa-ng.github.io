@@ -1,5 +1,6 @@
 {
 	"href":"/",
+	"name":"Home",
 	"cards": [
 		{
 			"title": "Welcome, I'm Alex",
@@ -25,12 +26,12 @@
 						{
 							"type":"project",
 							"title":"cps630 - Web applications", 
-							"link": "cps630"
+							"link": "projects/cps630"
 						},
 						{
 							"type":"project",
 							"title":"cps530 - Web development",
-							"link": "cps530"
+							"link": "projects/cps530"
 						}
 					]
 				},
@@ -41,7 +42,7 @@
 						{
 							"type":"project",
 							"title":"Random maze generation",
-							"link":"random-maze-generation",
+							"link":"projects/random-maze-generation",
 							"github":"https://github.com/Cynicalbird/mazeproject"
 						}
 					]
@@ -53,7 +54,7 @@
 						{
 							"type":"project",
 							"title":"TranSleep",
-							"link":"transleep",
+							"link":"projects/transleep",
 							"github":"https://github.com/Transleep/HTV-Bus-Stop-Reminder"
 						}
 					]
@@ -96,6 +97,8 @@
 				}
 			},
 			"forum": {
+				"method":"post",
+				"action":"/",
 				"fields": ["name","title","message","email"]
 			}
 		}

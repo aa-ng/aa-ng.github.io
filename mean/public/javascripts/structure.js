@@ -33,6 +33,10 @@ function generateLayout(layout)
                     break;
                 case "forum":
                     view+=generateForm(card.forum);
+                    break;
+                case "edit":
+                    view+=generateEdit(card.edit);
+                    break;
             }
             view += '</div>';
         }
@@ -150,12 +154,16 @@ function generateSocial(social)
 {
     var view = "<div class='center'><h2>Social</h2>";
     var container = "<div class='col-lg-3 col-md-4 col-sm-6 col-xs-12 icon-container'>";
+    //facebook
     if (social.hasOwnProperty("facebook"))
         view += container + "<a href='"+social.facebook.src+"'><img alt='facebook' src='"+social.facebook.icon+"'></a><h3>Facebook</h3></div>";
+    //email
     if (social.hasOwnProperty("email"))
         view += container + "<a href='mailto:"+social.email.src+"'><img alt='email' src='"+social.email.icon+"'></a><h3>Email</h3></div>";
+    //linked in
     if (social.hasOwnProperty("linkedin"))
         view += container + "<a href='"+social.linkedin.src+"'><img alt='linkedin' src='"+social.linkedin.icon+"'></a><h3>Linkedin</h3></div>";
+    //twitter
     if (social.hasOwnProperty("twitter"))
         view += container + "<a href='"+social.twitter.src+"'><img alt='twitter' src='"+social.twitter.icon+"'></a><h3>Twitter</h3></div>";
     return view+"</div>";
@@ -177,7 +185,7 @@ function generateNav(cards)
     viewMobile+="</li></ul></div>";
     viewDesktop+=viewMobile+"</ul>";
     //return view current nav-message is temporarily hardcoded.
-    return viewDesktop+"<h1><a href='https://Cynicalbird.github.io/' id='nav-title'>Alex</a></h1><p id='nav-message'>Website in construction</p>";
+    return viewDesktop+"<h1><a href='http://alex-ng.com/' id='nav-title'>Alex</a></h1><p id='nav-message'>Website in construction</p>";
 }
 
 function generatePill(card)
@@ -197,10 +205,87 @@ function generateMenuItem(card)
 function generateForm(form)
 {
     //hard coded title and form post for now
-    var view = '<div class="center form"><h2>Leave me a message</h2>';
+    var view = '<form method="'+form.method+'" action="'+form.action+'"><div class="center form"><h2>Leave me a message</h2>';
     for (var i = 0; i < form.fields.length; i++)
     {
         view +='<div class="col-xs-12"><input type="text" placeholder="'+form.fields[i]+'"></div>'
     }
-    return view+'</div>';
+    return view+'<button type="submit" class="btn btn-sm">Submit</button></div></form>';
+}
+
+function generateEdit(edit)
+{
+    var list;
+    if (edit.admin)
+    {
+        list = JSON.parse(requestAllPageData());
+        log('allPageData', list);
+        var view = '<div class="container"><div class="row">';
+        for (var i = 0; i < list.length; i++)
+        {
+            log('card', list[i]);
+            view += '<div class="col-xs-9"><p>"' + list[i].href + '"</p></div>'
+                +'<div class="col-xs-3">'+generateModal(list[i].name, list[i].name, list[i])+'</div>';
+        }
+        view+='<div class="row"><div class="center col-xs-12"></div>'+generateModal("New", "New", new Object())+'</div></div>';
+        //log(view);
+        enableModal();
+        return view + '</div></div>';
+    }
+}
+
+function generateModal(name, label, object)
+{
+    var view = '<button type="modalButton" class="'+name+'">Edit '+label+'</button>';
+    view+='<div id="'+ name+'" class="container" type="modal">'
+        +'<div class="'+name+'ModalContent" type="modalContent">'
+            +'<div type="modalHeader">'
+                +'<span type="modalClose" class="'+name+'">&times;</span>'
+                +'<h2>Edit '+label+'</h2>'
+            +'</div>'
+            +'<div class="modalForm"><form method="post" action="/api/pages">'
+            +'<div class="center"><div class="row"><textarea name="page" cols="50", rows="20">'+JSON.stringify(object, null, 4)+'</textarea></div>'
+            +'<button type="submit" class="btn btn-sm">Submit</button></div></div></form>'
+        + '</div></div>';
+    return view;
+}
+
+function enableModal(){
+    $(document).ready(function()
+    {
+        //modal windows
+        var modals = $("div[type='modal']");
+        //close modal spans
+        var modalsClose = $("span[type='modalClose']");
+        //open modal buttons
+        var modalsOpen = $("button[type='modalButton']");
+        //log('modalsClose',modalsClose);
+        //log('modalsOpen', modalsOpen);
+        //console.log(modalsOpen);
+
+        modalsClose.click(function () {
+            log('modalClose', this.className);
+            $("#" + this.className).css('display', 'none');
+        });
+
+        modalsOpen.click(function () {
+            log('modalButton', this.className);
+            $("#" + this.className).css('display', 'block');
+        });
+
+        log('modal', 'enabled');
+    });
+}
+
+//NOTE likely should be placed elsewhere only useful on admin page
+function requestAllPageData()
+{
+    //should be synchronous or else the function will try and return undefined implicitly upon completion
+    return $.ajax({
+        async: false,
+        url: '/api/pages',
+        type: 'GET',
+        data: {url: '*'},
+        contentType: 'application/json; charset=utf-8'
+    }).responseText;
 }
