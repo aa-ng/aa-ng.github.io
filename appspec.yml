@@ -1,0 +1,10 @@
+version: 0.0
+os: linux
+files:
+  - source: ./
+    destination: /home/ec2-user/public_html/Cynicalbird.github.io
+script:
+  cd /home/ec2-user/public_html/ynicalbird.github.io
+  tmux kill-session -t alex-ng
+  tmux new -s alex-ng
+  npm start
