@@ -1,8 +1,9 @@
+
 //generates the layout as an html view
 function generateLayout(layout)
 {
     var cards = layout.data.cards;
-    $("nav").html(generateNav(cards));
+    $("nav#localNav").html(generateNav(cards));
     for (var i = 0; i < cards.length; i++)
     {
         var card = cards[i];
@@ -13,62 +14,98 @@ function generateLayout(layout)
         //log the current card and json representation
         log("JSON, Card "+i, JSON.stringify(card));
         //loop through items/documents of card
-        for (var h = 0; h < card.items.length; h++)
+        //for (var h = 0; h < card.items.length; h++)
         {
             view += '<div class="row">';
-            //determine the type of element/document inside the card
-            switch (card.items[h])
-            {
-                case "list":
-                    view+=generateList(card.list);
-                    break;
-                case "projects":
-                    view+=generateProjects(card.projects);
-                    break;
-                case "articles":
-                    view+=generateArticles(card.articles);
-                    break;
-                case "social":
-                    view+=generateSocial(card.social);
-                    break;
-                case "forum":
-                    view+=generateForm(card.forum);
-                    break;
-                case "edit":
-                    view+=generateEdit(card.edit);
-                    break;
-            }
+            view+= generateCard(card.title, card.name, card);
             view += '</div>';
         }
         //set the title of the card
         $("h1.title-"+id).html(title);
         //place the generated view in container
-        $("div."+id).html(view);
+        //$("div."+id).html(view);
+        $("div.container#content-container").append(view);
         //log the current card and html representation
         log("HTML, Card "+i, view);
     }
 }
 
-function generateList(list, linked)
+/*
+* New function to generate standard card using Google's Material design lite framework
+* https://getmdl.io/
+ */
+function generateCard(title, name, card){
+    view = '<div id="'+name+'" class="'+name+'-card-wide mdl-card mdl-shadow--6dp">'
+        +'<div class="mdl-card__title"><h2 class="mdl-card__title-text">'+title+'</h2></div><div class="row">';
+        //hard coded to 1st item for now as I only want one document per card
+    if (card.images)
+    {
+        for (var i = 0; i < card.images.length; i++)
+            view+=generateImage(card.images[i].src, card.images[i].width);
+    }
+    switch (card.items[0])
+    {
+        case "list":
+            view += generateList(card.list.bullets, card.list.width);
+            break;
+        case "projects":
+            view += generateProjects(card.projects);
+            break;
+        case "articles":
+            view += generateArticles(card.articles);
+            break;
+        case "social":
+            view+= generateSocial(card.social);
+        case "forum":
+            view+=generateForm(card.forum);
+            break;
+        case "edit":
+            view+=generateEdit(card.edit);
+            break;
+        default:
+            view += "<h1>Error cannot create card type!</h1>"
+            break;
+    }
+
+    view += '</div><div class="mdl-card__actions mdl-card--border"><a class="mdl-button mdl-button--colored mdl-js67859tyruie-button mdl-js-ripple-effect">Last updated on: '+new Date(card.updated).toString()+'</a></div>';
+    return view+"</div>";
+}
+
+function generateList(list, width, linked)
 {
     //html view
-    var view = "<ul class='center'>";
+    var view = "<div class='"+width+"'><ul class='material-list mdl-list'>";
     //add each element of the list to the view
     for (var i = 0; i < list.length; i++)
     {
         //list with no hyperlinks
         if (!linked)
-            view += "<li>" + list[i] + "</li>";
+            view += generateListItem(list[i], 'label');
         //list with hyperlinks
         else
         {
             if (list[i].hasOwnProperty("github"))
-                view += "<a href='"+ list[i].github+"'><li>Github</li></a>";
-            view += "<a href='" + list[i].link + "'><li>" + list[i].title + "</li></a>";
+                view+= generateListItem('github', 'label', list[i].github);
+            view+= generateListItem(list[i].title, 'label', list[i].link);
         }
     }
     //return the view
-    return view+"</ul>";
+    return view+"</ul></div>";
+}
+
+function generateListItem(title, icon, link)
+{
+    var view = "<li class='mdl-list__item'>"
+        + "<span class='mdl-list__item-primary-content'>"
+        + "<i class='material-icons mdl-list__item-icon'>"
+        + icon
+        +"</i></span>";
+        if (!link)
+            view += title;
+        else
+            view +="<div class='col-xs-12'><a href='"+link+"'>"+title+"</a></div>";
+
+    return view+"</li>";
 }
 
 /*
@@ -82,20 +119,21 @@ function generateList(list, linked)
  */
 function generateProjects(projects)
 {
-    //html view with centered elements
-    var view = "<div class='center'>";
+    if (projects) {
+        //html view with centered elements
+        var view = "<div class='center'>";
 
-    for (var i = 0; i < projects.length; i++)
-    {
-        //curent project
-        var project = projects[i];
-        //bootstrap divider
-        view+="<div class='col-md-4 col-sm-6 col-xs-12'>";
-        if (project.type == "group")
-            view+=generateProject(project)+"</div>";
+        for (var i = 0; i < projects.length; i++) {
+            //curent project
+            var project = projects[i];
+            //bootstrap divider
+            view += "<div class='col-md-4 col-sm-6 col-xs-12'>";
+            if (project.type == "group")
+                view += generateProject(project) + "</div>";
+        }
+        //return the view
+        return view + "</div>";
     }
-    //return the view
-    return view+"</div>";
 }
 
 /*
@@ -109,7 +147,7 @@ function generateProjects(projects)
 function generateProject(project)
 {
     //html view
-    var view = "<h2>"+project.title+"</h2>";
+    var view = "<h4 class='mdl-list__item'>"+project.title+"</h4>";
     for (var i = 0; i < project.projects.length; i++)
     {
         //ensures project type is correct
@@ -119,7 +157,7 @@ function generateProject(project)
         //view += "<a data-toggle='collapse' class='collapsed' aria-expanded='false'>";
     }
     //generate list with links
-    view += generateList(project.projects, true);
+    view += generateList(project.projects, project.width, true);
     //return the view
     return view;
 }
@@ -144,7 +182,7 @@ function generateArticles(articles)
  */
 function generateArticle(article)
 {
-    var view = "<div class='col-md-4 col-sm-6 col-xs-12 center'><h2>"+article.title+"</h2>";
+    var view = "<div class='col-md-6 col-sm-6 col-xs-12 center'><h3>"+article.title+"</h3>";
     for (var i = 0; i < article.paragraphs.length; i++)
         view += "<p>"+article.paragraphs[i];+"</p>";
     return view+"</div>";
@@ -152,65 +190,56 @@ function generateArticle(article)
 
 function generateSocial(social)
 {
-    var view = "<div class='center'><h2>Social</h2>";
-    var container = "<div class='col-lg-3 col-md-4 col-sm-6 col-xs-12 icon-container'>";
+    var view = "<div class='center col-xs-12 col-lg-6'><h3>Social</h3>";
+    var container = "<div class='col-lg-3 col-md-4 col-sm-6 col-xs-6 icon-container'>";
     //facebook
     if (social.hasOwnProperty("facebook"))
-        view += container + "<a href='"+social.facebook.src+"'><img alt='facebook' src='"+social.facebook.icon+"'></a><h3>Facebook</h3></div>";
+        view += container + "<a href='"+social.facebook.src+"'><img alt='facebook' src='"+social.facebook.icon+"'></a><h4>Facebook</h4></div>";
     //email
     if (social.hasOwnProperty("email"))
-        view += container + "<a href='mailto:"+social.email.src+"'><img alt='email' src='"+social.email.icon+"'></a><h3>Email</h3></div>";
+        view += container + "<a href='mailto:"+social.email.src+"'><img alt='email' src='"+social.email.icon+"'></a><h4>Email</h4></div>";
     //linked in
     if (social.hasOwnProperty("linkedin"))
-        view += container + "<a href='"+social.linkedin.src+"'><img alt='linkedin' src='"+social.linkedin.icon+"'></a><h3>Linkedin</h3></div>";
+        view += container + "<a href='"+social.linkedin.src+"'><img alt='linkedin' src='"+social.linkedin.icon+"'></a><h4>Linkedin</h4></div>";
     //twitter
     if (social.hasOwnProperty("twitter"))
-        view += container + "<a href='"+social.twitter.src+"'><img alt='twitter' src='"+social.twitter.icon+"'></a><h3>Twitter</h3></div>";
+        view += container + "<a href='"+social.twitter.src+"'><img alt='twitter' src='"+social.twitter.icon+"'></a><h4>Twitter</h4></div>";
     return view+"</div>";
 }
 
+/*
+
+ */
 function generateNav(cards)
 {
-    var viewDesktop = "<ul class='nav nav-pills pull-right'>";
-    var viewMobile = "<div id='menu-container' class='dropdown'>" +
-        "<button id='menu' class='hidden-sm hidden-md hidden-lg btn-lg dropdown-toggle' type='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='true'>" +
-        "Menu<span class='carrot'></span></button>" +
-        "<ul class='dropdown-menu'>" +
-        "<li class='dropdown-header'>Navigation</li>";
+    var view = "";
     for(var i = 0; i < cards.length; i++)
-    {
-        viewDesktop+=generatePill(cards[i]);
-        viewMobile+=generateMenuItem(cards[i]);
-    }
-    viewMobile+="</li></ul></div>";
-    viewDesktop+=viewMobile+"</ul>";
-    //return view current nav-message is temporarily hardcoded.
-    return viewDesktop+"<h1><a href='http://alex-ng.com/' id='nav-title'>Alex</a></h1><p id='nav-message'>Website in construction</p>";
+        view+=generateNavLink("#"+cards[i].name, cards[i].name);
+    return view;
 }
 
-function generatePill(card)
-{
-    var id = titleToId(card.title);
-    var view = "<li class='hidden-xs' role='presentation' id='nav-"+id+"'"+"><a href='#"+id+"'>"+id;
-    return view+"</a></li>";
-}
-
-function generateMenuItem(card)
-{
-    var id = titleToId(card.title);
-    var view = "<li><a href='#"+id+"'>"+id;
-    return view+"</a></li>";
+function generateNavLink(href, label){
+    return '<a class="mdl-navigation__link" href="'+href+'">'+label+'</a>';
 }
 
 function generateForm(form)
 {
     //hard coded title and form post for now
-    var view = '<form method="'+form.method+'" action="'+form.action+'"><div class="center form"><h2>Leave me a message</h2>';
+    var view = '<div class="center col-xs-12 col-lg-6"><form method="'+form.method+'" action="'+form.action+'"><h3>Leave me a message</h3>';
     for (var i = 0; i < form.fields.length; i++)
     {
-        view +='<div class="col-xs-12"><input type="text" placeholder="'+form.fields[i]+'"></div>'
+        view +='<div class="col-xs-12">'+generateInput(form.fields[i], form.fields[i], form.fields[i])+'</div>';
     }
-    return view+'<button type="submit" class="btn btn-sm">Submit</button></div></form>';
+    return view+'<button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Submit</button></form></div>';
+}
+
+function generateInput(name, label, id)
+{
+    var view = '<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">'
+    +'<input class="mdl-textfield__input" type="text" id="'+id+'" name="'+name+'">'
+    +'<label class="mdl-textfield__label" for="'+id+'">'+label+'</label></div>';
+    //componentHandler.upgradeElement(view);
+    return view;
 }
 
 function generateEdit(edit)
@@ -220,35 +249,41 @@ function generateEdit(edit)
     {
         list = JSON.parse(requestAllPageData());
         log('allPageData', list);
-        var view = '<div class="container"><div class="row">';
+        var view = '<div class="container col-xs-12"><div class="row">';
         for (var i = 0; i < list.length; i++)
         {
+            view += '<div class="col-xs-6"><p>' + list[i].name + ' - "'+list[i].href+'"</p></div>';
             log('card', list[i]);
-            view += '<div class="col-xs-9"><p>"' + list[i].href + '"</p></div>'
-                +'<div class="col-xs-3">'+generateModal(list[i].name, list[i].name, list[i])+'</div>';
+                view += '<div class="row"><div class="col-xs-6 center">'+generateModal(list[i].name, list[i].name, list[i])+'</div></div>';
         }
-        view+='<div class="row"><div class="center col-xs-12"></div>'+generateModal("New", "New", new Object())+'</div></div>';
+        view+='<div class="col-xs-6"><p>Create new page- new</p></div><div class="row"><div class="col-xs-6 center">'+generateModal("New", "New", new Object())+'</div></div>';
         //log(view);
         enableModal();
         return view + '</div></div>';
     }
 }
 
+function generateImage(src, width)
+{
+    var view = '<div class="col-xs-6"><img height="184px" src="'+src+'" alt="'+src+'"></div>';
+    return view;
+}
+
 function generateModal(name, label, object)
 {
-    var view = '<button type="modalButton" class="'+name+'">Edit '+label+'</button>';
+    var view = '<button type="modalButton" name="'+name+'" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Edit '+label+'</button>';
     view+='<div id="'+ name+'" class="container" type="modal">'
-        +'<div class="'+name+'ModalContent" type="modalContent">'
             +'<div type="modalHeader">'
                 +'<span type="modalClose" class="'+name+'">&times;</span>'
                 +'<h2>Edit '+label+'</h2>'
             +'</div>'
-            +'<div class="modalForm"><form method="post" action="/api/pages">'
-            +'<div class="center"><div class="row"><textarea name="page" cols="50", rows="20">'+JSON.stringify(object, null, 4)+'</textarea></div>'
-            +'<button type="submit" class="btn btn-sm">Submit</button></div></div></form>'
-        + '</div></div>';
+            +'<div class="modalForm"><input type="hidden" name="_method" value="put"/>'
+            +'<div class="center"><div class="row"><textarea name="'+name+'" cols="50", rows="20">'+JSON.stringify(object, null, "\t")+'</textarea></div>'
+            +'<button onclick="updatePage(`'+name+'`)" type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Submit</button></div></div>'
+        + '</div>';
     return view;
 }
+
 
 function enableModal(){
     $(document).ready(function()
@@ -269,8 +304,8 @@ function enableModal(){
         });
 
         modalsOpen.click(function () {
-            log('modalButton', this.className);
-            $("#" + this.className).css('display', 'block');
+            log('modalButton', $(this).attr('name'));
+            $("#" + $(this).attr('name')).css('display', 'block');
         });
 
         log('modal', 'enabled');
@@ -289,3 +324,4 @@ function requestAllPageData()
         contentType: 'application/json; charset=utf-8'
     }).responseText;
 }
+

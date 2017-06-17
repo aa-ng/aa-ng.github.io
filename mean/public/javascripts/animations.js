@@ -7,11 +7,20 @@ $(document).ready(function(){
 
 });
 
+/*
+$('a[href*=\\#]').on('click', function(event){
+    event.preventDefault();
+    $('html,body').animate({scrollTop:$(this.hash).offset().top}, 500);
+});
+*/
+
+/*
 //if the window/viewport resized
 $(window).resize(function() {
     getBorders(cards);
 });
 
+/*
 $(window).scroll(function (event){
     var scroll = $(window).scrollTop();
     if (scroll <= 2)
@@ -20,6 +29,7 @@ $(window).scroll(function (event){
         $("#nav-title").removeClass("expand");
         $("nav").removeClass("collapse");
         $("#nav-message").css("display","initial");
+        $("a.mdl-navigation__link").addClass('is-active');
     }
     else
     {
@@ -38,7 +48,9 @@ $(window).scroll(function (event){
         $("#nav-"+card).attr("role","active");
     }
 });
+*/
 
+/*
 function scrollAnimate()
 {
     $("div[class^='card']").each(function(){
@@ -68,3 +80,4 @@ function getBorders(cards)
         log("Borders: "+i+":"+cards[i],height);
     }
 }
+*/

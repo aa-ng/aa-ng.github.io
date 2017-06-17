@@ -41,7 +41,7 @@ router.get('/pages', function(req, res, next){
  */
 router.post('/pages', function(req, res, next){
     //to implement
-    res.json("Confirmed");
+    res.json("POST");
 });
 
 /*
@@ -50,7 +50,10 @@ router.post('/pages', function(req, res, next){
  */
 router.put('/pages', function(req, res, next){
     //to implement
-    res.json("Confirmed");
+    //console.log(req.body);
+    Page.updatePage(req.body.page, function(){
+        res.json(req.body.page);
+    });
 });
 
 module.exports = router;

@@ -6,6 +6,8 @@ html
         meta(charset="UTF-8")
         block scripts
     body(ng-app="app" ng-controller="main")
-        block navigation
-        block content
-        block footer
+        div(class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header")
+            block navigation
+            main(class="mdl-layout__content")
+                div(class="page-content")
+                    block content

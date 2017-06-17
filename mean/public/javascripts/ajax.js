@@ -24,7 +24,9 @@ app.controller("main", function($scope, $http){
         //generate a html view from the response
         generateLayout(res);
         //add scroll animations
-        scrollAnimate();
+        //scrollAnimate();
+        //upgrades mdl textfields as they can render incorrectly when dynamically generated
+        componentHandler.upgradeElements($('.mdl-textfield').get());
     });
 
     /*
@@ -77,6 +79,46 @@ $(document).ready(function(){
 
 });
 
+//handle form validation
+$('form').submit(function() {
+    log("textarea", $("textarea").val());
+    /*
+    //return false will stop form from being submitted
+    var request = $.ajax({
+        url: '/api/pages',
+        type: 'PUT',
+        async: false,
+        data: {page: $("textarea").val()},
+        success: function (res){
+            log('form', res);
+        }
+    });
+
+     <form method="post" action="/api/pages">
+
+    return false;
+    */
+});
+
+/*
+Sends put request to backend to update page
+ */
+function updatePage(button){
+    console.log(JSON.stringify(button));
+    //removed string condensation as it was removing spaces in data, that was wanted
+    var page = JSON.stringify($("textarea[name="+button+"]").val()); //.replace(/(\r\n|\n|\r|\s)/gm,""));
+    log("page", page);
+    var request = $.ajax({
+        url: '/api/pages',
+        type: 'PUT',
+        async: false,
+        data: {page: page},
+        success: function (res){
+            log('form', res);
+        }
+    });
+}
+
 //capture tab key press for textarea
 $("div.center").on('keydown', 'textarea', function(e) {
     var keyCode = e.keyCode || e.which;
@@ -106,6 +148,15 @@ $(document).delegate('textarea', 'keydown', function(e) {
             $(this).get(0).selectionEnd = start + 1;
     }
 });
+
+/*
+$('a[href*=#]').click(function(event){
+    $('html, body').animate({
+        scrollTop: $( $.attr(this, 'href') ).offset().top
+    }, 500);
+    event.preventDefault();
+});
+*/
 
 //standardized log function for consistent format in console
 function log(tag,message){ console.log("["+JSON.stringify(tag)+"]"+" : "+JSON.stringify(message))}

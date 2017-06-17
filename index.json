@@ -4,6 +4,7 @@
 	"cards": [
 		{
 			"title": "Welcome, I'm Alex",
+			"name": "welcome",
 			"align": "center",
 			"images": ["/images/logo_lrg.jpeg"],
 			"items": ["list"],
@@ -15,6 +16,7 @@
 		},
 		{
 			"title": "Projects",
+			"name": "projects",
 			"align": "left",
 			"images": [],
 			"items": ["projects"],
@@ -25,7 +27,7 @@
 					"projects": [
 						{
 							"type":"project",
-							"title":"cps630 - Web applications", 
+							"title":"cps630 - Web applications",
 							"link": "projects/cps630"
 						},
 						{
@@ -63,6 +65,7 @@
 		},
 		{
 			"title": "About",
+			"name": "about",
 			"align": "left",
 			"items": ["articles"],
 			"articles": [
@@ -76,6 +79,7 @@
 		},
 		{
 			"title": "Contact",
+			"name": "contact",
 			"align": "left",
 			"items": ["social","forum"],
 			"social": {

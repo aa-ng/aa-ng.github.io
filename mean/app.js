@@ -26,6 +26,8 @@ app.use('/js', express.static(__dirname + '/node_modules/jquery/dist'));
 app.use('/js', express.static(__dirname + '/node_modules/angular'));
 // redirect CSS bootstrap
 app.use('/css', express.static(__dirname + '/node_modules/bootstrap/dist/css'));
+// redirect CSS material design lite
+app.use('/material', express.static(__dirname + '/node_modules/material-design-lite/dist'));
 
 
 //var expressHandlebars = require('express-handlebars');

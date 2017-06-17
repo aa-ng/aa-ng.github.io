@@ -1,27 +1,33 @@
 extends layout.pug
 
-block footer
-    footer
-        div.container.center
-            div.row
-                //div.col-lg-2.col-md-3.col-sm-4.col-xs-12
-                div.col-xs-12
-                    h2 Footer in progress...
-        div.end
-            div.row
-                h3 &copy Alex Ng #{year}
-
 block navigation
-    nav
-        ul(class='nav nav-pills pull-right')
-            li(role='presentation')
-                a(href='/') Home
+    //The drawer is always open in large screens. The header is always shown, even in small screens.
+    header(class="nav mdl-layout__header mdl-layout__header--waterfall mdl-shadow--6dp")
+        //always visible row
+        div(class="mdl-layout__header-row")
+            h3
+                a(id="site-link" href="http://alex-ng.com") Alex
+            div(class="mdl-layout-spacer")
+            div(class="mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label mdl-textfield--align-right")
+                label(class="mdl-button mdl-js-button mdl-button--icon" for="fixed-header-drawer-exp")
+                    i(class="material-icons") search
+                div(class="mdl-textfield__expandable-holder")
+                    input(class="mdl-textfield__input" type="text" name="sample" id="fixed-header-drawer-exp")
+        //collapsible row
+        div(class="mdl-layout__header-row")
+            div(class="mdl-layout-spacer")
+            nav(id="localNav" class="mdl-navigation")
 
-            li(role='presentation')
-                a(href='/about') About
-        h1
-            a(href='https://Cynicalbird.github.io/')#nav-title Alex
-        p#nav-message #{message}
+    //sidebar
+    div(class="mdl-layout__drawer")
+        //title
+        span(class="mdl-layout-title")= title
+        //nav links
+        nav(class="mdl-navigation")
+            a(class="mdl-navigation__link" href="/") Home
+            //a(class="mdl-navigation__link" href="/admin") Admin
+            a(class="mdl-navigation__link" href="/projects") Projects
+
 
 mixin card(title, picture)
     //Card container
@@ -52,10 +58,17 @@ block scripts
     script(src="/js/jquery.min.js")
     script(src="/js/bootstrap.min.js")
     // End of bootstrap dependencies
+    // Material design lite
+    link(href="/material/material.min.css" rel="stylesheet", type="text/css")
+    script(src="/material/material.min.js")
+    //material design icons
+    link(href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet")
+    // End of material design lite dependencies
     // AngularJS
     script(src="/js/angular.js")
     // End of AngularJS
-    link(href="/stylesheets/style.css" rel="stylesheet" type="text/css")
+    //link(href="/stylesheets/style.css" rel="stylesheet" type="text/css")
+    link(href="stylesheets/main.css" rel="stylesheet" type="text/css")
     script(src="/javascripts/animations.js")
     script(src="/javascripts/ajax.js")
     script(src="/javascripts/structure.js")

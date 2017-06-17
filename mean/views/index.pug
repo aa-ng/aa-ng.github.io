@@ -1,9 +1,6 @@
 extends interface.pug
 block content
-    +card("Welcome", "/images/logo_lrg.jpeg")
-    +card("Projects")
-    +card("About")
-    +card("Contact")
+    div(id="content-container" class="container")
 
 mixin projects(projects)
     div(class="center")
