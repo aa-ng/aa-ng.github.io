@@ -263,7 +263,7 @@ function displayIcon(weather)
 {
 	var weather_icon = document.getElementById("weather_icon");
 	var code = weather.main;
-	var extention = ".png";
+	var extention = ".social";
 	console.log("[displayIcon] hour: "+hour);
 	//alert("Sunrise hour icon: "+sunrise_hour);
 	//alert("Sunset hour icon: "+sunset_hour);

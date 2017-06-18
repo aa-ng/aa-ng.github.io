@@ -95,7 +95,7 @@ function onclick(e)
 
 function processFiles(files)
 {
-	var photo_extentions = ['gif','png','jpg','jpeg'];
+	var photo_extentions = ['gif','social','jpg','jpeg'];
 	for (var i =  0; i < files.length; i++)
 	{
 		console.log("[processFiles] file_index: "+i);

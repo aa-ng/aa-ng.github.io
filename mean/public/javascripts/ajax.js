@@ -27,39 +27,10 @@ app.controller("main", function($scope, $http){
         //scrollAnimate();
         //upgrades mdl textfields as they can render incorrectly when dynamically generated
         componentHandler.upgradeElements($('.mdl-textfield').get());
+        componentHandler.upgradeElements($('.mdl-button').get());
+        //componentHandler.upgradeElements($('.mdl-textfield').get());
     });
-
-    /*
-    $scope.doneClasses = function(){
-        //modal windows
-        var modals = $("div[type='modal']");
-        //close modal spans
-        var modalsClose = $("span[type='modalClose']");
-        //open modal buttons
-        var modalsOpen = $("button[type='modalButton']");
-
-        modalsClose.click(function(){
-            log('modalClose', this.className);
-            $("#"+this.className).css('display','none');
-        })
-
-        modalsOpen.click(function(){
-            log('modalButton',this.className);
-            $("#"+this.className).css('display','block');
-        });
-
-        log('classes','done');
-    }
-    */
 });
-
-app.directive('repeatDone', function() {
-    return function(scope, element, attrs) {
-        if (scope.$last) { // all are rendered
-            scope.$eval(attrs.repeatDone);
-        }
-    }
-})
 
 /*
 * Converts multi spaced string to just the string before the first space
@@ -73,32 +44,6 @@ function titleToId(title)
     id = id[0].replace(',','');
     return id;
 }
-
-//unused
-$(document).ready(function(){
-
-});
-
-//handle form validation
-$('form').submit(function() {
-    log("textarea", $("textarea").val());
-    /*
-    //return false will stop form from being submitted
-    var request = $.ajax({
-        url: '/api/pages',
-        type: 'PUT',
-        async: false,
-        data: {page: $("textarea").val()},
-        success: function (res){
-            log('form', res);
-        }
-    });
-
-     <form method="post" action="/api/pages">
-
-    return false;
-    */
-});
 
 /*
 Sends put request to backend to update page

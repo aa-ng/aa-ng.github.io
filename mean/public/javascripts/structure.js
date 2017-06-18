@@ -36,37 +36,40 @@ function generateLayout(layout)
  */
 function generateCard(title, name, card){
     view = '<div id="'+name+'" class="'+name+'-card-wide mdl-card mdl-shadow--6dp">'
-        +'<div class="mdl-card__title"><h2 class="mdl-card__title-text">'+title+'</h2></div><div class="row">';
+        +'<div class="mdl-card__title"><h2 class="mdl-card__title-text">'+title+'</h2></div><div class="container">';
         //hard coded to 1st item for now as I only want one document per card
+    for (var i = 0; i < card.items.length; i++)
+    {
+        switch (card.items[i])
+        {
+            case "list":
+                view += generateList(card.list.bullets, card.list.width);
+                break;
+            case "projects":
+                view += generateProjects(card.projects);
+                break;
+            case "articles":
+                view += generateArticles(card.articles);
+                break;
+            case "forum":
+                view+=generateForm(card.forum);
+                break;
+            case "social":
+                view+= generateSocial(card.social);
+                break;
+            case "edit":
+                view+=generateEdit(card.edit);
+                break;
+            default:
+                view += "<h1>Error cannot create card type!</h1>"
+                break;
+        }
+    }
     if (card.images)
     {
         for (var i = 0; i < card.images.length; i++)
-            view+=generateImage(card.images[i].src, card.images[i].width);
+            view+=generateImage(card.images[i].src, card.images[i].width, card.images[i].align);
     }
-    switch (card.items[0])
-    {
-        case "list":
-            view += generateList(card.list.bullets, card.list.width);
-            break;
-        case "projects":
-            view += generateProjects(card.projects);
-            break;
-        case "articles":
-            view += generateArticles(card.articles);
-            break;
-        case "social":
-            view+= generateSocial(card.social);
-        case "forum":
-            view+=generateForm(card.forum);
-            break;
-        case "edit":
-            view+=generateEdit(card.edit);
-            break;
-        default:
-            view += "<h1>Error cannot create card type!</h1>"
-            break;
-    }
-
     view += '</div><div class="mdl-card__actions mdl-card--border"><a class="mdl-button mdl-button--colored mdl-js67859tyruie-button mdl-js-ripple-effect">Last updated on: '+new Date(card.updated).toString()+'</a></div>';
     return view+"</div>";
 }
@@ -182,7 +185,7 @@ function generateArticles(articles)
  */
 function generateArticle(article)
 {
-    var view = "<div class='col-md-6 col-sm-6 col-xs-12 center'><h3>"+article.title+"</h3>";
+    var view = "<div class='col-md-9 col-sm-9 col-xs-12'><h3>"+article.title+"</h3>";
     for (var i = 0; i < article.paragraphs.length; i++)
         view += "<p>"+article.paragraphs[i];+"</p>";
     return view+"</div>";
@@ -194,16 +197,16 @@ function generateSocial(social)
     var container = "<div class='col-lg-3 col-md-4 col-sm-6 col-xs-6 icon-container'>";
     //facebook
     if (social.hasOwnProperty("facebook"))
-        view += container + "<a href='"+social.facebook.src+"'><img alt='facebook' src='"+social.facebook.icon+"'></a><h4>Facebook</h4></div>";
+        view += container + "<a href='"+social.facebook.src+"'><img class='social-icon' alt='facebook' src='"+social.facebook.icon+"'></a><h4>Facebook</h4></div>";
     //email
-    if (social.hasOwnProperty("email"))
-        view += container + "<a href='mailto:"+social.email.src+"'><img alt='email' src='"+social.email.icon+"'></a><h4>Email</h4></div>";
+    if (social.hasOwnProperty("github"))
+        view += container + "<a href='"+social.github.src+"'><img class='social-icon' alt='email' src='"+social.github.icon+"'></a><h4>Github</h4></div>";
     //linked in
     if (social.hasOwnProperty("linkedin"))
-        view += container + "<a href='"+social.linkedin.src+"'><img alt='linkedin' src='"+social.linkedin.icon+"'></a><h4>Linkedin</h4></div>";
+        view += container + "<a href='"+social.linkedin.src+"'><img class='social-icon' alt='linkedin' src='"+social.linkedin.icon+"'></a><h4>Linkedin</h4></div>";
     //twitter
     if (social.hasOwnProperty("twitter"))
-        view += container + "<a href='"+social.twitter.src+"'><img alt='twitter' src='"+social.twitter.icon+"'></a><h4>Twitter</h4></div>";
+        view += container + "<a href='"+social.twitter.src+"'><img class='social-icon' alt='twitter' src='"+social.twitter.icon+"'></a><h4>Twitter</h4></div>";
     return view+"</div>";
 }
 
@@ -263,9 +266,9 @@ function generateEdit(edit)
     }
 }
 
-function generateImage(src, width)
+function generateImage(src, width, center)
 {
-    var view = '<div class="col-xs-6"><img height="184px" src="'+src+'" alt="'+src+'"></div>';
+    var view = '<div class="'+width+' '+center+'"><img class="logo" height="184px" src="'+src+'" alt="'+src+'"></div>';
     return view;
 }
 
@@ -305,7 +308,10 @@ function enableModal(){
 
         modalsOpen.click(function () {
             log('modalButton', $(this).attr('name'));
-            $("#" + $(this).attr('name')).css('display', 'block');
+            if ($("#" + $(this).attr('name')).css('display') == 'block')
+                $("#" + $(this).attr('name')).css('display', 'none');
+            else
+                $("#" + $(this).attr('name')).css('display', 'block');
         });
 
         log('modal', 'enabled');
