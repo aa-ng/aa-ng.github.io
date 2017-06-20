@@ -40,8 +40,20 @@ router.get('/pages', function(req, res, next){
 * To be implemented: req validation
  */
 router.post('/pages', function(req, res, next){
-    //to implement
-    res.json("POST");
+    var reqPage = JSON.parse(JSON.parse(req.body.page));
+    console.log(reqPage);
+    var newPage = Page({
+        href: reqPage.href,
+        name: reqPage.name,
+        cards: reqPage.cards
+    });
+    Page.createPage(newPage, function(err, page){
+        if (err)
+            console.log(err);
+        else
+            res.json('success');
+        console.log(page);
+    });
 });
 
 /*

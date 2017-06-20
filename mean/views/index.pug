@@ -1,52 +1,7 @@
 extends interface.pug
 block content
-    div(id="content-container" class="container")
-    button(id="fab" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored ")
-        i(class="material-icons") add
-
-mixin projects(projects)
-    div(class="center")
-        div(class="col-md-4 col-sm-6 col-xs-12")
-            +article("Web development")
-            +project("cps630 - Web applications","cps630")
-        div(class="col-md-4 col-sm-6 col-xs-12")
-            +list(["Java","Github"],"Random maze generation", true)
-        div(class="col-md-4 col-sm-6 col-xs-12")
-            +list(["Transleep","Github"],"Android", true)
-        div(class="col-md-4 col-sm-6 col-xs-12")
-            +article("Games","click")
-        div(class="col-md-4 col-sm-6 col-xs-12")
-            +article("Ryerson University", "click")
-        div(class="col-md-4 col-sm-6 col-xs-12")
-            +project("Random maze generation", "Random-maze-generation", "https://github.com/CynicalBird/mazeproject")
-
-mixin article(title, message)
-    h2= title
-    if (message)
-        p= message
-mixin list(items, title, links)
-    if (title)
-        h2= title
-    ul
-        each item in items
-            if (links)
-                li
-                    a(href= item)= item
-            else
-                li= item
-mixin project(name, web, github)
-    if (name)
-        h4
-            a(href= "#"+web+"-project" data-toggle="collapse" class="collapsed" aria-expanded="false")= name
-        div(id= web+"-project" class="collapse" aria-expanded="false")
-            ul
-                if (web)
-                    li
-                        a(href= web) Link
-                if (github)
-                    li
-                        a(href= github) Github
-
-
-    else
-        Error project name not provided
+    div(class="page-content")
+        div(id="content-container" class="container")
+        //fab
+        button(id="fab" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored ")
+            i(class="material-icons") add

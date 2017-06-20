@@ -1,14 +1,20 @@
 doctype html
 html
     head
+        //title of page
         title= title
+        //viewport & support for responsive design
         meta(name="viewport" content="width=device-width, initial-scale=1")
+        //character set
         meta(charset="UTF-8")
+        //scripts/dependencies
         block scripts
-    body(ng-app="app" ng-controller="main")
+    body(ng-app="app" ng-controller="main" class="")
         div(class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header")
+            //nav/top bar
             block navigation
             main(class="mdl-layout__content")
-                div(class="page-content")
-                    block content
-                    block footer
+                //main content
+                block content
+                //footer
+                block footer

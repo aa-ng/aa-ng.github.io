@@ -1,10 +1,72 @@
 extends interface.pug
 block content
-    div.container
-        div(class="welcome-card-wide mdl-card mdl-shadow--6dp")
+    div(class="mdl-layout__tab-panel is-active container" id="overview")
+        section(class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--4dp")
+            header(class="section__play-btn mdl-cell mdl-cell--3-col-desktop mdl-cell--2-col-tablet mdl-cell--4-col-phone mdl-color--pink-500 mdl-color-text--white")
+                //i(class="material-icons") play_circle_filled
+            div(class="mdl-card mdl-cell mdl-cell--9-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone")
+                div(class="mdl-card__supporting-text")
+                    h4 Projects
+                    p Welcome to my projects overview, clicking any of the tabs above will take you to a more detailed look at the projects grouped by field.
+                div(class="mdl-card__actions mdl-card--border")
+                    a(class="mdl-button") Last updated on:
+        section(class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--4dp")
+    div(class="mdl-layout__tab-panel container" id="webdev")
+        section(class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--4dp")
+            header(class="section__play-btn mdl-cell mdl-cell--3-col-desktop mdl-cell--2-col-tablet mdl-cell--4-col-phone mdl-color--pink-500 mdl-color-text--white")
+                //i(class="material-icons") play_circle_filled
+            div(class="mdl-card mdl-cell mdl-cell--9-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone")
+                div(class="mdl-card__supporting-text")
+                    h4 Web development
+                    p Here are my projects related to web development.
+                div(class="mdl-card__actions mdl-card--border")
+                    a(class="mdl-button") Last updated on:
+    div(class="mdl-layout__tab-panel container" id="games")
+        section(class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--4dp")
+            header(class="section__play-btn mdl-cell mdl-cell--3-col-desktop mdl-cell--2-col-tablet mdl-cell--4-col-phone mdl-color--pink-500 mdl-color-text--white")
+                //i(class="material-icons") play_circle_filled
+            div(class="mdl-card mdl-cell mdl-cell--9-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone")
+                div(class="mdl-card__supporting-text")
+                    h4 Game development
+                    p Here are my projects related to web development.
+                div(class="mdl-card__actions mdl-card--border")
+                    a(class="mdl-button") Last updated on:
+    div(class="mdl-layout__tab-panel container" id="android")
+block navigation
+    header(class="mdl-layout__header mdl-layout__header--scroll mdl-color--primary")
+        //spacer
+        div(class="mdl-layout--large-screen-only mdl-layout__header-row")
+        //title and message
+        div(class="mdl-layout--large-screen-only mdl-layout__header-row")
+            h3= title
+        //spacer
+        div(class="mdl-layout--large-screen-only mdl-layout__header-row")
+        //tabs
+        //div(class="mdl-layout__tab-bar-container mdl-color--red-700")
+            //div(class="mdl-layout__tab-bar-button mdl-layout__tab-bar-left-button mdl-color--red-700")
+                i(class="material-icons") chevron_left
+        div(class="mdl-layout__tab-bar mdl-js-ripple-effect mdl-color--primary-dark" data-upgraded="MaterialRipple")
+            a(href="#overview" class="mdl-layout__tab is-active") Overview
+            a(href="#webdev" class="mdl-layout__tab") Web development
+            a(href="#games" class="mdl-layout__tab") Games
+            a(href="#android" class="mdl-layout__tab") Android
+            //div(class="mdl-layout__tab-bar-button mdl-layout__tab-bar-right-button mdl-color--red-700")
+                i(class="material-icons") chevron_right
+    div(class="mdl-layout__drawer")
+        //title
+        span(class="mdl-layout-title")= title
+        //nav links
+        nav(class="mdl-navigation")
+            a(class="mdl-navigation__link" href="/") Home
+            //a(class="mdl-navigation__link" href="/admin") Admin
+            a(class="mdl-navigation__link" href="/projects") Projects
+
+
+
+        //div(class="welcome-card-wide mdl-card mdl-shadow--6dp")
             div(class="mdl-card__title")
                 h2(class="mdl-card__title-text") Welcome!
-                img(src="/images/logo.social" alt="favicon" class="logo")
+                img(src="/images/projects/icons/analytics-3.png" alt="favicon" class="logo")
             div(class="mdl-card__supporting-text" color="black") This text might describe the photo and provide further information, such as where and when it was taken.
             div(class="mdl-card__actions mdl-card--border")
                 a(href="link" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect") Related Action

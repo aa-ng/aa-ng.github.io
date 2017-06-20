@@ -33,29 +33,19 @@ app.controller("main", function($scope, $http){
 });
 
 /*
-* Converts multi spaced string to just the string before the first space
-* (Delimits by space character and returns the first token)
- */
-function titleToId(title)
-{
-    //delimit title by spaces
-    var id = title.split(" ");
-    //get first word and remove extra characters such as commas for the id
-    id = id[0].replace(',','');
-    return id;
-}
-
-/*
 Sends put request to backend to update page
  */
 function updatePage(button){
-    console.log(JSON.stringify(button));
+    log('buttonPressed', button);
     //removed string condensation as it was removing spaces in data, that was wanted
     var page = JSON.stringify($("textarea[name="+button+"]").val()); //.replace(/(\r\n|\n|\r|\s)/gm,""));
     log("page", page);
+    var method = 'PUT';
+    if (button === 'New')
+        method = 'POST';
     var request = $.ajax({
         url: '/api/pages',
-        type: 'PUT',
+        type: method,
         async: false,
         data: {page: page},
         success: function (res){
@@ -64,44 +54,17 @@ function updatePage(button){
     });
 }
 
-//capture tab key press for textarea
-$("div.center").on('keydown', 'textarea', function(e) {
-    var keyCode = e.keyCode || e.which;
-
-    if (keyCode == 9) {
-        e.preventDefault();
-        // call custom function here
-    }
-});
-
-//add tabbing functionality to textarea
-$(document).delegate('textarea', 'keydown', function(e) {
-    var keyCode = e.keyCode || e.which;
-
-    if (keyCode == 9) {
-        e.preventDefault();
-        var start = $(this).get(0).selectionStart;
-        var end = $(this).get(0).selectionEnd;
-
-        // set textarea value to: text before caret + tab + text after caret
-        $(this).val($(this).val().substring(0, start)
-            + "\t"
-            + $(this).val().substring(end));
-
-        // put caret at right position again
-        $(this).get(0).selectionStart =
-            $(this).get(0).selectionEnd = start + 1;
-    }
-});
-
 /*
-$('a[href*=#]').click(function(event){
-    $('html, body').animate({
-        scrollTop: $( $.attr(this, 'href') ).offset().top
-    }, 500);
-    event.preventDefault();
-});
-*/
-
-//standardized log function for consistent format in console
-function log(tag,message){ console.log("["+JSON.stringify(tag)+"]"+" : "+JSON.stringify(message))}
+Requests list of all page data/documents
+ */
+function requestAllPageData()
+{
+    //should be synchronous or else the function will try and return undefined implicitly upon completion
+    return $.ajax({
+        async: false,
+        url: '/api/pages',
+        type: 'GET',
+        data: {url: '*'},
+        contentType: 'application/json; charset=utf-8'
+    }).responseText;
+}

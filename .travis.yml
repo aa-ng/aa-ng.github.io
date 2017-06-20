@@ -9,7 +9,7 @@ cache:
 script:
   - zip -r latest *
   - mkdir -p releases
-  - mv latest.zip releases/latest.zip
+  - mv latestAlexSite.zip releases/latestAlexSite.zip
 deploy:
 - provider: s3
   access_key_id: $AWS_ACCESS_KEY
@@ -24,7 +24,7 @@ deploy:
   access_key_id: $AWS_ACCESS_KEY
   secret_access_key: $AWS_SECRET_KEY
   bucket: alex-ng
-  key: latest.zip
+  key: latestAlexSite.zip
   bundle_type: zip
   application: operation-ignition
   deployment_group: ignition-servers

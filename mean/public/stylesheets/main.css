@@ -4,10 +4,14 @@
 }
 
 /* overrides material design lite default card size for "wide" cards */
-.mdl-card[class*=-wide]
+.mdl-card, .mdl-grid
 {
     margin-top: 12px;
     margin-bottom: 12px;
+}
+
+.mdl-card[class*=wide]
+{
     width: 100%;
 }
 
@@ -18,12 +22,23 @@
     height: 300px;
 }
 
+.container#overview section > header { background: url('/images/projects/icons/analytics-2.png') center/80% no-repeat; }
+.container#webdev section > header { background: url('/images/projects/icons/analytics-1.png') center/80% no-repeat; }
+.container#games section > header { background: url('/images/projects/icons/analytics-7.png') center/80% no-repeat; }
+
+.mdl-layout.is-upgraded .mdl-layout__tab.is-active::after { /*background: #337ab7;*/ }
+
+.mdl-layout__tab-bar-button , .mdl-layout__tab-bar-left-button, .mdl-layout__tab-bar-right-button
+{
+    /*background-color: #D52451;*/
+}
+
 a#site-link
 {
     color: white;
 }
 
-button#fab { position: fixed;  bottom: 10px;  right: 10px;}
+button#fab { position: fixed;  bottom: 10px;  right: 10px; z-index: 1000}
 
 div.center, icon-container { margin: 0 auto; text-align: center; }
 div.left { text-align: left; }
@@ -119,6 +134,11 @@ header.nav
     background-color: #E63462;
 }
 
+.nav
+{
+    background-color: #D52451;
+}
+
 html, body
 {
     width: 100%;
@@ -131,3 +151,11 @@ html, body
 }
 
 p.footer { margin-bottom: 0; line-height: 36px }
+
+/* Tab bar consistent tabs background-color */
+div.mdl-layout__drawer-button, div.mdl-layout__tab-bar-button.mdl-layout__tab-bar-left-button, .mdl-layout__tab-bar-button, .mdl-layout__tab-bar-right-button { background-color: transparent; }
+.mdl-layout__header .mdl-layout__drawer-button { background-color: transparent; border: none; }
+.mdl-layout__tab-bar
+{
+    width: 100%;
+}
