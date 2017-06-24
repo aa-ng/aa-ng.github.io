@@ -35,8 +35,14 @@ function generateLayout(layout)
 * https://getmdl.io/
  */
 function generateCard(title, name, card){
-    view = '<div id="'+name+'" class="'+name+'-card-wide mdl-card mdl-shadow--6dp">'
-        +'<div class="mdl-card__title"><h2 class="mdl-card__title-text">'+title+'</h2></div><div class="container">';
+    view = '<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--6dp" id="'+name+'">';
+    if (card.images)
+    {
+        view += '<header class="section__play-btn mdl-cell mdl-cell--3-col-desktop mdl-cell--2-col-tablet mdl-cell--4-col-phone '+card.color+' mdl-color-text--white"></header><div id="' + name + '" class="' + name + '-card-wide mdl-card mdl-cell mdl-cell--9-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone">';
+    }
+    else
+        view += '<div class="'+name+'-card-wide mdl-card mdl-cell mdl-cell--12-col-desktop mdl-cell--12-col-tablet mdl-cell--12-col-phone">';
+    view += '<div class="mdl-card__title"><h2 class="mdl-card__title-text">'+title+'</h2></div>';
         //hard coded to 1st item for now as I only want one document per card
     for (var i = 0; i < card.items.length; i++)
     {
@@ -67,11 +73,11 @@ function generateCard(title, name, card){
     }
     if (card.images)
     {
-        for (var i = 0; i < card.images.length; i++)
-            view+=generateImage(card.images[i].src, card.images[i].width, card.images[i].align);
+        //for (var i = 0; i < card.images.length; i++)
+            //view+=generateImage(card.images[i].src, card.images[i].width, card.images[i].align);
     }
-    view += '</div><div class="mdl-card__actions mdl-card--border"><a class="mdl-button mdl-button--colored mdl-js67859tyruie-button mdl-js-ripple-effect">Last updated on: '+new Date(card.updated).toString()+'</a></div>';
-    return view+"</div>";
+    view += '<div class="mdl-card__actions mdl-card--border"><a class="mdl-button mdl-button--colored mdl-js67859tyruie-button mdl-js-ripple-effect">Last updated on: '+new Date(card.updated).toString()+'</a></div>';
+    return view+"</div></section>";
 }
 
 function generateList(list, width, linked)
@@ -171,7 +177,7 @@ function generateProject(project)
  */
 function generateArticles(articles)
 {
-    var view = "<div class='center'>";
+    var view = "<div class='col-md-12 col-sm-12 col-xs-12'>";
     for (var i = 0; i < articles.length; i++)
     {
         view += generateArticle(articles[i]);
@@ -185,7 +191,7 @@ function generateArticles(articles)
  */
 function generateArticle(article)
 {
-    var view = "<div class='col-md-9 col-sm-9 col-xs-12'><h3>"+article.title+"</h3>";
+    var view = "<div class='center'><h3>"+article.title+"</h3>";
     for (var i = 0; i < article.paragraphs.length; i++)
         view += "<p>"+article.paragraphs[i];+"</p>";
     return view+"</div>";

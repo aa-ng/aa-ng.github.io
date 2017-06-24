@@ -19,10 +19,12 @@
 {
     background: url('/images/banner.jpg') center/cover;
     color: white;
-    height: 300px;
+    height: 250px;
 }
 
-.container#overview section > header { background: url('/images/projects/icons/analytics-2.png') center/80% no-repeat; }
+section#welcome > header { background: url('/images/logo.png') center/80% no-repeat; }
+section#about > header { background: url('/images/profile_pic_round.png') center/80% no-repeat; back}
+section#overview > header { background: url('/images/projects/icons/analytics-2.png') center/80% no-repeat; }
 .container#webdev section > header { background: url('/images/projects/icons/analytics-1.png') center/80% no-repeat; }
 .container#games section > header { background: url('/images/projects/icons/analytics-7.png') center/80% no-repeat; }
 

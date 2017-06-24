@@ -1,37 +1,8 @@
 extends interface.pug
 block content
-    div(class="mdl-layout__tab-panel is-active container" id="overview")
-        section(class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--4dp")
-            header(class="section__play-btn mdl-cell mdl-cell--3-col-desktop mdl-cell--2-col-tablet mdl-cell--4-col-phone mdl-color--pink-500 mdl-color-text--white")
-                //i(class="material-icons") play_circle_filled
-            div(class="mdl-card mdl-cell mdl-cell--9-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone")
-                div(class="mdl-card__supporting-text")
-                    h4 Projects
-                    p Welcome to my projects overview, clicking any of the tabs above will take you to a more detailed look at the projects grouped by field.
-                div(class="mdl-card__actions mdl-card--border")
-                    a(class="mdl-button") Last updated on:
-        section(class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--4dp")
-    div(class="mdl-layout__tab-panel container" id="webdev")
-        section(class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--4dp")
-            header(class="section__play-btn mdl-cell mdl-cell--3-col-desktop mdl-cell--2-col-tablet mdl-cell--4-col-phone mdl-color--pink-500 mdl-color-text--white")
-                //i(class="material-icons") play_circle_filled
-            div(class="mdl-card mdl-cell mdl-cell--9-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone")
-                div(class="mdl-card__supporting-text")
-                    h4 Web development
-                    p Here are my projects related to web development.
-                div(class="mdl-card__actions mdl-card--border")
-                    a(class="mdl-button") Last updated on:
-    div(class="mdl-layout__tab-panel container" id="games")
-        section(class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--4dp")
-            header(class="section__play-btn mdl-cell mdl-cell--3-col-desktop mdl-cell--2-col-tablet mdl-cell--4-col-phone mdl-color--pink-500 mdl-color-text--white")
-                //i(class="material-icons") play_circle_filled
-            div(class="mdl-card mdl-cell mdl-cell--9-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone")
-                div(class="mdl-card__supporting-text")
-                    h4 Game development
-                    p Here are my projects related to web development.
-                div(class="mdl-card__actions mdl-card--border")
-                    a(class="mdl-button") Last updated on:
-    div(class="mdl-layout__tab-panel container" id="android")
+    div(class="page-content")
+        div(id="content-container" class="container")
+
 block navigation
     header(class="mdl-layout__header mdl-layout__header--scroll mdl-color--primary")
         //spacer
