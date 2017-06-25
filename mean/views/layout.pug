@@ -9,12 +9,15 @@ html
         meta(charset="UTF-8")
         //scripts/dependencies
         block scripts
-    body(ng-app="app" ng-controller="main" class="")
+    body(ng-app="app" ng-controller="main" class="mdl-color--grey-100")
         div(class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header")
             //nav/top bar
             block navigation
+            block sidebar
             main(class="mdl-layout__content")
                 //main content
                 block content
                 //footer
                 block footer
+            button(id="fab" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored " onclick="#top")
+                i(class="material-icons") arrow_upward

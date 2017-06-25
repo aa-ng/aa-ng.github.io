@@ -4,11 +4,19 @@ var PageSchema = mongoose.Schema({
     href: {
         type: String,
         lowercase: true,
-        trim: true
+        trim: true,
+        required: true
     },
     name: {
-        type: String
+        type: String,
+        lowercase: true,
+        required: true
     },
+    tabbed: [
+        {
+
+        }
+    ],
     cards: [
         {
 

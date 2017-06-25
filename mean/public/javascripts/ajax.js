@@ -20,7 +20,7 @@ app.controller("main", function($scope, $http){
         params: {url: pathname}
     }).then(function(res){
         //log the request response
-        log("post",JSON.stringify(res));
+        log("post",(res));
         //generate a html view from the response
         generateLayout(res);
         //add scroll animations
@@ -28,7 +28,8 @@ app.controller("main", function($scope, $http){
         //upgrades mdl textfields as they can render incorrectly when dynamically generated
         componentHandler.upgradeElements($('.mdl-textfield').get());
         componentHandler.upgradeElements($('.mdl-button').get());
-        //componentHandler.upgradeElements($('.mdl-textfield').get());
+        componentHandler.upgradeElements($('.toc').get());
+        componentHandler.upgradeElements($('.mdl-layout__drawer'));
     });
 });
 

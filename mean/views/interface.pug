@@ -18,15 +18,22 @@ block navigation
             div(class="mdl-layout-spacer")
             nav(id="localNav" class="mdl-navigation")
 
-    //sidebar
+block sidebar
     div(class="mdl-layout__drawer")
         //title
         span(class="mdl-layout-title")= title
         //nav links
         nav(class="mdl-navigation")
-            a(class="mdl-navigation__link" href="/") Home
-            //a(class="mdl-navigation__link" href="/admin") Admin
-            a(class="mdl-navigation__link" href="/projects") Projects
+        div.col-xs-12
+            a(class="mdl-navigation__link" href="/")
+                p <i class='material-icons mdl-list__item-icon'>home</i> Home
+        //div.col-xs-12
+            a(class="mdl-navigation__link" href="/admin")
+                p <i class='material-icons mdl-list__item-icon'>home</i> Admin
+        div.col-xs-12
+            a(class="mdl-navigation__link" href="/projects")
+                p <i class='material-icons mdl-list__item-icon'>laptop</i> Projects
+
 
 block footer
     footer.mdl-mini-footer

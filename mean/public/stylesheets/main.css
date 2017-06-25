@@ -10,11 +10,6 @@
     margin-bottom: 12px;
 }
 
-.mdl-card[class*=wide]
-{
-    width: 100%;
-}
-
 .welcome-card-wide > .mdl-card__title
 {
     background: url('/images/banner.jpg') center/cover;

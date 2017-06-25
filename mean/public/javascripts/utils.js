@@ -25,6 +25,10 @@ function enableModal(){
     });
 }
 
+$("button#fab").on("click", function() {
+    $("body").scrollTop(0);
+});
+
 //capture tab key press for textarea
 $("div.center").on('keydown', 'textarea', function(e) {
     var keyCode = e.keyCode || e.which;

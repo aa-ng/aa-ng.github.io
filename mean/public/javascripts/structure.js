@@ -4,29 +4,67 @@ function generateLayout(layout)
 {
     var cards = layout.data.cards;
     $("nav#localNav").html(generateNav(cards));
+    var tabs = layout.data.tabbed;
+    if (tabs)
+    {
+        log('tabbed', 'true');
+        for (var i = 0; i < tabs.length; i++)
+        {
+            var active = '';
+            if (i == 0)
+                active = 'is-active';
+            var view = generateTab(tabs[i].name, tabs[i].label, active);
+            $("div.container#content-container").append(view);
+            componentHandler.upgradeDom();
+        }
+    }
     for (var i = 0; i < cards.length; i++)
     {
         var card = cards[i];
         var title = card.title;
         var id = titleToId(title);
+        var cardContainer = $("div.container#content-container");
+        //if card is tabbed place set its container to its tab
+        if (card.tab)
+            cardContainer = $("div#"+card.tab+"Tab");
         //html view of current card
         var view = '';
         //log the current card and json representation
         log("JSON, Card "+i, JSON.stringify(card));
-        //loop through items/documents of card
-        //for (var h = 0; h < card.items.length; h++)
-        {
-            view += '<div class="row">';
-            view+= generateCard(card.title, card.name, card);
-            view += '</div>';
-        }
+
+        view += '<div class="row">';
+        view+= generateCard(card.title, card.name, card);
+        view += '</div>';
+
         //set the title of the card
-        $("h1.title-"+id).html(title);
+        //$("h1.title-"+id).html(title);
         //place the generated view in container
-        //$("div."+id).html(view);
-        $("div.container#content-container").append(view);
+        cardContainer.append(view);
         //log the current card and html representation
         log("HTML, Card "+i, view);
+    }
+    patchDynamicTabs();
+}
+
+function generateTab(name, label, active)
+{
+    var view = '<div class="mdl-layout__tab-panel container '+active+'" id="'+name+'Tab"></div>';
+    return view;
+}
+
+/*
+* Function correctly upgrades MDL tabs that are dynamically generated
+* is-active class should be correctly removed when selecting tabs
+* https://github.com/react-mdl/react-mdl/issues/66
+ */
+function patchDynamicTabs()
+{
+    var tabs = document.querySelectorAll('.mdl-layout__tab');
+    var panels = document.querySelectorAll('.mdl-layout__tab-panel');
+    var layout = document.querySelector('.mdl-js-layout');
+    var tabbar = document.querySelector('.mdl-layout__tab-bar');
+    for (var i = 0; i < tabs.length; i++) {
+        new MaterialLayoutTab(tabs[i], tabs, panels, layout.MaterialLayout);
     }
 }
 
@@ -35,15 +73,15 @@ function generateLayout(layout)
 * https://getmdl.io/
  */
 function generateCard(title, name, card){
-    view = '<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--6dp" id="'+name+'">';
+    view = '<section class="section--center mdl-grid mdl-grid--no-spacing '+card.shadow+' '+card.backgroundColor+'" id="'+name+'">';
+    //if card has images images display them in header (Image Currently static in css)
     if (card.images)
-    {
-        view += '<header class="section__play-btn mdl-cell mdl-cell--3-col-desktop mdl-cell--2-col-tablet mdl-cell--4-col-phone '+card.color+' mdl-color-text--white"></header><div id="' + name + '" class="' + name + '-card-wide mdl-card mdl-cell mdl-cell--9-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone">';
-    }
+        view += '<header class="section__play-btn mdl-cell mdl-cell--3-col-desktop mdl-cell--2-col-tablet mdl-cell--4-col-phone '+card.color+' mdl-color-text--white"></header><div id="' + name + '" class="' + name + '-card-wide mdl-card mdl-cell mdl-cell--9-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone '+card.backgroundColor+'">';
     else
-        view += '<div class="'+name+'-card-wide mdl-card mdl-cell mdl-cell--12-col-desktop mdl-cell--12-col-tablet mdl-cell--12-col-phone">';
+        view += '<div class="'+name+'-card-wide mdl-card mdl-cell mdl-cell--12-col-desktop mdl-cell--12-col-tablet mdl-cell--12-col-phone '+card.backgroundColor+'">';
     view += '<div class="mdl-card__title"><h2 class="mdl-card__title-text">'+title+'</h2></div>';
-        //hard coded to 1st item for now as I only want one document per card
+
+    //generate card items
     for (var i = 0; i < card.items.length; i++)
     {
         switch (card.items[i])
@@ -54,8 +92,8 @@ function generateCard(title, name, card){
             case "projects":
                 view += generateProjects(card.projects);
                 break;
-            case "articles":
-                view += generateArticles(card.articles);
+            case "article":
+                view += generateArticles(card.article);
                 break;
             case "forum":
                 view+=generateForm(card.forum);
@@ -67,15 +105,11 @@ function generateCard(title, name, card){
                 view+=generateEdit(card.edit);
                 break;
             default:
-                view += "<h1>Error cannot create card type!</h1>"
+                view += "<h1>Error cannot create card type!</h1>";
                 break;
         }
     }
-    if (card.images)
-    {
-        //for (var i = 0; i < card.images.length; i++)
-            //view+=generateImage(card.images[i].src, card.images[i].width, card.images[i].align);
-    }
+    //card actions
     view += '<div class="mdl-card__actions mdl-card--border"><a class="mdl-button mdl-button--colored mdl-js67859tyruie-button mdl-js-ripple-effect">Last updated on: '+new Date(card.updated).toString()+'</a></div>';
     return view+"</div></section>";
 }
@@ -83,7 +117,7 @@ function generateCard(title, name, card){
 function generateList(list, width, linked)
 {
     //html view
-    var view = "<div class='"+width+"'><ul class='material-list mdl-list'>";
+    var view = "<div class='"+width+"'><ul class='material-list mdl-list toc'>";
     //add each element of the list to the view
     for (var i = 0; i < list.length; i++)
     {
@@ -157,7 +191,7 @@ function generateProject(project)
 {
     //html view
     var view = "<h4 class='mdl-list__item'>"+project.title+"</h4>";
-    for (var i = 0; i < project.projects.length; i++)
+    //for (var i = 0; i < project.list.length; i++)
     {
         //ensures project type is correct
         if (project.type != "group")
@@ -166,7 +200,7 @@ function generateProject(project)
         //view += "<a data-toggle='collapse' class='collapsed' aria-expanded='false'>";
     }
     //generate list with links
-    view += generateList(project.projects, project.width, true);
+    view += generateList(project.list, project.width, true);
     //return the view
     return view;
 }
@@ -191,10 +225,12 @@ function generateArticles(articles)
  */
 function generateArticle(article)
 {
-    var view = "<div class='center'><h3>"+article.title+"</h3>";
+    var view = "<h4>"+article.title+"</h4>";
     for (var i = 0; i < article.paragraphs.length; i++)
         view += "<p>"+article.paragraphs[i];+"</p>";
-    return view+"</div>";
+    if (article.list)
+        view += generateList(article.list, 'col-xs-12', true);
+    return view;
 }
 
 function generateSocial(social)
