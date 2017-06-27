@@ -76,7 +76,7 @@ function generateCard(title, name, card){
     view = '<section class="section--center mdl-grid mdl-grid--no-spacing '+card.shadow+' '+card.backgroundColor+'" id="'+name+'">';
     //if card has images images display them in header (Image Currently static in css)
     if (card.images)
-        view += '<header class="section__play-btn mdl-cell mdl-cell--3-col-desktop mdl-cell--2-col-tablet mdl-cell--4-col-phone '+card.color+' mdl-color-text--white"></header><div id="' + name + '" class="' + name + '-card-wide mdl-card mdl-cell mdl-cell--9-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone '+card.backgroundColor+'">';
+        view += '<header class="section__play-btn mdl-cell mdl-cell--3-col-desktop mdl-cell--2-col-tablet mdl-cell--4-col-phone '+card.color+' '+name+' mdl-color-text--white"></header><div id="' + name + '" class="' + name + '-card-wide mdl-card mdl-cell mdl-cell--9-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone '+card.backgroundColor+'">';
     else
         view += '<div class="'+name+'-card-wide mdl-card mdl-cell mdl-cell--12-col-desktop mdl-cell--12-col-tablet mdl-cell--12-col-phone '+card.backgroundColor+'">';
     view += '<div class="mdl-card__title"><h2 class="mdl-card__title-text">'+title+'</h2></div>';
@@ -110,7 +110,7 @@ function generateCard(title, name, card){
         }
     }
     //card actions
-    view += '<div class="mdl-card__actions mdl-card--border"><a class="mdl-button mdl-button--colored mdl-js67859tyruie-button mdl-js-ripple-effect">Last updated on: '+new Date(card.updated).toString()+'</a></div>';
+    view += '<div class="mdl-card__actions mdl-card--border"><a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">Last updated on: '+new Date(card.updated).toUTCString()+'</a></div>';
     return view+"</div></section>";
 }
 
@@ -275,7 +275,7 @@ function generateForm(form)
     {
         view +='<div class="col-xs-12">'+generateInput(form.fields[i], form.fields[i], form.fields[i])+'</div>';
     }
-    return view+'<button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Submit</button></form></div>';
+    return view+'<button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent mdl-color-text--white">Submit</button></form></div>';
 }
 
 function generateInput(name, label, id)
@@ -301,7 +301,7 @@ function generateEdit(edit)
             log('card', list[i]);
                 view += '<div class="row"><div class="col-xs-6 center">'+generateModal(list[i].name, list[i].name, list[i])+'</div></div>';
         }
-        view+='<div class="col-xs-6"><p>Create new page- new</p></div><div class="row"><div class="col-xs-6 center">'+generateModal("New", "New", new Object())+'</div></div>';
+        view+='<div class="col-xs-6"><p>Create new page- new</p></div><div class="row"><div class="col-xs-6 center">'+generateModal("New", "New", {href:"", name:"", cards:[], tabbed:[]})+'</div></div>';
         //log(view);
         enableModal();
         return view + '</div></div>';
@@ -316,7 +316,7 @@ function generateImage(src, width, center)
 
 function generateModal(name, label, object)
 {
-    var view = '<button type="modalButton" name="'+name+'" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Edit '+label+'</button>';
+    var view = '<button type="modalButton" name="'+name+'" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent mdl-color-text--white">Edit '+label+'</button>';
     view+='<div id="'+ name+'" class="container" type="modal">'
             +'<div type="modalHeader">'
                 +'<span type="modalClose" class="'+name+'">&times;</span>'
@@ -324,7 +324,7 @@ function generateModal(name, label, object)
             +'</div>'
             +'<div class="modalForm"><input type="hidden" name="_method" value="put"/>'
             +'<div class="center"><div class="row"><textarea name="'+name+'" cols="50", rows="20">'+JSON.stringify(object, null, "\t")+'</textarea></div>'
-            +'<button onclick="updatePage(`'+name+'`)" type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Submit</button></div></div>'
+            +'<button onclick="updatePage(`'+name+'`)" type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent mdl-color-text--white">Submit</button></div></div>'
         + '</div>';
     return view;
 }

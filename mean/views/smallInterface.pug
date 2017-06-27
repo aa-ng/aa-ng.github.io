@@ -1,0 +1,119 @@
+extends smallLayout
+
+block navigation
+    //The drawer is always open in large screens. The header is always shown, even in small screens.
+    header(class="mdl-layout__header mdl-layout__header--waterfall mdl-shadow--6dp mdl-color--primary")
+        //always visible row
+        div(class="mdl-layout__header-row")
+            h3
+                a(id="site-link" href="http://alex-ng.com") Alex
+            div(class="mdl-layout-spacer")
+            div(class="mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label mdl-textfield--align-right")
+                label(class="mdl-button mdl-js-button mdl-button--icon" for="fixed-header-drawer-exp")
+                    i(class="material-icons") search
+                div(class="mdl-textfield__expandable-holder")
+                    input(class="mdl-textfield__input" type="text" name="sample" id="fixed-header-drawer-exp")
+        //collapsible row
+        div(class="mdl-layout__header-row")
+            div(class="mdl-layout-spacer")
+            nav(id="localNav" class="mdl-navigation")
+                block sidebar
+
+block sidebar
+    div(class="mdl-layout__drawer")
+        //title
+        span(class="mdl-layout-title")= title
+        //nav links
+        nav(class="mdl-navigation")
+        div.col-xs-12
+            a(class="mdl-navigation__link" href="/")
+                p <i class='material-icons mdl-list__item-icon'>home</i> Home
+        //div.col-xs-12
+            a(class="mdl-navigation__link" href="/admin")
+                p <i class='material-icons mdl-list__item-icon'>lock</i> Admin
+        div.col-xs-12
+            a(class="mdl-navigation__link" href="/projects")
+                p <i class='material-icons mdl-list__item-icon'>laptop</i> Projects
+        div.col-xs-12
+            a(class="mdl-navigation__link" href="http://resume.alex-ng.com")
+                p <i class='material-icons mdl-list__item-icon'>assignment</i> Resume
+
+
+block footer
+    footer.mdl-mini-footer
+        div.mdl-mini-footer__left-section
+            div.mdl-logo Copyright &copy; Alex Ng 2017
+            ul.mdl-mini-footer__link-list
+                li
+                    p.footer Icon's By <a class='footer' href="http://www.flaticon.com/authors/pixel-buddha">Pixel Budda</a> & <a class='footer' href="http://www.flaticon.com/authors/madebyoliver">MadeByOliver</a> from <a class="footer" href="http://www.flaticon.com">FlatIcon.com</a>
+
+block scripts
+    // Bootstrap
+    link(href="/css/bootstrap.css" rel="stylesheet" type="text/css")
+    // JQuery
+    script(src="/js/jquery.min.js")
+    script(src="/js/bootstrap.min.js")
+    // End of bootstrap dependencies
+    // Material design lite
+    link(href="/material/material.pink-red.min.css" rel="stylesheet", type="text/css")
+    script(src="/material/material.min.js")
+    //material design icons
+    link(href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet")
+    // End of material design lite dependencies
+    // AngularJS
+    script(src="/js/angular.js")
+    // End of AngularJS
+    //link(href="/stylesheets/style.css" rel="stylesheet" type="text/css")
+    link(href="stylesheets/main.css" rel="stylesheet" type="text/css")
+    script(src="/javascripts/animations.js")
+    script(src="/javascripts/ajax.js")
+    script(src="/javascripts/structure.js")
+    script(src="/javascripts/utils.js")
+
+    //apple device icons
+    link(rel="apple-touch-icon" href="/apple-touch-icon.social")
+    link(rel="apple-touch-icon" href="touch-icon-iphone.social")
+    link(rel="apple-touch-icon" sizes="152x152" href="touch-icon-ipad.social")
+    link(rel="apple-touch-icon" sizes="180x180" href="touch-icon-iphone-retina.social")
+    link(rel="apple-touch-icon" sizes="167x167" href="touch-icon-ipad-retina.social")
+
+    //favicons
+    link(rel="shortcut icon" href="/favicon.ico")
+    //base favicon
+    link(rel="icon" sizes="16x16 32x32 64x64" href="/favicon.ico")
+    //favicon in multiple scales/sizes
+    link(rel="icon" type="image/social" sizes="196x196" href="/favicon-192.social")
+    link(rel="icon" type="image/social" sizes="160x160" href="/favicon-160.social")
+    link(rel="icon" type="image/social" sizes="96x96" href="/favicon-96.social")
+    link(rel="icon" type="image/social" sizes="64x64" href="/favicon-64.social")
+    link(rel="icon" type="image/social" sizes="32x32" href="/favicon-32.social")
+    link(rel="icon" type="image/social" sizes="16x16" href="/favicon-16.social")
+    //apple touch for IOS and MacBook Pro touchbar
+    link(rel="apple-touch-icon" href="/favicon-57.social")
+    link(rel="apple-touch-icon" sizes="114x114" href="/favicon-114.social")
+    link(rel="apple-touch-icon" sizes="72x72" href="/favicon-72.social")
+    link(rel="apple-touch-icon" sizes="144x144" href="/favicon-144.social")
+    link(rel="apple-touch-icon" sizes="60x60" href="/favicon-60.social")
+    link(rel="apple-touch-icon" sizes="120x120" href="/favicon-120.social")
+    link(rel="apple-touch-icon" sizes="76x76" href="/favicon-76.social")
+    link(rel="apple-touch-icon" sizes="152x152" href="/favicon-152.social")
+    link(rel="apple-touch-icon" sizes="180x180" href="/favicon-180.social")
+    meta(name="msapplication-TileColor" content="#FB651D")
+    meta(name="msapplication-TileImage" content="/favicon-144.social")
+    meta(name="msapplication-config" content="/browserconfig.xml")
+
+    //Add to homescreen for Chrome on Android
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" sizes="192x192" href="images/android-desktop.png">
+
+    //Add to homescreen for Safari on iOS
+    meta(name="apple-mobile-web-app-capable" content="yes")
+    meta(name="apple-mobile-web-app-status-bar-style" content="red")
+    meta(name="apple-mobile-web-app-title" content="Material Design Lite")
+    link(rel="apple-touch-icon-precomposed" href="apple-touch-icon.png")
+
+    //Tile icon for Win8 (144x144 + tile color)
+    meta(name="msapplication-TileImage" content="/favicon-144.png")
+    meta(name="msapplication-TileColor" content="#E63462")
+
+    link(rel="shortcut icon" href="images/favicon.png")

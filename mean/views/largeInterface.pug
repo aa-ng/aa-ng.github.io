@@ -1,8 +1,8 @@
-extends layout.pug
+extends largeLayout
 
 block navigation
     //The drawer is always open in large screens. The header is always shown, even in small screens.
-    header(class="mdl-layout__header mdl-layout__header--waterfall mdl-shadow--6dp mdl-color--pink-500")
+    header(class="mdl-layout__header mdl-layout__header--waterfall mdl-shadow--6dp mdl-color--primary")
         //always visible row
         div(class="mdl-layout__header-row")
             h3
@@ -17,6 +17,7 @@ block navigation
         div(class="mdl-layout__header-row")
             div(class="mdl-layout-spacer")
             nav(id="localNav" class="mdl-navigation")
+                block sidebar
 
 block sidebar
     div(class="mdl-layout__drawer")
@@ -29,10 +30,13 @@ block sidebar
                 p <i class='material-icons mdl-list__item-icon'>home</i> Home
         //div.col-xs-12
             a(class="mdl-navigation__link" href="/admin")
-                p <i class='material-icons mdl-list__item-icon'>home</i> Admin
+                p <i class='material-icons mdl-list__item-icon'>lock</i> Admin
         div.col-xs-12
             a(class="mdl-navigation__link" href="/projects")
                 p <i class='material-icons mdl-list__item-icon'>laptop</i> Projects
+        div.col-xs-12
+            a(class="mdl-navigation__link" href="http://resume.alex-ng.com")
+                p <i class='material-icons mdl-list__item-icon'>assignment</i> Resume
 
 
 block footer
@@ -51,7 +55,7 @@ block scripts
     script(src="/js/bootstrap.min.js")
     // End of bootstrap dependencies
     // Material design lite
-    link(href="/material/material.red-pink.min.css" rel="stylesheet", type="text/css")
+    link(href="/material/material.pink-red.min.css" rel="stylesheet", type="text/css")
     script(src="/material/material.min.js")
     //material design icons
     link(href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet")
@@ -112,4 +116,4 @@ block scripts
     meta(name="msapplication-TileImage" content="/favicon-144.png")
     meta(name="msapplication-TileColor" content="#E63462")
 
-    <link rel="shortcut icon" href="images/favicon.png">
+    link(rel="shortcut icon" href="images/favicon.png")

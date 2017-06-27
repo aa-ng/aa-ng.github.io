@@ -19,7 +19,8 @@
 
 section#welcome > header { background: url('/images/logo.png') center/80% no-repeat; }
 section#about > header { background: url('/images/profile_pic_round.png') center/80% no-repeat; back}
-section#overview > header { background: url('/images/projects/icons/analytics-2.png') center/80% no-repeat; }
+section#overview > header.overview { background: url('/images/projects/icons/analytics-2.png') center/80% no-repeat; }
+section#ignite > header.ignite { background: url('/images/amber_logo.png') center/60% no-repeat; }
 .container#webdev section > header { background: url('/images/projects/icons/analytics-1.png') center/80% no-repeat; }
 .container#games section > header { background: url('/images/projects/icons/analytics-7.png') center/80% no-repeat; }
 

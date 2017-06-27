@@ -10,7 +10,7 @@ html
         //scripts/dependencies
         block scripts
     body(ng-app="app" ng-controller="main" class="mdl-color--grey-100")
-        div(class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header")
+        div(class="mdl-layout mdl-js-layout mdl-layout--fixed-header")
             //nav/top bar
             block navigation
             block sidebar
@@ -19,5 +19,5 @@ html
                 block content
                 //footer
                 block footer
-            button(id="fab" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored " onclick="#top")
+            button(id="fab" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored .mdl-color-text--white" onclick="#top")
                 i(class="material-icons") arrow_upward

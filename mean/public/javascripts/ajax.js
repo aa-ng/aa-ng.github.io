@@ -28,8 +28,8 @@ app.controller("main", function($scope, $http){
         //upgrades mdl textfields as they can render incorrectly when dynamically generated
         componentHandler.upgradeElements($('.mdl-textfield').get());
         componentHandler.upgradeElements($('.mdl-button').get());
-        componentHandler.upgradeElements($('.toc').get());
         componentHandler.upgradeElements($('.mdl-layout__drawer'));
+        componentHandler.upgradeDom();
     });
 });
 
