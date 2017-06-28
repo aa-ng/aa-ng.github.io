@@ -1,0 +1,43 @@
+extends ../largeInterface
+
+block content
+    div.row
+    section(class="section--center mdl-grid mdl-grid--no-spacing")
+        //header(class="section__play-btn mdl-cell mdl-cell--3-col-desktop mdl-cell--2-col-tablet mdl-cell--4-col-phone mdl-color--teal-100 mdl-color-text--white")
+        div(class="mdl-layout-spacer")
+        div(class="mdl-card mdl-cell mdl-cell--8-col mdl-shadow--4dp")
+            form(id="note" onsubmit="" class="mdl-typography--text-center")
+                div(class="mdl-card__supporting-text mdl-cell--12-col")
+                    div(class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-cell mdl-cell--9-col")
+                        input(class="mdl-textfield__input" type="text" id="title")
+                        label(class="mdl-textfield__label" for="title") Title
+                    div(class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-cell mdl-cell--9-col")
+                        textarea(class="mdl-textfield__input" type="text" rows= "6" id="body")
+                        label(class="mdl-textfield__label" for="body") Write a note...
+                div(class="mdl-card__actions mdl-card--border")
+                    button(class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color--accent mdl-color-text--white") done
+
+        div(class="mdl-layout-spacer")
+
+block scripts
+    // Bootstrap
+    link(href="/css/bootstrap.css" rel="stylesheet" type="text/css")
+    // JQuery
+    script(src="/js/jquery.min.js")
+    script(src="/js/bootstrap.min.js")
+    // End of bootstrap dependencies
+    // Material design lite
+    link(href="/material/material.pink-indigo.min.css" rel="stylesheet", type="text/css")
+    script(src="/material/material.min.js")
+    //material design icons
+    link(href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet")
+    // End of material design lite dependencies
+    // AngularJS
+    script(src="/js/angular.js")
+    link(href="/stylesheets/main.css" rel="stylesheet" type="text/css")
+    script(src="/javascripts/projects/notes/ajax.js")
+    script(src="/javascripts/utils.js")
+    script(src="/javascripts/projects/notes/note.js")
+    script(src="/javascripts/projects/notes/storage.js")
+
+

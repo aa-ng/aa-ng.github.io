@@ -1,3 +1,11 @@
+/*
+Target tab bar selected highlight
+ */
+.mdl-layout.is-upgraded .mdl-layout__tab.is-active::after
+{
+    height: 3px;
+}
+
 .material-list
 {
 
@@ -20,7 +28,8 @@
 section#welcome > header { background: url('/images/logo.png') center/80% no-repeat; }
 section#about > header { background: url('/images/profile_pic_round.png') center/80% no-repeat; back}
 section#overview > header.overview { background: url('/images/projects/icons/analytics-2.png') center/80% no-repeat; }
-section#ignite > header.ignite { background: url('/images/amber_logo.png') center/60% no-repeat; }
+section#ignite > header.ignite { background: url('/images/amber_logo.png') center/70% no-repeat; }
+section#mazeproject > header.mazeproject { background: url('/images/projects/icons/puzzle.png') center/60% no-repeat; }
 .container#webdev section > header { background: url('/images/projects/icons/analytics-1.png') center/80% no-repeat; }
 .container#games section > header { background: url('/images/projects/icons/analytics-7.png') center/80% no-repeat; }
 
@@ -85,7 +94,7 @@ div[type=modalHeader]
     display: block;
     position: relative;
     padding: 20px;
-    background-color: #FB651D;
+    background-color: #3f51b5;
     max-height: none;
     height: auto;
     color: white;
@@ -130,6 +139,11 @@ span[type=modalClose]:focus {
 header.nav
 {
     background-color: #E63462;
+}
+
+header.mdl-layout__header.mdl-layout__header--waterfall.mdl-shadow--8dp.mdl-color--primary
+{
+    margin-bottom: 15px;
 }
 
 .nav

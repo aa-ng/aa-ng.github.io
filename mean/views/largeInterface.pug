@@ -2,11 +2,11 @@ extends largeLayout
 
 block navigation
     //The drawer is always open in large screens. The header is always shown, even in small screens.
-    header(class="mdl-layout__header mdl-layout__header--waterfall mdl-shadow--6dp mdl-color--primary")
+    header(class="mdl-layout__header mdl-layout__header--waterfall mdl-shadow--8dp mdl-color--primary")
         //always visible row
         div(class="mdl-layout__header-row")
             h3
-                a(id="site-link" href="http://alex-ng.com") Alex
+                a(id="site-link" href="http://alex-ng.com" class="mdl-color-text--white") Alex
             div(class="mdl-layout-spacer")
             div(class="mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label mdl-textfield--align-right")
                 label(class="mdl-button mdl-js-button mdl-button--icon" for="fixed-header-drawer-exp")
@@ -45,7 +45,7 @@ block footer
             div.mdl-logo Copyright &copy; Alex Ng 2017
             ul.mdl-mini-footer__link-list
                 li
-                    p.footer Icon's By <a class='footer' href="http://www.flaticon.com/authors/pixel-buddha">Pixel Budda</a> & <a class='footer' href="http://www.flaticon.com/authors/madebyoliver">MadeByOliver</a> from <a class="footer" href="http://www.flaticon.com">FlatIcon.com</a>
+                    p.footer Icon's By <a class='footer' href="http://www.flaticon.com/authors/pixel-buddha">Pixel Budda</a>, <a class='footer' href="http://www.flaticon.com/authors/madebyoliver">MadeByOliver</a>, and <a class='footer' href="http://www.flaticon.com/authors/freepik">Freepik</a> from <a class="footer" href="http://www.flaticon.com">FlatIcon.com</a>
 
 block scripts
     // Bootstrap
@@ -55,7 +55,7 @@ block scripts
     script(src="/js/bootstrap.min.js")
     // End of bootstrap dependencies
     // Material design lite
-    link(href="/material/material.pink-red.min.css" rel="stylesheet", type="text/css")
+    link(href="/material/material.pink-indigo.min.css" rel="stylesheet", type="text/css")
     script(src="/material/material.min.js")
     //material design icons
     link(href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet")
@@ -64,12 +64,13 @@ block scripts
     script(src="/js/angular.js")
     // End of AngularJS
     //link(href="/stylesheets/style.css" rel="stylesheet" type="text/css")
-    link(href="stylesheets/main.css" rel="stylesheet" type="text/css")
+    link(href="/stylesheets/main.css" rel="stylesheet" type="text/css")
     script(src="/javascripts/animations.js")
     script(src="/javascripts/ajax.js")
     script(src="/javascripts/structure.js")
     script(src="/javascripts/utils.js")
 
+block favicons
     //apple device icons
     link(rel="apple-touch-icon" href="/apple-touch-icon.social")
     link(rel="apple-touch-icon" href="touch-icon-iphone.social")

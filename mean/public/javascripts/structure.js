@@ -110,7 +110,7 @@ function generateCard(title, name, card){
         }
     }
     //card actions
-    view += '<div class="mdl-card__actions mdl-card--border"><a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">Last updated on: '+new Date(card.updated).toUTCString()+'</a></div>';
+    view += '<div class="mdl-card__actions mdl-card--border"><a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-color-text--primary">Last updated on: '+new Date(card.updated).toUTCString()+'</a></div>';
     return view+"</div></section>";
 }
 
@@ -146,7 +146,7 @@ function generateListItem(title, icon, link)
         if (!link)
             view += title;
         else
-            view +="<div class='col-xs-12'><a href='"+link+"'>"+title+"</a></div>";
+            view +="<div class='col-xs-12'><a class='mdl-color-text--accent' href='"+link+"'>"+title+"</a></div>";
 
     return view+"</li>";
 }

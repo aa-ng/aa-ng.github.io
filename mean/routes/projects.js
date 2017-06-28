@@ -16,5 +16,12 @@ router.get('/cps630', function (req, res, next) {
     });
 });
 
+router.get('/cps630/lab4', function (req, res, next) {
+    res.render('projects/notes', {
+        title: 'Note taking project',
+        message: 'Course completed'
+    });
+});
+
 
 module.exports = router;

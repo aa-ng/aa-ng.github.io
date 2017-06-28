@@ -1,0 +1,156 @@
+{
+	"_id": "59448ef0cb0bbaa4a3c5570d",
+	"href": "/",
+	"name": "Home",
+	"cards": [
+		{
+			"list": {
+				"width": "col-xs-12 col-sm-12",
+				"bullets": [
+					"Web developer",
+					"Software developer",
+					"Digital media Enthusiast"
+				]
+			},
+			"items": [
+				"list"
+			],
+			"images": [
+				{
+					"src": "/images/logo_lrg.jpeg",
+					"width": "col-xs-12",
+					"align": "center"
+				}
+			],
+			"color": "mdl-color--pink-400",
+			"backgroundColor": "mdl-color--white",
+			"align": "center",
+			"name": "welcome",
+			"title": "Welcome, I'm Alex",
+			"shadow": "mdl-shadow--4dp",
+			"updated": 1497733782844
+		},
+		{
+			"projects": [
+				{
+					"width": "col-xs-12",
+					"list": [
+						{
+							"link": "projects/cps630",
+							"title": "cps630 - Web applications",
+							"type": "linked"
+						},
+						{
+							"link": "projects/cps530",
+							"title": "cps530 - Web development",
+							"type": "linked"
+						}
+					],
+					"title": "Web development",
+					"type": "group"
+				},
+				{
+					"list": [
+						{
+							"github": "https://github.com/Cynicalbird/mazeproject",
+							"link": "projects/random-maze-generation",
+							"title": "Random maze generation",
+							"type": "linked"
+						}
+					],
+					"title": "Random maze generation",
+					"type": "group"
+				},
+				{
+					"list": [
+						{
+							"github": "https://github.com/Transleep/HTV-Bus-Stop-Reminder",
+							"link": "projects/transleep",
+							"title": "TranSleep",
+							"type": "linked"
+						}
+					],
+					"title": "Android",
+					"type": "group"
+				}
+			],
+			"items": [
+				"projects"
+			],
+			"backgroundColor": "mdl-color--white",
+			"align": "left",
+			"name": "projects",
+			"title": "Projects",
+			"shadow": "mdl-shadow--4dp",
+			"updated": 1497733782844
+		},
+		{
+			"article": [
+				{
+					"paragraphs": [
+						"Currently studying in their 2nd year of Computer Science at Ryerson University, Alex Ng is interested in Computer graphics and vision. Alex has hosted and deployed various internet services and web servers while practicing Front-end web development. Alex is currently working on side projects to strengthen their software development portfolio."
+					],
+					"title": "About me"
+				}
+			],
+			"items": [
+				"article"
+			],
+			"images": [
+				{
+					"src": "/images/profile_pic.jpg",
+					"width": "col-xs-12 col-sm-3",
+					"align": "center"
+				}
+			],
+			"color": "mdl-color--pink-400",
+			"backgroundColor": "mdl-color--white",
+			"align": "left",
+			"name": "about",
+			"title": "About",
+			"shadow": "mdl-shadow--4dp",
+			"updated": 1497733782844
+		},
+		{
+			"forum": {
+				"fields": [
+					"name",
+					"title",
+					"message",
+					"email"
+				],
+				"action": "/",
+				"method": "post"
+			},
+			"social": {
+				"linkedin": {
+					"icon": "/images/social/linkedin.png",
+					"src": "https://ca.linkedin.com/in/alex-ng-130039134"
+				},
+				"twitter": {
+					"icon": "/images/social/twitter.png",
+					"src": "http://www.twitter.com/5d8310faf5d34ff"
+				},
+				"github": {
+					"icon": "/images/social/github.png",
+					"src": "https://github.com/CynicalBird"
+				},
+				"facebook": {
+					"icon": "/images/social/facebook.png",
+					"src": "http://www.facebook.com/username1862"
+				}
+			},
+			"items": [
+				"forum",
+				"social"
+			],
+			"backgroundColor": "mdl-color--white",
+			"align": "left",
+			"name": "contact",
+			"title": "Contact",
+			"shadow": "mdl-shadow--4dp",
+			"updated": 1497733782844
+		}
+	],
+	"tabbed": []
+}

@@ -1,0 +1,25 @@
+{
+	"_id": "59448f83cb0bbaa4a3c5570e",
+	"href": "/admin",
+	"name": "Admin",
+	"cards": [
+		{
+			"edit": {
+				"actions": [
+					"update",
+					"create"
+				],
+				"admin": true
+			},
+			"items": [
+				"edit"
+			],
+			"align": "left",
+			"title": "Edit pages",
+			"name": "Edit",
+			"shadow": "mdl-shadow--4dp",
+			"updated": 1497733782844
+		}
+	],
+	"tabbed": []
+}

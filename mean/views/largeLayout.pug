@@ -9,6 +9,7 @@ html
         meta(charset="UTF-8")
         //scripts/dependencies
         block scripts
+        block favicons
     body(ng-app="app" ng-controller="main" class="mdl-color--grey-100")
         div(class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header")
             //nav/top bar
@@ -19,5 +20,5 @@ html
                 block content
                 //footer
                 block footer
-            button(id="fab" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored .mdl-color-text--white" onclick="#top")
+            button(id="fab" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-shadow--4dp mdl-color-text--white mdl-color--accent-dark")
                 i(class="material-icons") arrow_upward

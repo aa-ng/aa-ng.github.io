@@ -1,0 +1,243 @@
+{
+  "_id": "5947240ac64049f7f4993622",
+  "href": "/projects",
+  "name": "Projects",
+  "__v": 0,
+  "cards": [
+    {
+      "article": [
+        {
+          "paragraphs": [
+            "Welcome to my projects overview, clicking any of the tabs above will take you to a more detailed look at the projects grouped by field."
+          ],
+          "title": "Overview"
+        }
+      ],
+      "items": [
+        "article"
+      ],
+      "images": [
+        {
+          "src": "/images/projects/icons/analytics-2.png",
+          "width": "col-xs-12",
+          "align": "center"
+        }
+      ],
+      "color": "mdl-color--pink-500",
+      "backgroundColor": "mdl-color--white",
+      "align": "left",
+      "title": "Projects",
+      "name": "overview",
+      "tab": "overview",
+      "shadow": "mdl-shadow--4dp",
+      "updated": 1497733782844
+    },
+    {
+      "article": [
+        {
+          "paragraphs": [
+            "Operation ignition is a online web base real time multiplayer, RPG game. Ignite is played from a 2D top down camera, with dynamically generated terrain. (WIP) Our game encourages teamwork with 9 unique classes, guilds, and party system."
+          ],
+          "title": "Summary"
+        },
+        {
+          "paragraphs": [
+            "NodeJS, MongoDB, PhaserJS, Socket.IO, Travis CI, AWS, JQuery, Bootstrap, Git and, Github"
+          ],
+          "title": "Technology specifications"
+        },
+        {
+          "paragraphs": [],
+          "list": [
+            {
+              "github": "https://github.com/Amber-labs/operation-ignition",
+              "link": "projects/ignite",
+              "title": "More on Ignite",
+              "type": "github"
+            }
+          ],
+          "title": "Links"
+        }
+      ],
+      "items": [
+        "article"
+      ],
+      "images": [
+        {
+          "src": "/images/amber_logo.png",
+          "width": "col-xs-12",
+          "align": "center"
+        }
+      ],
+      "color": "mdl-color--pink-500",
+      "backgroundColor": "mdl-color--white",
+      "align": "left",
+      "title": "Project Ignite",
+      "name": "ignite",
+      "tab": "overview",
+      "shadow": "mdl-shadow--4dp",
+      "updated": 1497733782844
+    },
+    {
+      "article": [
+        {
+          "paragraphs": [
+            "My grade 12 Computer Science project featuring perfect maze random generation and a simple recursive backtracker solution. This project was written in Java using the growing tree algorithm. It also features many Object oriented programming techniques like inheritance and polymorphism."
+          ],
+          "title": "Summary"
+        },
+        {
+          "paragraphs": [],
+          "list": [
+            {
+              "github": "https://github.com/CynicalBird/mazeproject",
+              "link": "projects/mazeproject",
+              "title": "More on my maze project",
+              "type": "github"
+            },
+            {
+              "link":"http://www.astrolog.org/labyrnth/algrithm.htm",
+              "title":"Perfect mazes and algorithms",
+              "type":"link"
+
+            }
+          ],
+          "title": "Links"
+        }
+      ],
+      "items": [
+        "article"
+      ],
+      "images": [
+        {
+          "src": "/images/amber_logo.png",
+          "width": "col-xs-12",
+          "align": "center"
+        }
+      ],
+      "color": "mdl-color--pink-500",
+      "backgroundColor": "mdl-color--white",
+      "align": "left",
+      "title": "Random maze generation",
+      "name": "mazeproject",
+      "tab": "overview",
+      "shadow": "mdl-shadow--4dp",
+      "updated": 1497733782844
+    },
+    {
+      "article": [
+        {
+          "paragraphs": [
+            "Below are some of my projects I've developed related to Web development."
+          ],
+          "list": [
+            {
+              "link": "https://cynicalbird.github.io/cps630/labs/lab4/index.html",
+              "title": "Note taking app",
+              "type": "linked"
+            },
+            {
+              "link": "https://cynicalbird.github.io/cps630/labs/lab2/index.html",
+              "title": "Weather app",
+              "type": "linked"
+            },
+            {
+              "link": "https://cynicalbird.github.io/cps630/labs/lab3/index.html",
+              "title": "Geolocation app",
+              "type": "linked"
+            },
+            {
+              "link": "https://cynicalbird.github.io/cps630/labs/lab1/index.html",
+              "title": "Responsive design app",
+              "type": "linked"
+            }
+          ],
+          "title": "Related projects"
+        },
+        {
+          "paragraphs": [
+            "My note taking app features AJAX calls, AngularJS two-way binding, includes directive, repeat directive and Bootstrap."
+          ],
+          "title": "Note taking project details"
+        },
+        {
+          "paragraphs": [
+            "Here are the courses I've taken related to Web development."
+          ],
+          "list": [
+            {
+              "link": "http://www.ryerson.ca/calendar/2016-2017/courses/computer-science/CPS/630/",
+              "title": "cps630 - Web applications",
+              "type": "linked"
+            },
+            {
+              "link": "http://www.ryerson.ca/calendar/2016-2017/courses/computer-science/CPS/530/",
+              "title": "cps530 - Web applications",
+              "type": "linked"
+            }
+          ],
+          "title": "Courses"
+        }
+      ],
+      "items": [
+        "article"
+      ],
+      "backgroundColor": "mdl-color--grey-100",
+      "align": "left",
+      "title": "Web development",
+      "name": "webdev",
+      "tab": "webdev",
+      "updated": 1497733782844
+    },
+    {
+      "article": [
+        {
+          "paragraphs": []
+        }
+      ],
+      "items": [
+        "article"
+      ],
+      "backgroundColor": "mdl-color--grey-100",
+      "align": "left",
+      "title": "Game development",
+      "name": "gamedev",
+      "tab": "gamedev",
+      "updated": 1497733782844
+    },
+    {
+      "article": [
+        {
+          "paragraphs": []
+        }
+      ],
+      "items": [
+        "article"
+      ],
+      "backgroundColor": "mdl-color--grey-100",
+      "align": "left",
+      "title": "Android",
+      "name": "android",
+      "tab": "android",
+      "updated": 1497733782844
+    }
+  ],
+  "tabbed": [
+    {
+      "name": "overview",
+      "label": "Overview"
+    },
+    {
+      "name": "webdev",
+      "label": "Web development"
+    },
+    {
+      "name": "gamedev",
+      "label": "Game development"
+    },
+    {
+      "name": "android",
+      "label": "Android"
+    }
+  ]
+}
