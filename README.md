@@ -6,7 +6,7 @@
 | /api/pages | returns page data data | creates new page document | updates current page document (entirely) | not in use | not in use |
 
 # API Summary
-My personal website relies on dynamically generated html structure, based on a JSON response from my backend NodeJS server API. This API is built around the [RESTful][rest] structure, with the goal of creating my own simple CMS (Content management system)
+My personal website relies on dynamically generated html structure, based on a JSON response from my backend NodeJS server API. This API is built around the [RESTful][rest] structure, with the goal of creating my own simple CMS. (Content management system) See where I generate the html view [here.][structure]
 
 # API Usage
 * /api/pages
@@ -74,6 +74,7 @@ functionality for PUT requests are of little difference on the front end, aside 
 - http://alex-ng.com
 - https://Cynicalbird.github.io
 
+[structure]: https://github.com/CynicalBird/Cynicalbird.github.io/blob/master/mean/public/javascripts/structure.js
 [projects]: https://github.com/CynicalBird/Cynicalbird.github.io/blob/master/mean/pages/projects.json
 [index]: https://github.com/CynicalBird/Cynicalbird.github.io/blob/master/mean/pages/index.json
 [rest]: http://www.restapitutorial.com/lessons/httpmethods.html
