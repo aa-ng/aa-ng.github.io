@@ -1,6 +1,6 @@
 # My personal website [![Badge]][Travis]
 
-# Endpoint Functionality
+# API Endpoint Functionality
 |  Endpoint  |  GET  |  POST  |  PUT  | PATCH | DELETE |
 | :--------: | :---: | :----: | :---: | :---: | :----: |
 | /api/pages | returns page data data | creates new page document | updates current page document (entirely) | not in use | not in use |
