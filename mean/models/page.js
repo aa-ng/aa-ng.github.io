@@ -56,7 +56,7 @@ module.exports.updatePage = function(data, callback) {
         var query = {_id: page._id};
         console.log("Query: "+JSON.stringify(query));
         Page.findOneAndUpdate(query, page, {upsert:true}, function(err, doc){
-            if (err) return res.send(500, { error: err });
+            if (err) console.log(err);
             else
                 callback();
         });
