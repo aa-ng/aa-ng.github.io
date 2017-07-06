@@ -71,7 +71,7 @@ functionality for PUT requests are of little difference on the front end, aside 
 - [projects page][projects]
 
 # Links
-- http://alex-ng.com
+- http://www.alex-ng.com
 - https://Cynicalbird.github.io
 
 [structure]: https://github.com/CynicalBird/Cynicalbird.github.io/blob/master/mean/public/javascripts/structure.js
