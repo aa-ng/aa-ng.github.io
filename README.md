@@ -1,12 +1,14 @@
 # My personal website [![Badge]][Travis]
 
+[![My personal website](http://54.186.41.85:8000/images/preview.png)](http://www.alex-ng.com)
+
+# API Summary
+My personal website relies on dynamically generated html structure, based on a JSON response from my backend NodeJS server API. This API is built around the [RESTful][rest] structure, with the goal of creating my own simple CMS. (Content management system) See where I generate the html view [here.][structure]
+
 # API Endpoint Functionality
 |  Endpoint  |  GET  |  POST  |  PUT  | PATCH | DELETE |
 | :--------: | :---: | :----: | :---: | :---: | :----: |
 | /api/pages | returns page data data | creates new page document | updates current page document (entirely) | not in use | not in use |
-
-# API Summary
-My personal website relies on dynamically generated html structure, based on a JSON response from my backend NodeJS server API. This API is built around the [RESTful][rest] structure, with the goal of creating my own simple CMS. (Content management system) See where I generate the html view [here.][structure]
 
 # API Usage
 * /api/pages

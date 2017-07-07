@@ -143,7 +143,7 @@ header.nav
 
 header.mdl-layout__header.mdl-layout__header--waterfall.mdl-shadow--8dp.mdl-color--primary
 {
-    margin-bottom: 15px;
+    /*margin-bottom: 15px;*/
 }
 
 .nav

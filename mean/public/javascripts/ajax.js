@@ -5,6 +5,15 @@
 * Features: AJAX request for index page data
 */
 
+window.sr = ScrollReveal({
+    reset: false,
+    useDelay: 'always',
+    distance: '100%',
+    viewFactor: 0.2,
+    viewport: window.document.documentElement
+
+});
+
 //initialize angularjs app
 var app = angular.module("app",[]);
 
@@ -23,13 +32,18 @@ app.controller("main", function($scope, $http){
         log("post",(res));
         //generate a html view from the response
         generateLayout(res);
-        //add scroll animations
-        //scrollAnimate();
-        //upgrades mdl textfields as they can render incorrectly when dynamically generated
         componentHandler.upgradeElements($('.mdl-textfield').get());
         componentHandler.upgradeElements($('.mdl-button').get());
         componentHandler.upgradeElements($('.mdl-layout__drawer'));
-        componentHandler.upgradeDom();
+        $(document).ready(function(){
+            //sr.reveal("h2", {duration: 200 });
+            //container: document.getElementById('content-container')
+            //add scroll animations
+            //scrollAnimate();
+            //upgrades mdl textfields as they can render incorrectly when dynamically generated
+            //componentHandler.upgradeDom();
+            //sr.sync();
+        })
     });
 });
 

@@ -24,6 +24,8 @@ app.use('/js', express.static(__dirname + '/node_modules/bootstrap/dist/js'));
 app.use('/js', express.static(__dirname + '/node_modules/jquery/dist'));
 //redirect JS angularjs
 app.use('/js', express.static(__dirname + '/node_modules/angular'));
+//redirect Scroll reveal
+app.use('/js', express.static(__dirname + '/node_modules/scrollreveal/dist'));
 // redirect CSS bootstrap
 app.use('/css', express.static(__dirname + '/node_modules/bootstrap/dist/css'));
 // redirect CSS material design lite

@@ -1,4 +1,3 @@
-
 //generates the layout as an html view
 function generateLayout(layout)
 {
@@ -18,6 +17,7 @@ function generateLayout(layout)
             componentHandler.upgradeDom();
         }
     }
+    var cardNames = [];
     for (var i = 0; i < cards.length; i++)
     {
         var card = cards[i];
@@ -32,7 +32,7 @@ function generateLayout(layout)
         //log the current card and json representation
         log("JSON, Card "+i, JSON.stringify(card));
 
-        view += '<div class="row">';
+        view += '<div class="card-anim">';
         view+= generateCard(card.title, card.name, card);
         view += '</div>';
 
@@ -42,6 +42,7 @@ function generateLayout(layout)
         cardContainer.append(view);
         //log the current card and html representation
         log("HTML, Card "+i, view);
+        cardNames.push(card.name);
     }
     patchDynamicTabs();
 }
@@ -76,7 +77,7 @@ function generateCard(title, name, card){
     view = '<section class="section--center mdl-grid mdl-grid--no-spacing '+card.shadow+' '+card.backgroundColor+'" id="'+name+'">';
     //if card has images images display them in header (Image Currently static in css)
     if (card.images)
-        view += '<header class="section__play-btn mdl-cell mdl-cell--3-col-desktop mdl-cell--2-col-tablet mdl-cell--4-col-phone '+card.color+' '+name+' mdl-color-text--white"></header><div id="' + name + '" class="' + name + '-card-wide mdl-card mdl-cell mdl-cell--9-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone '+card.backgroundColor+'">';
+        view += '<header class="section__play-btn mdl-cell mdl-cell--3-col-desktop mdl-cell--2-col-tablet mdl-cell--4-col-phone '+card.color+' '+name+' mdl-color-text--white"></header><div class="' + name + '-card-wide mdl-card mdl-cell mdl-cell--9-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone '+card.backgroundColor+'">';
     else
         view += '<div class="'+name+'-card-wide mdl-card mdl-cell mdl-cell--12-col-desktop mdl-cell--12-col-tablet mdl-cell--12-col-phone '+card.backgroundColor+'">';
     view += '<div class="mdl-card__title"><h2 class="mdl-card__title-text">'+title+'</h2></div>';
