@@ -12,7 +12,7 @@ var projects = require('./routes/projects');
 var admin = require('./routes/admin');
 
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://cynicalbird:DKg-2MD-SRh-Pwg@ds127428.mlab.com:27428/heroku_m8tfgxv7');
+mongoose.connect(process.env.MONGODB_URI_2);
 var db = mongoose.connection;
 
 
