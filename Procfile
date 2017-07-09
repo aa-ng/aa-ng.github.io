@@ -1,2 +1,1 @@
-cd mean
-web: node bin/www
+web: node mean/bin/www
