@@ -1,0 +1,24 @@
+{
+  "name": "alex",
+  "version": "1.0.0",
+  "description": "[![My personal website](http://54.186.41.85:8000/images/preview.png)](http://www.alex-ng.com)",
+  "main": "app.js",
+  "dependencies": {
+    "scrollreveal": "^3.3.6"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+	"postinstall": "cd mean && npm install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Cynicalbird/Cynicalbird.github.io.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Cynicalbird/Cynicalbird.github.io/issues"
+  },
+  "homepage": "https://github.com/Cynicalbird/Cynicalbird.github.io#readme"
+}
