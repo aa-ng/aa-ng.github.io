@@ -1,1 +1,2 @@
-web: node mean/bin/www
+worker: cd mean
+web: npm start
