@@ -26,7 +26,7 @@
             <v-list-tile-title>Go home</v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
-        <v-card>
+        <v-card class="elevation-0">
           <v-card-text>
             <v-layout row wrap>
               <v-flex xs12 md6>
