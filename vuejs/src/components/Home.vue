@@ -4,15 +4,7 @@
       <v-flex xs12 md10>
         <v-layout column>
           <v-container grid-list-md>
-            <v-layout row wrap>
-              <v-flex
-                v-bind="{ [`sm${card.flex} xs12`]: true }"
-                v-for="card in cards"
-                :key="card"
-              >
-                <alex-presentation-card :card="card"></alex-presentation-card>
-              </v-flex>
-            </v-layout>
+              <alex-presentation-cards :cards="cards"></alex-presentation-cards>
           </v-container>
         </v-layout>
       </v-flex>
@@ -21,7 +13,7 @@
 </template>
 
 <script>
-  import PresentationCard from './cards/PresentationCard.vue'
+  import PresentationCards from './cards/presentationCards/PresentationCards.vue'
   export default {
     props: {
       cards: {
@@ -30,7 +22,7 @@
       }
     },
     components: {
-      'alex-presentation-card': PresentationCard
+      'alex-presentation-cards': PresentationCards
     }
   }
 </script>
