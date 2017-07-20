@@ -1,5 +1,5 @@
 <template>
-  <v-list-tile @click.native.stop="left = !left" router :to="drawerLink.link">
+  <v-list-tile @click.stop="left = !left" :to="drawerLink.link">
     <v-list-tile-action>
       <v-icon>{{ drawerLink.icon }}</v-icon>
     </v-list-tile-action>
