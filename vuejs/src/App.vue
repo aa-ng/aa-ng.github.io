@@ -5,13 +5,24 @@
     :light="!theme.dark"
     standalone
   >
-    <alex-header :primaryDrawer="primaryDrawer"></alex-header>
-    <alex-drawer :primaryDrawer="primaryDrawer" :drawers="drawers" :footer="footer" :theme="theme"></alex-drawer>
+    <alex-header
+      :primaryDrawer="primaryDrawer"
+    ></alex-header>
+    <alex-drawer
+      :primaryDrawer="primaryDrawer"
+      :drawers="drawers"
+      :footer="footer"
+      :theme="theme"
+    ></alex-drawer>
     <main>
-      <router-view :cards="cards"></router-view>
+      <router-view
+        :cards="cards"
+      ></router-view>
     </main>
-    <v-footer :absolute="footer.fixed">
-      <span>© {{ new Date().getFullYear() }}</span>
+    <v-footer
+      :absolute="footer.fixed"
+    >
+      <span>Alex Ng © {{ new Date().getFullYear() }}</span>
     </v-footer>
   </v-app>
 </template>
@@ -37,9 +48,55 @@
         fixed: false
       },
       cards: [
-        { title: "Welcome I'm Alex", src: 'https://alex-ng.herokuapp.com/images/banner.jpg', flex: 12, showDetails: false, details: 'lorem ipsum', description: 'hello world', summary: 'test' },
-        { title: 'Projects', src: 'https://alex-ng.herokuapp.com/images/projects/ignite/preview.png', flex: 6, showDetails: false, details: 'lorem ipsum', description: 'hello world', summary: 'test' },
-        { title: 'About me', src: 'https://alex-ng.herokuapp.com/images/projects/maze-project/mazeproject_code.png', flex: 6, showDetails: false, details: 'lorem ipsum', description: 'hello world', summary: 'test' }
+        {
+          title: "Welcome I'm Alex",
+          src: 'https://alex-ng.herokuapp.com/images/banner.jpg',
+          flex: 12,
+          showDetails: false,
+          summary: 'Welcome to my portfolio website!',
+          chips: [
+            {label: 'Web developer', icon: 'web', color: 'indigo'},
+            {label: 'Software developer', icon: 'code', color: 'light-blue'},
+            {label: 'Digital media enthusiast', icon: 'work', color: 'pink'}
+          ]
+        },
+        {
+          title: 'Projects',
+          src: 'https://alex-ng.herokuapp.com/images/projects/ignite/preview.png',
+          flex: 6,
+          showDetails: false,
+          summary: 'Check out some of my selected projects here on this site or on Github.',
+          details: 'lorem ipsum',
+          actions: [{label: 'Github', href: 'https://www.github.com/cynicalbird'}, {label: 'More', link: '/projects'}]
+        },
+        {
+          title: 'About me',
+          src: 'https://alex-ng.herokuapp.com/images/profile_pic_round.png',
+          contain: true,
+          flex: 6,
+          showDetails: false,
+          summary: 'Entering their 3rd year of Computer Science at Ryerson university Alex is strengthening their development portfolio, with new technologies and frameworks like VueJS, NodeJS and Firebase. Alex is also interested in the future of machine learning and data sciences.',
+          details: {
+            chips: [
+              {label: 'NodeJS', icon: 'device_hub', color: 'green'},
+              {label: 'VueJS', icon: 'pageview', color: 'teal'},
+              {label: 'Responsive design', icon: 'dashboard', color: 'blue'},
+              {label: 'AJAX', icon: 'send', color: 'purple'},
+              {label: 'Git', icon: 'history', color: 'orange'},
+              {label: 'Java', icon: 'computer', color: 'light-green'}
+            ]
+          },
+          actions: [{label: 'More', link: '/about'}]
+        },
+        {
+          title: 'Contact me',
+          actions: [
+            {label: 'LinkedIn', href: 'https://www.linkedin.com/in/alex-ng-130039134/?ppe=1'},
+            {label: 'Github', href: 'https://github.com/CynicalBird'},
+            {label: 'Email', href: 'mailto:alex.ng.personal@gmail.com'}
+          ],
+          flex: 6
+        }
       ]
     }),
     components: {
@@ -51,11 +108,10 @@
 
 <style lang="stylus">
   #sandbox {
-    border: 1px solid rgba(0, 0, 0, .1);
     overflow: hidden;
   }
   #sandbox .container, #sandbox {
-    min-height: 700px;
+    /*min-height: 700px;*/
   }
   @import './stylus/main'
 </style>

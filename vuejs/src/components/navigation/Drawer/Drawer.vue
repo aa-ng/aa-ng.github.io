@@ -12,6 +12,19 @@
     enable-resize-watcher
   >
     <v-list dense>
+      <v-list-tile class="pa-2 text-xs-center">
+        <v-list-tile-action>
+          <v-list-tile-avatar class="">
+            <img src="https://alex-ng.herokuapp.com/images/logo.png" alt="">
+          </v-list-tile-avatar>
+        </v-list-tile-action>
+        <v-list-tile-content>
+          <v-list-tile-title>
+            Alex
+          </v-list-tile-title>
+        </v-list-tile-content>
+      </v-list-tile>
+      <v-divider></v-divider>
       <alex-drawer-link v-for="drawerLink in drawerLinks" :drawerLink="drawerLink"></alex-drawer-link>
       <alex-appearence-config
         :primaryDrawer="primaryDrawer"
@@ -34,7 +47,8 @@
         drawerLinks: [
           { icon: 'home', link: '/', label: 'Home Page' },
           { icon: 'laptop', link: '/projects', label: 'My projects' },
-          { icon: 'assignment', link: '/resume', label: 'Resume' }
+          { icon: 'assignment', link: '/resume', label: 'Resume' },
+          { icon: 'face', link: '/about', label: 'About alex' }
         ]
       }
     },
@@ -70,3 +84,7 @@
     }
   }
 </script>
+
+<style scoped>
+
+</style>

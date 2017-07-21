@@ -1,6 +1,9 @@
 <template>
-  <v-toolbar dark class="primary">
-    <v-toolbar-side-icon @click.stop="primaryDrawer.model = !primaryDrawer.model" v-if="primaryDrawer.type !== 'permanent'"></v-toolbar-side-icon>
+  <v-toolbar dark class="primary elevation-0">
+    <v-toolbar-side-icon
+      @click.stop="primaryDrawer.model = !primaryDrawer.model"
+      v-if="primaryDrawer.type !== 'permanent'"
+    ></v-toolbar-side-icon>
     <v-toolbar-title>Alex Ng</v-toolbar-title>
   </v-toolbar>
 </template>
