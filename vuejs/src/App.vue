@@ -8,17 +8,17 @@
     <alex-header
       :primaryDrawer="primaryDrawer"
     ></alex-header>
-    <alex-drawer
-      :primaryDrawer="primaryDrawer"
-      :drawers="drawers"
-      :footer="footer"
-      :theme="theme"
-    ></alex-drawer>
+    <alex-drawer :primaryDrawer="primaryDrawer"></alex-drawer>
     <main>
       <router-view
         :cards="cards"
+        :primaryDrawer="primaryDrawer"
+        :drawers="drawers"
+        :footer="footer"
+        :theme="theme"
       ></router-view>
     </main>
+    <!--<alex-fab></alex-fab>-->
     <v-footer
       :absolute="footer.fixed"
     >
@@ -30,6 +30,7 @@
 <script>
   import Drawer from './components/navigation/Drawer/Drawer.vue'
   import HeaderBar from './components/navigation/Header/HeaderBar.vue'
+  import Fab from './components/navigation/Fab.vue'
 
   export default {
     data: () => ({
@@ -101,7 +102,8 @@
     }),
     components: {
       'alex-drawer': Drawer,
-      'alex-header': HeaderBar
+      'alex-header': HeaderBar,
+      'alex-fab': Fab
     }
   }
 </script>

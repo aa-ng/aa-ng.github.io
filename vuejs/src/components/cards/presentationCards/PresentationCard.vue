@@ -41,7 +41,7 @@
     </v-card-actions>
     <v-divider v-if="card.details"></v-divider>
     <v-slide-y-transition>
-      <v-card-text v-if="card.details" v-show="card.showDetails">
+      <v-card-text v-if="card.details" v-show="card.showDetails" class="text-xs-bottom">
         <span v-if="typeof card.details === 'string'">{{ card.details }}</span>
         <!-- Details objects -->
         <div class="text-xs-center text-sm-left" v-else>
@@ -69,9 +69,5 @@
 </script>
 
 <style scoped>
-  div.flex {
-    flex-basis: auto;
-    flex: 1 1 auto;
-    overflow-y: auto;
-  }
+
 </style>

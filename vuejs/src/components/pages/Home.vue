@@ -13,7 +13,7 @@
 </template>
 
 <script>
-  import PresentationCards from './cards/presentationCards/PresentationCards.vue'
+  import PresentationCards from '../cards/presentationCards/PresentationCards.vue'
   export default {
     props: {
       cards: {
