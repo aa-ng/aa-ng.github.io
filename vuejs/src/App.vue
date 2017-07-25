@@ -64,39 +64,51 @@
         {
           title: 'Projects',
           src: 'https://alex-ng.herokuapp.com/images/projects/ignite/preview.png',
-          flex: 6,
+          flex: 12,
           showDetails: false,
           summary: 'Check out some of my selected projects here on this site or on Github.',
-          details: 'lorem ipsum',
-          actions: [{label: 'Github', href: 'https://www.github.com/cynicalbird'}, {label: 'More', link: '/projects'}]
+          actions: [{label: 'Details', link: '/projects'}, {label: 'Github', href: 'https://www.github.com/cynicalbird'}],
+          details: {
+            buttons: [
+              {label: 'Random maze generation', link: '/projects/mazeproject'},
+              {label: 'Ignite', link: '/projects/ignite'},
+              {label: 'Portfolio website', link: '/projects/webportfolio'}
+            ]
+          }
         },
         {
           title: 'About me',
           src: 'https://alex-ng.herokuapp.com/images/profile_pic_round.png',
           contain: true,
-          flex: 6,
+          flex: 12,
           showDetails: false,
           summary: 'Entering their 3rd year of Computer Science at Ryerson university Alex is strengthening their development portfolio, with new technologies and frameworks like VueJS, NodeJS and Firebase. Alex is also interested in the future of machine learning and data sciences.',
           details: {
+            title: 'Summary of skills',
             chips: [
               {label: 'NodeJS', icon: 'device_hub', color: 'green'},
               {label: 'VueJS', icon: 'pageview', color: 'teal'},
               {label: 'Responsive design', icon: 'dashboard', color: 'blue'},
               {label: 'AJAX', icon: 'send', color: 'purple'},
               {label: 'Git', icon: 'history', color: 'orange'},
-              {label: 'Java', icon: 'computer', color: 'light-green'}
+              {label: 'Java', icon: 'computer', color: 'red'}
             ]
           },
-          actions: [{label: 'More', link: '/about'}]
+          actions: [{label: 'Details', link: '/about'}, {label: 'Resume', href: 'http://resume.alex-ng.com'}]
         },
         {
           title: 'Contact me',
+          form: [
+            {label: 'Name'},
+            {label: 'Email'},
+            {label: 'Message'}
+          ],
           actions: [
             {label: 'LinkedIn', href: 'https://www.linkedin.com/in/alex-ng-130039134/?ppe=1'},
             {label: 'Github', href: 'https://github.com/CynicalBird'},
             {label: 'Email', href: 'mailto:alex.ng.personal@gmail.com'}
           ],
-          flex: 6
+          flex: 12
         }
       ]
     }),
@@ -111,6 +123,7 @@
 <style lang="stylus">
   #sandbox {
     overflow: hidden;
+    margin-top: 45px;
   }
   #sandbox .container, #sandbox {
     /*min-height: 700px;*/

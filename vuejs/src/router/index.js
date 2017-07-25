@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '@/components/pages/Home'
-import Settings from '@/components/configuration/AppearenceSettings.vue'
+import Settings from '@/components/settings/AppearenceSettings.vue'
 
 Vue.use(Router)
 

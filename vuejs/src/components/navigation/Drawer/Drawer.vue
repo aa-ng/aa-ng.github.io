@@ -10,19 +10,6 @@
     overflow
   >
     <v-list dense>
-      <v-list-tile class="pa-2 text-xs-center">
-        <v-list-tile-action>
-          <v-list-tile-avatar class="">
-            <img src="https://alex-ng.herokuapp.com/images/logo.png" alt="">
-          </v-list-tile-avatar>
-        </v-list-tile-action>
-        <v-list-tile-content>
-          <v-list-tile-title>
-            Alex
-          </v-list-tile-title>
-        </v-list-tile-content>
-      </v-list-tile>
-      <v-divider></v-divider>
       <alex-drawer-link v-for="drawerLink in drawerLinks" :drawerLink="drawerLink"></alex-drawer-link>
     </v-list>
   </v-navigation-drawer>
