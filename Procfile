@@ -1,1 +1,1 @@
-web: node vuejs/build/dev-server.js
+web: node vuejs/build/build.js
