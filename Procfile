@@ -1,1 +1,1 @@
-web: node mean/bin/www
+web: node vuejs/build/dev-server.js
